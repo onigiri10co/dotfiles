@@ -4,14 +4,6 @@
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 
 
-# Dependency
-bash $ROLE_ROOT_PATH/homebrew/install.sh
-## for neoclide/coc.nvim
-bash $ROLE_ROOT_PATH/node/install.sh
-npm ls -g yarn > /dev/null 2>&1 || {
-  npm install -g yarn
-}
-
 # Install vim
 brew list vim > /dev/null 2>&1 || {
   brew install vim
@@ -26,4 +18,9 @@ cd $CURRENT_PATH
 cp .vimrc "${HOME}"
 cp -fr .config ${HOME}
 )
+
+# for neoclide/coc.nvim
+npm ls -g yarn > /dev/null 2>&1 || {
+  npm install -g yarn
+}
 
