@@ -21,6 +21,8 @@ main() {
     echo "$(timestamp) [INFO] Install ${role}..."
     bash $CURRENT_PATH/install.sh ${role}
   done
+
+  echo "$(timestamp) [INFO] Install successful. Please login again."
 }
 
 
