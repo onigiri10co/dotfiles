@@ -19,17 +19,7 @@ help:
 
 .PHONY: create
 create: ## Create ROLE, options: ROLE=<RoleName>
-	@if [ -z "$(ROLE)" ]; then \
-		echo "[ERROR] ROLE is required."; \
-		exit 1; \
-	fi; \
-	if [ -e "roles/$(ROLE)" ]; then \
-		echo "[ERROR] roles/$(ROLE) is already exists."; \
-		exit 1; \
-	fi;
-	mkdir -p roles/$(ROLE); cd $$_; \
-	echo "# roles/$(ROLE)\n\n" > README.md; \
-	echo "#!bin/bash -e\n\n" > install.sh; \
+	@_tools/create.sh $(ROLE)
 
 
 .PHONY: install
