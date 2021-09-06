@@ -11,25 +11,25 @@ _install() {
   local role_path="${ROLE_ROOT_PATH}/${role}"
   local installsh_path="${role_path}/${INSTALL_SHELL}"
 
-  [[ -d ${role_path} ]] && {
-    [[ ! -e ${installsh_path} ]] && {
+  if [[ -d ${role_path} ]]; then
+    if [[ ! -e ${installsh_path} ]]; then
       echo "[ERROR] ${installsh_path} is not found."
       return 1
-    }
+    fi
     bash ${installsh_path}
-  } || {
+  else
     echo "[ERROR] ${role_path} is not found."
     return 1
-  }
+  fi 
 }
 
 _list() {
   local role_path="${1:?[ERROR] role_path is required.}"
   local dependencies_path="${role_path}/${DEPENDENCIES_FILE}"
 
-  [[ -e ${dependencies_path} ]] && {
+  if [[ -e ${dependencies_path} ]]; then
     cat ${dependencies_path}
-  }
+  fi
 }
 
 main() {
@@ -40,9 +40,9 @@ main() {
   for role in $(_list ${role_path}) ${ownrole}; do
     _install ${role} || return $?
     source_path="$HOME/.zsh.d/${role}.zshrc"
-    [[ -e ${source_path} ]] && {
+    if [[ -e ${source_path} ]]; then
       source ${source_path}
-    }
+    fi
   done
 }
 
