@@ -5,22 +5,22 @@ onigri10co's dotfiles
 
 ## Installation
 ```
-$ curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/HEAD/install.sh | bash
+% curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/HEAD/install.sh | bash
 
 # another way
-$ git clone https://github.com/onigiri10co/dotfiles.git
-$ cd dotfiles
-$ make install-all
+% git clone https://github.com/onigiri10co/dotfiles.git
+% cd dotfiles
+% make install-all
 
 # by ROLE
-$ make install ROLE=vim
+% make install ROLE=vim
 ```
 
 
 
 ## Create ROLE
 ```
-$ make create ROLE=vim
+% make create ROLE=vim
 ```
 
 1. Define the dependent role names on the `roles/<ROLE>/dependencies` file. If does not exist, empty it or delete it.
