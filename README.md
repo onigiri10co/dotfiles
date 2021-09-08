@@ -17,6 +17,16 @@ onigri10co's dotfiles
 ```
 
 
+### NOTE: sudo password
+```
+# If you make the following settings in advance, you will not be asked for sudo password.
+% sudo sh -c "echo $(whoami) ALL=\(ALL\) NOPASSWD:ALL > /private/etc/sudoers.d/$(whoami)"
+
+# Delete it if it is not necessary after the installation is completed.
+% sudo rm -f /private/etc/sudoers.d/$(whoami)
+```
+
+
 
 ## Configuration
 You can override the configuration values for particular role by setting them before installation.
@@ -29,7 +39,15 @@ You can override the configuration values for particular role by setting them be
 
 
 
-## Create ROLE
+## Development
+### Specify the branch
+```
+% export DOTF_BRANCH="development"
+% curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/${DOTF_BRANCH}/install.sh | bash
+```
+
+
+### Create ROLE
 ```
 % make create ROLE=vim
 ```
