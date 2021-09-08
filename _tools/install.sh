@@ -1,4 +1,5 @@
-#!/usr/bin/env bash -e
+#!/usr/bin/env bash
+set -e
 
 readonly ROLE_ROOT_PATH=roles
 readonly INSTALL_SHELL=install.sh
