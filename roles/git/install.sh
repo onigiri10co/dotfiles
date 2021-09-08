@@ -31,6 +31,6 @@ brew list git-secrets > /dev/null 2>&1 || {
 }
 
 GIT_SECRETS="${GIT_TEMPLATE_ROOT}/git-secrets"
-git secrets --install ${GIT_SECRETS} --force
+git secrets --install ${GIT_SECRETS} --force > /dev/null
 git config --global init.templatedir ${GIT_SECRETS}
 
