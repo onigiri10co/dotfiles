@@ -18,6 +18,17 @@ onigri10co's dotfiles
 
 
 
+## Configuration
+You can override the configuration values for particular role by setting them before installation.
+
+### roles/git
+```
+% export GIT_USERNAME=foo
+% export GIT_EMAIL=bar@baz.com
+```
+
+
+
 ## Create ROLE
 ```
 % make create ROLE=vim
