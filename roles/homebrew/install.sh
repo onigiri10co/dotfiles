@@ -1,5 +1,4 @@
-#!/bin/bash -e
-
+#!/usr/bin/env bash -e
 
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 
@@ -10,7 +9,7 @@ type brew > /dev/null 2>&1 || {
 }
 
 ( 
-cd $CURRENT_PATH
-cp -fr .zsh.d "$HOME/"
+cd ${CURRENT_PATH}
+cp -fr .zsh.d ${HOME}/
 )
 

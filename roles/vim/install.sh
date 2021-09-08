@@ -1,5 +1,4 @@
-#!/bin/bash -e
-
+#!/usr/bin/env bash -e
 
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 
@@ -14,8 +13,8 @@ curl -sSfLo ~/.vim/autoload/plug.vim \
   --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 ( 
-cd $CURRENT_PATH
-cp .vimrc "${HOME}"
+cd ${CURRENT_PATH}
+cp .vimrc ${HOME}
 cp -fr .config ${HOME}
 )
 
