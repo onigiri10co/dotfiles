@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 set -e
 
 readonly ROLE_ROOT_PATH=roles
@@ -23,7 +23,7 @@ _install() {
   fi 
 }
 
-_list() {
+_dependencies() {
   local role_path="${1:?[ERROR] role_path is required.}"
   local dependencies_path="${role_path}/${DEPENDENCIES_FILE}"
 
@@ -32,17 +32,28 @@ _list() {
   fi
 }
 
+_source_role_zshrc() {
+  ls ~/.zsh.d/*.zshrc 1> /dev/null 2>&1 || return
+
+  if [[ ! -f ~/.zsh.d/.zshrc || $(ls -t  ~/.zsh.d/*.zshrc 2>/dev/null | head -n1) -nt ~/.zsh.d/.zshrc ]]; then
+    cat ~/.zsh.d/*.zshrc > ~/.zsh.d/.zshrc
+  fi
+
+  if [[ ! -f ~/.zsh.d/.zshrc.zwc || ~/.zsh.d/.zshrc -nt ~/.zsh.d/.zshrc.zwc ]]; then
+    zcompile ~/.zsh.d/.zshrc
+  fi
+
+  source ~/.zsh.d/.zshrc
+}
+
 main() {
   local ownrole="${1:?[ERROR] ROLE is required.}"
   local role_path="${ROLE_ROOT_PATH}/${ownrole}"
 
   local source_path
-  for role in $(_list ${role_path}) ${ownrole}; do
+  for role in $(_dependencies ${role_path}) ${ownrole}; do
+    _source_role_zshrc
     _install ${role} || return $?
-    source_path="$HOME/.zsh.d/${role}.zshrc"
-    if [[ -e ${source_path} ]]; then
-      source ${source_path}
-    fi
   done
 }
 
