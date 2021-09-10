@@ -5,7 +5,7 @@ onigri10co's dotfiles
 
 ## Installation
 ```
-% curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/HEAD/install.sh | bash
+% curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/HEAD/install.sh | zsh
 
 # another way
 % git clone https://github.com/onigiri10co/dotfiles.git
@@ -43,7 +43,7 @@ You can override the configuration values for particular role by setting them be
 ### Specify the branch
 ```
 % export DOTF_BRANCH="development"
-% curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/${DOTF_BRANCH}/install.sh | bash
+% curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/${DOTF_BRANCH}/install.sh | zsh
 ```
 
 

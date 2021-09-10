@@ -16,7 +16,7 @@ _install() {
       echo "[ERROR] ${installsh_path} is not found."
       return 1
     fi
-    bash ${installsh_path}
+    zsh ${installsh_path}
   else
     echo "[ERROR] ${role_path} is not found."
     return 1

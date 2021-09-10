@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 set -e
 
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
@@ -16,10 +16,10 @@ main() {
   echo "$(timestamp) [INFO] Install roles list"
   echo ${roles} | sed -E 's/roles\/|\/install.sh//g' | tr ' ' '\n'
 
-  for role_path in ${roles}; do
+  for role_path in ${=roles}; do
     role=$(basename ${role_path%/*})
     echo "$(timestamp) [INFO] Install ${role}..."
-    bash $CURRENT_PATH/install.sh ${role}
+    zsh $CURRENT_PATH/install.sh ${role}
   done
 
   echo "$(timestamp) [INFO] Install successful. Please login again."

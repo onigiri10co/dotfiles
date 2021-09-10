@@ -1,4 +1,5 @@
-#!/bin/bash -e
+#!/usr/bin/env zsh
+set -e
 
 DOTF_REPOSITORY='github.com/onigiri10co/dotfiles';
 DOTF_BRANCH="${DOTF_BRANCH:-main}";
