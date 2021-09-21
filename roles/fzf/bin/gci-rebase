@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+
+# gci-rebase is get git commit sha, Get the commit ID of the previous commit for rebasing.
+#
+# Examples:
+# git rebase -i `gci-rebase`
+
+main() {
+  local commits commit
+  commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
+  commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
+  commit=$(echo "$commit" | sed "s/ .*//")
+
+  previous_commit=$(git log --pretty=oneline --abbrev-commit --reverse | grep -B1 "$commit" | head -n1)
+  echo -n $(echo "$previous_commit" | sed "s/ .*//")
+}
+
+main
+
