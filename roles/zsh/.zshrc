@@ -25,9 +25,6 @@ fpath+=~/.zsh.d/completion
 
 # Env
 export PATH="$HOME/bin:/usr/local/bin:/sbin:/usr/sbin/:$PATH"
-# Load zsh config(see also: $HOME/bin/zsh-build)
-zsh-build
-source ~/.zsh.d/.zshrc
 
 # Bindkey
 bindkey -v                                             # vi keybind 
@@ -78,7 +75,9 @@ zstyle ':vcs_info:*' actionformats '(%b|%a)'           # This format is displaye
 precmd () { vcs_info }
 PROMPT='${vcs_info_msg_0_}'$PROMPT 
 
-
 # Command options
 export LESS='-iMR'
+
+# Load zsh config(see also: $HOME/bin/zsh-build)
+zsh-build && source ~/.zsh.d/.zshrc
 

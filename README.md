@@ -54,5 +54,7 @@ You can override the configuration values for particular role by setting them be
 
 1. Define the dependent role names on the `roles/<ROLE>/dependencies` file. If does not exist, empty it or delete it.
 1. Implement `roles/<ROLE>/install.sh` file.
-1. If you want to define environment variables, define it in the `roles/<ROLE>/.zsh.d/<ROLE>.zshrc` file.
+1. If you want to define environment variables, define it in the `roles/<ROLE>/.zsh.d/<ROLE>.zshrc.env` file.
+1. If you want to define alias, define it in the `roles/<ROLE>/.zsh.d/<ROLE>.zshrc.alias` file.
+1. If you want to define other processes, define it in the `roles/<ROLE>/.zsh.d/<ROLE>.zshrc` file.
 
