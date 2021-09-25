@@ -78,10 +78,6 @@ zstyle ':vcs_info:*' actionformats '(%b|%a)'           # This format is displaye
 precmd () { vcs_info }
 PROMPT='${vcs_info_msg_0_}'$PROMPT 
 
-# Color
-# Nort dircolors: https://www.nordtheme.com/ports/dircolors
-# eval "$(gdircolors ~/.config/colorscheme/Solarized_dircolors.256dark)"
-test -r ~/.dir_colors && eval $(dircolors ~/.dir_colors)
 
 # Command options
 export LESS='-iMR'
