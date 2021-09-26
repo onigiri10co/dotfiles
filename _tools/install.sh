@@ -35,12 +35,13 @@ _dependencies() {
 _source_role_zshrc() {
   setopt +o nomatch
 
-  ls ~/.zsh.d/*.{zshrc,zshrc.env,zshrc.alias} > /dev/null 2>&1 || return
+  [[ -d ~/.zsh.d ]] && ls ~/.zsh.d/* | grep -E '.*(zshrc|zshrc.env|zshrc.alias)$' > /dev/null 2>&1 || return 0
 
   if [[ ! -f ~/.zsh.d/.zshrc || $(ls -t  ~/.zsh.d/*.{zshrc,zshrc.env,zshrc.alias} 2>/dev/null | head -n1) -nt ~/.zsh.d/.zshrc ]]; then
-    cat ~/.zsh.d/*.zshrc.env > ~/.zsh.d/.zshrc
-    cat ~/.zsh.d/*.zshrc.alias >> ~/.zsh.d/.zshrc
-    cat ~/.zsh.d/*.zshrc >> ~/.zsh.d/.zshrc
+    rm -f ~/.zsh.d/.zshrc
+    ls ~/.zsh.d/*.zshrc.env >/dev/null 2>&1 && cat ~/.zsh.d/*.zshrc.env >> ~/.zsh.d/.zshrc
+    ls ~/.zsh.d/*.zshrc.alias >/dev/null 2>&1 && cat ~/.zsh.d/*.zshrc.alias >> ~/.zsh.d/.zshrc
+    ls ~/.zsh.d/*.zshrc >/dev/null 2>&1 && cat ~/.zsh.d/*.zshrc >> ~/.zsh.d/.zshrc
   fi
 
   if [[ ! -f ~/.zsh.d/.zshrc.zwc || ~/.zsh.d/.zshrc -nt ~/.zsh.d/.zshrc.zwc ]]; then

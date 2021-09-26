@@ -79,5 +79,6 @@ PROMPT='${vcs_info_msg_0_}'$PROMPT
 export LESS='-iMR'
 
 # Load zsh config(see also: $HOME/bin/zsh-build)
-zsh-build && source ~/.zsh.d/.zshrc
+zsh-build
+test -r ~/.zsh.d/.zshrc && source ~/.zsh.d/.zshrc
 
