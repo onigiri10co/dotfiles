@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+setopt +o nomatch
+
+if `ls ~/.ssh/*.pem >/dev/null 2>&1`; then
+  chmod 600 ~/.ssh/*.pem
+  ssh-add ~/.ssh/*.pem >/dev/null 2>&1
+fi
+
+ssh-add -l
