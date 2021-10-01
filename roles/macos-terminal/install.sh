@@ -34,25 +34,28 @@ COLORSCHEME_PATH="$HOME/.config/colorscheme"
 mkdir -p "${COLORSCHEME_PATH}"
 curl -sL -o "${COLORSCHEME_PATH}/${IMPORT_PROFILE_NAME}" "${COLOR_SCHEME_URL}"
 
-# Import Profile
-open "${COLORSCHEME_PATH}/${IMPORT_PROFILE_NAME}"
+# TODO: open ... で、別 terminal が開いてうざいので、いったん手動にした。
+# # Import Profile
+# open "${COLORSCHEME_PATH}/${IMPORT_PROFILE_NAME}"
+#
+# # Settings Profile
+# (
+# cat <<EOT
+# tell application "Terminal"
+#     set themeName to "$PROFILE_NAME" 
+#     set mainID to id of front window
+#     set default settings to settings set themeName
+#     set startup settings to settings set themeName
+#     set current settings of window id mainID to settings set themeName
+# --  close (every window whose id ≠ mainID)
+# end tell
+# EOT
+# ) | osascript
+#
+# ## Only use UTF-8 in Terminal.app
+# defaults write com.apple.terminal StringEncodings -array 4
+# ## Terminal > Profiles > Shell > When the shell exits: Close the window
+# defaults write com.apple.Terminal shellExitAction -int 0
 
-# Settings Profile
-(
-cat <<EOT
-tell application "Terminal"
-    set themeName to "$PROFILE_NAME" 
-    set mainID to id of front window
-    set default settings to settings set themeName
-    set startup settings to settings set themeName
-    set current settings of window id mainID to settings set themeName
---  close (every window whose id ≠ mainID)
-end tell
-EOT
-) | osascript
-
-## Only use UTF-8 in Terminal.app
-defaults write com.apple.terminal StringEncodings -array 4
-## Terminal > Profiles > Shell > When the shell exits: Close the window
-defaults write com.apple.Terminal shellExitAction -int 0
+# [Mac のターミナルで日本語入力](https://sekika.github.io/2015/11/23/mac-terminal-japanese/)
 
