@@ -33,6 +33,16 @@ sudo rm -f /private/etc/sudoers.d/$(whoami)
 ```
 
 
+### NOTE: for Apple Silicon Mac
+Ref. [If you need to install Rosetta on your Mac - Apple Support](https://support.apple.com/en-us/HT211861)
+
+e.g. google-japanese-ime, docker
+
+```
+sudo softwareupdate --install-rosetta --agree-to-license
+```
+
+
 
 ## Configuration
 You can override the configuration values for particular role by setting them before installation.
