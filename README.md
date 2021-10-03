@@ -5,25 +5,31 @@ onigri10co's dotfiles
 
 ## Installation
 ```
-% curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/HEAD/install.sh | zsh
+curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/HEAD/install.sh | zsh
+```
 
-# another way
-% git clone https://github.com/onigiri10co/dotfiles.git
-% cd dotfiles
-% make install-all
+### another way
+```
+git clone https://github.com/onigiri10co/dotfiles.git
+cd dotfiles
+make install-all
 
 # by ROLE
-% make install ROLE=vim
+make install ROLE=vim
 ```
 
 
 ### NOTE: sudo password
-```
-# If you make the following settings in advance, you will not be asked for sudo password.
-% sudo sh -c "echo $(whoami) ALL=\(ALL\) NOPASSWD:ALL > /private/etc/sudoers.d/$(whoami)"
+If you make the following settings in advance, you will not be asked for sudo password.
 
-# Delete it if it is not necessary after the installation is completed.
-% sudo rm -f /private/etc/sudoers.d/$(whoami)
+```
+sudo sh -c "echo $(whoami) ALL=\(ALL\) NOPASSWD:ALL > /private/etc/sudoers.d/$(whoami)"
+```
+
+Delete it if it is not necessary after the installation is completed.
+
+```
+sudo rm -f /private/etc/sudoers.d/$(whoami)
 ```
 
 
@@ -33,8 +39,8 @@ You can override the configuration values for particular role by setting them be
 
 ### roles/git
 ```
-% export GIT_USERNAME=foo
-% export GIT_EMAIL=bar@baz.com
+export GIT_USERNAME=foo
+export GIT_EMAIL=bar@baz.com
 ```
 
 
@@ -42,14 +48,14 @@ You can override the configuration values for particular role by setting them be
 ## Development
 ### Specify the branch
 ```
-% export DOTF_BRANCH="development"
-% curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/${DOTF_BRANCH}/install.sh | zsh
+export DOTF_BRANCH="develop"
+curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/${DOTF_BRANCH}/install.sh | zsh
 ```
 
 
 ### Create ROLE
 ```
-% make create ROLE=vim
+make create ROLE=vim
 ```
 
 1. Define the dependent role names on the `roles/<ROLE>/dependencies` file. If does not exist, empty it or delete it.
