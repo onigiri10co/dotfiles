@@ -40,3 +40,9 @@ GIT_SECRETS="${GIT_CONFIG_ROOT_DIR}/git-secrets"
 git secrets --install ${GIT_SECRETS} --force > /dev/null
 git config --global init.templatedir ${GIT_SECRETS}
 
+( 
+cd ${CURRENT_PATH}
+cp -fr bin ${HOME}
+chmod +x ${HOME}/bin/*
+)
+
