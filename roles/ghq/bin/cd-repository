@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+
+GHQ_ROOT=`ghq root`
+TARGET_DIR=$(
+  echo -e "`ghq list`" | sort | uniq \
+  | fzf -0 --inline-info --ansi --cycle --preview "ls -la $GHQ_ROOT/{}"
+)
+
+[[ ! -z $TARGET_DIR ]] && cd "$GHQ_ROOT/$TARGET_DIR"
+
