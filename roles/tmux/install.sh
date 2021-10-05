@@ -14,10 +14,6 @@ brew list reattach-to-user-namespace > /dev/null 2>&1 || {
   brew install reattach-to-user-namespace
 }
 
-# Install ansifilter (for tmux-plugins/tmux-logging)
-brew list ansifilter > /dev/null 2>&1 || {
-  brew install ansifilter
-}
 
 [[ -e ~/.tmux/plugins/tpm ]] || {
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
