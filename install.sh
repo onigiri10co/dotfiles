@@ -38,7 +38,7 @@ main() {
   curl -fsSL https://${DOTF_REPOSITORY}/archive/${DOTF_BRANCH}.tar.gz -# | tar xz -C ${DOTF_WORKPATH} --strip=1
   ( 
     cd ${DOTF_WORKPATH}
-    make install-all
+    make install
   )
 }
 

@@ -14,20 +14,19 @@ help:
 	@echo "Examples:"
 	@echo "make create ROLE=vim"
 	@echo "make install ROLE=vim"
-	@echo "make install-all"
+	@echo "make install"
 
 
 .PHONY: create
-create: ## Create ROLE, options: ROLE=<RoleName>
+create: ## Create ROLE <ROLE=RoleName>
 	@_tools/create.sh $(ROLE)
 
 
 .PHONY: install
-install: ## Install ROLE, options: ROLE=<RoleName>
-	@_tools/install.sh $(ROLE)
-
-
-.PHONY: install-all
-install-all: ## Install All ROLEs
-	@_tools/install_all.sh
+install: ## Install ROLEs [ROLE=RoleName] 
+	@if [ -n "$(ROLE)" ]; then \
+		_tools/install.sh $(ROLE); \
+	else \
+		_tools/install_all.sh; \
+	fi
 

@@ -12,7 +12,7 @@ curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/HEAD/install.s
 ```
 git clone https://github.com/onigiri10co/dotfiles.git
 cd dotfiles
-make install-all
+make install
 
 # by ROLE
 make install ROLE=vim
