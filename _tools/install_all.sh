@@ -2,7 +2,6 @@
 set -e
 
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
-readonly ROLE_ROOT_PATH=roles
 
 
 timestamp() {
@@ -11,7 +10,7 @@ timestamp() {
 
 main() {
   local roles role_path role
-  roles=$(find ${ROLE_ROOT_PATH} ! -path './_tools*' -a ! -path './.git*' -a -name 'install.sh' | sort)
+  roles=$(find roles ! -path './_tools*' -a ! -path './.git*' -a -name 'install.sh' | sort)
 
   echo "$(timestamp) [INFO] Install roles list"
   echo ${roles} | sed -E 's/roles\/|\/install.sh//g' | tr ' ' '\n'

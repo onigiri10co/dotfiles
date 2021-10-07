@@ -2,7 +2,9 @@
 set -e
 
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
-readonly ROLE_ROOT_PATH=roles
 
 
+brew list {{ROLE}} > /dev/null 2>&1 || {
+  brew install {{ROLE}}
+}
 
