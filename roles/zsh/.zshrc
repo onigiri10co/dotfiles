@@ -16,7 +16,6 @@
 # For each, read global(/etc/zsh*) and then overwrite with local(~/.zsh*)). 
 # if $ZDOTDIR is set, zsh* under that directory will be loaded(default: $HOME).
 ##########################################################################################################
-
 # Not duplicate registration
 typeset -U path PATH cdpath fpath manpath MANPATH
 
@@ -77,6 +76,9 @@ PROMPT='${vcs_info_msg_0_}'$PROMPT
 
 # Command options
 export LESS='-iMR'
+
+# Setup zsh-completion
+zsh-completion
 
 # Load zsh config(see also: $HOME/bin/zsh-build)
 zsh-build
