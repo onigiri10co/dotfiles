@@ -8,7 +8,6 @@ GIT_USERNAME="${GIT_USERNAME:-onigiri10co}"
 GIT_EMAIL="${GIT_EMAIL:-onigiri10co@gmail.com}"
 
 
-# Install git
 brew list git > /dev/null 2>&1 || {
   brew install git
 }

@@ -5,7 +5,6 @@ readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 readonly NORD_DIR_REPO='github.com/arcticicestudio/nord-dircolors'
 
 
-# Install zsh
 brew list zsh > /dev/null 2>&1 || {
   brew install zsh
 }
@@ -18,7 +17,6 @@ cp -fr bin ${HOME}
 chmod +x ${HOME}/bin/*
 )
 
-# Make completion dir
 mkdir -p ~/.zsh.d/completion
 
 # Color Settings: dircolors 

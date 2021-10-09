@@ -2,7 +2,6 @@
 set -e
 
 
-# Install macvim
 brew list macvim > /dev/null 2>&1 || {
   brew install macvim
 }

@@ -4,7 +4,6 @@ set -e
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 
 
-# Install hammerspoon
 brew list --cask hammerspoon > /dev/null 2>&1 || {
   brew install hammerspoon --cask 
 }

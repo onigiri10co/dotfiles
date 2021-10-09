@@ -4,16 +4,13 @@ set -e
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 
 
-# Install tmux
 brew list tmux > /dev/null 2>&1 || {
   brew install tmux
 }
 
-# Install reattach-to-user-namespace
 brew list reattach-to-user-namespace > /dev/null 2>&1 || {
   brew install reattach-to-user-namespace
 }
-
 
 [[ -e ~/.tmux/plugins/tpm ]] || {
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

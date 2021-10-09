@@ -4,7 +4,6 @@ set -e
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 
 
-# Install vim
 brew list vim > /dev/null 2>&1 || {
   brew list macvim > /dev/null 2>&1 && {
     brew unlink macvim
