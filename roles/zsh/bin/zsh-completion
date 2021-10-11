@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+setopt +o nomatch
+
+
+cp -a $(brew --prefix)/share/zsh/site-functions/* ~/.zsh.d/completion
+

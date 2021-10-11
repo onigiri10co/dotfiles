@@ -1,0 +1,55 @@
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+
+# <type>
+# feat: (new feature for the user, not a new feature for build script)
+# fix: (bug fix for the user, not a fix to a build script)
+# docs: (changes to the documentation)
+# style: (formatting, missing semi colons, etc; no production code change)
+# refactor: (refactoring production code, eg. renaming a variable)
+# test: (adding missing tests, refactoring tests; no production code change)
+# chore: (updating grunt tasks etc; no production code change)
+
+# [optional scope] example
+# init
+# runner
+# watcher
+# config
+# web-server
+# middleware
+# proxy
+
+# Examples Refs https://www.conventionalcommits.org
+# Commit message with description and breaking change footer
+# feat: allow provided config object to extend other configs
+#
+# Commit message with ! to draw attention to breaking change
+# refactor!: drop support for Node 6
+#
+# Commit message with scope and ! to draw attention to breaking change
+# refactor(runtime)!: drop support for Node 6
+#
+# Commit message with both ! and BREAKING CHANGE footer
+# refactor!: drop support for Node 6
+# 
+# BREAKING CHANGE: refactor to use JavaScript features not available in Node 6.
+#
+# Commit message with no body
+# docs: correct spelling of CHANGELOG
+# 
+# Commit message with scope
+# feat(lang): add polish language
+#
+# Commit message with multi-paragraph body and multiple footers
+# fix: correct minor typos in code
+# 
+# see the issue for details
+# 
+# on typos fixed.
+# 
+# Reviewed-by: Z
+# Refs #133
+

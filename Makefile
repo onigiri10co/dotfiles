@@ -1,0 +1,32 @@
+.DEFAULT_GOAL := help
+
+
+.PHONY: all
+all:
+
+
+.PHONY: help
+help:
+	@echo "Usage: make <target> [options]\n"
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
+		| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+	@echo ""
+	@echo "Examples:"
+	@echo "make create ROLE=vim"
+	@echo "make install ROLE=vim"
+	@echo "make install"
+
+
+.PHONY: create
+create: ## Create ROLE <ROLE=RoleName>
+	@_tools/create.sh $(ROLE)
+
+
+.PHONY: install
+install: ## Install ROLEs [ROLE=RoleName] 
+	@if [ -n "$(ROLE)" ]; then \
+		_tools/install.sh $(ROLE); \
+	else \
+		_tools/install_all.sh; \
+	fi
+
