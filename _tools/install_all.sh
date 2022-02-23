@@ -10,7 +10,16 @@ timestamp() {
 
 main() {
   local roles role_path role
-  roles=$(find roles ! -path './_tools*' -a ! -path './.git*' -a -name 'install.sh' | sort)
+
+  if [[ -f $DOTF_ROLES_FILE ]]; then
+    while read role; do
+      [[ $role =~ ^# ]] && continue
+      roles="$roles $role"
+    done < <(cat $DOTF_ROLES_FILE) 
+    roles=$(echo "${roles}" | tr ' ' '\n' | sed '/^$/d' | sort | uniq)
+  else
+    roles=$(find roles ! -path './_tools*' -a ! -path './.git*' -a -name 'install.sh' | sort)
+  fi
 
   echo "$(timestamp) [INFO] Install roles list"
   echo ${roles} | sed -E 's/roles\/|\/install.sh//g' | tr ' ' '\n'
