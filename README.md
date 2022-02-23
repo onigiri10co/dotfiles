@@ -16,6 +16,15 @@ make install
 
 # by ROLE
 make install ROLE=vim
+
+# Only specified ROLES
+export DOTF_ROLES_FILE=`pwd`/roles.txt
+cat $DOTF_ROLES_FILE
+# is a comment, blank lines are ignored.
+fzf
+git
+tig
+make install
 ```
 
 
