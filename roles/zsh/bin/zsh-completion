@@ -3,5 +3,5 @@
 setopt +o nomatch
 
 
-cp -a $(brew --prefix)/share/zsh/site-functions/* ~/.zsh.d/completion
+cp -sf $(brew --prefix)/share/zsh/site-functions/* ~/.zsh.d/completion
 
