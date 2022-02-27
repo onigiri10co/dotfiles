@@ -73,6 +73,20 @@ for i in range(1, 9)
 endfor
 
 
+"Setting/QuickFix
+augroup QuickFixCmd
+  autocmd!
+  autocmd QuickFixCmdPost *grep* cwindow
+augroup END
+
+autocmd FileType qf call s:qickfix_keymap()
+function! s:qickfix_keymap()
+  ""Press esc twice to close
+  nmap <silent><buffer> <ESC><ESC> :<C-u>bd<CR>
+  imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>bd<CR>
+endfunction
+
+
 "Setting/Plugin
 call plug#begin('~/.vim/plugged')
 ""Color"
