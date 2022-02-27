@@ -96,7 +96,6 @@ Plug 'tyru/open-browser.vim'
 """brew install node && npm i -g yarn
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
-Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 
