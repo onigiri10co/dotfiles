@@ -65,6 +65,12 @@ nnoremap k gk
 inoremap <silent> jj <ESC>
 ""Display current buffer path on the command line
 cnoremap <c-x> <c-r>=expand('%:p')<cr>
+" move tabs with Tab
+nnoremap <Tab><Tab> gt
+nnoremap <S-Tab> gT
+for i in range(1, 9)
+    execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
+endfor
 
 
 "Setting/Plugin
