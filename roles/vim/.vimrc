@@ -19,7 +19,7 @@ set ambiwidth=double                                   ""Display double-byte cha
 set wildignore=*.o,*.obj,*.pyc,*.so,*.dll,*.class,*~   ""Ignore Pattern when the complement, vimgrep.
 ""Don't perform a line feed when pressing the Enter key on the completion display.
 inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
-augroup autochdir-settings
+augroup AutoChangeDir
   autocmd!
   ""Automatically move to the directory of the file being edited
   autocmd BufEnter * silent! lcd %:p:h
@@ -137,7 +137,7 @@ let g:nord_bold_vertical_split_line = 1
 let g:nord_cursor_line_number_background = 1
 ""ref. https://github.com/arcticicestudio/nord-vim/issues/26
 ""ref. https://www.nordtheme.com/docs/ports/vim/customization
-augroup colorscheme-nord-overrides
+augroup ColorschemeNord
   autocmd!
   autocmd ColorScheme nord highlight Visual ctermfg=11
   autocmd ColorScheme nord highlight CursorLine ctermfg=14
@@ -364,7 +364,7 @@ function! LightlineCocInfo() abort
     return s:lightline_coc_diagnostic('information', 'i')
 endfunction
 
-augroup coc-status-settings
+augroup CocStatusSettings
   autocmd!
   autocmd User CocDiagnosticChange call lightline#update()
 augroup END
