@@ -63,7 +63,7 @@ inoremap <silent> jj <ESC>
 nnoremap <Tab><Tab> gt
 nnoremap <S-Tab> gT
 for i in range(1, 9)
-    execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
+  execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
 endfor
 cnoremap <c-x> <c-r>=expand('%:p')<cr>
 
@@ -226,14 +226,14 @@ let g:openbrowser_search_engines = {
 
 "Setting/Tool/neoclide/coc.nvim
 let g:coc_global_extensions = [
-    \ 'coc-lists',
-    \ 'coc-marketplace',
-    \ 'coc-json',
-    \ 'coc-tsserver',
-    \ 'coc-prettier',
-    \ 'coc-eslint',
-    \ 'coc-python',
-    \ 'coc-go',
+  \ 'coc-lists',
+  \ 'coc-marketplace',
+  \ 'coc-json',
+  \ 'coc-tsserver',
+  \ 'coc-prettier',
+  \ 'coc-eslint',
+  \ 'coc-python',
+  \ 'coc-go',
 \ ]
 ""Show all diagnostics (OR CocList diagnostics)
 nnoremap <silent> <Leader>di :<C-u>CocDiagnostics<CR>
@@ -293,41 +293,41 @@ endfunction
 
 "Setting/Tool/itchyny/lightline.vim
 let g:lightline = {
-    \ 'colorscheme': 'nord',
-    \ 'active': {
-    \   'left': [
-    \     [ 'mode', 'paste' ],
-    \     [ 'coc_error', 'coc_warn', 'coc_info' ],
-    \     [ 'readonly', 'gitbranch', 'filename', 'modified' ],
-    \   ],
-    \   'right': [
-    \     [ 'fileformat', 'fileencoding', 'filetype', 'percent', 'lineinfo' ],
-    \   ],
-    \ },
-    \ 'inactive': {
-    \   'left': [
-    \     [ 'inactive_filename' ],
-    \   ],
-    \   'right': [
-    \     [ ],
-    \   ],
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'gitbranch#name',
-    \   'filename': 'LightlineFilename',
-    \ },
-    \ 'component_expand': {
-    \   'coc_error': 'LightlineCocError',
-    \   'coc_warn': 'LightlineCocWarn',
-    \   'coc_info': 'LightlineCocInfo',
-    \   'inactive_filename': 'LightlineFilename',
-    \ },
-    \ 'component_type': {
-    \   'coc_error': 'error',
-    \   'coc_warn': 'warning',
-    \   'coc_info': 'tabsel',
-    \   'inactive_filename': 'middle',
-    \ },
+  \ 'colorscheme': 'nord',
+  \ 'active': {
+  \   'left': [
+  \     [ 'mode', 'paste' ],
+  \     [ 'coc_error', 'coc_warn', 'coc_info' ],
+  \     [ 'readonly', 'gitbranch', 'filename', 'modified' ],
+  \   ],
+  \   'right': [
+  \     [ 'fileformat', 'fileencoding', 'filetype', 'percent', 'lineinfo' ],
+  \   ],
+  \ },
+  \ 'inactive': {
+  \   'left': [
+  \     [ 'inactive_filename' ],
+  \   ],
+  \   'right': [
+  \     [ ],
+  \   ],
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'gitbranch#name',
+  \   'filename': 'LightlineFilename',
+  \ },
+  \ 'component_expand': {
+  \   'coc_error': 'LightlineCocError',
+  \   'coc_warn': 'LightlineCocWarn',
+  \   'coc_info': 'LightlineCocInfo',
+  \   'inactive_filename': 'LightlineFilename',
+  \ },
+  \ 'component_type': {
+  \   'coc_error': 'error',
+  \   'coc_warn': 'warning',
+  \   'coc_info': 'tabsel',
+  \   'inactive_filename': 'middle',
+  \ },
 \ }
 
 ""Custom Color Settings
@@ -335,27 +335,27 @@ let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
 let s:palette.normal.right = s:palette.normal.middle
 
 function! LightlineFilename() abort
-    return expand('%:p:h:t') . '/' . expand('%:t')
+  return expand('%:p:h:t') . '/' . expand('%:t')
 endfunction
 
 function! s:lightline_coc_diagnostic(type, sign) abort
-    let info = get(b:, 'coc_diagnostic_info', 0)
-    if empty(info) || get(info, a:type, 0) == 0
-        return ''
-    endif
-    return printf('%s %d', a:sign, info[a:type])
+  let info = get(b:, 'coc_diagnostic_info', 0)
+  if empty(info) || get(info, a:type, 0) == 0
+    return ''
+  endif
+  return printf('%s %d', a:sign, info[a:type])
 endfunction
 
 function! LightlineCocError() abort
-    return s:lightline_coc_diagnostic('error', '✘')
+  return s:lightline_coc_diagnostic('error', '✘')
 endfunction
 
 function! LightlineCocWarn() abort
-    return s:lightline_coc_diagnostic('warning', '⚠')
+  return s:lightline_coc_diagnostic('warning', '⚠')
 endfunction
 
 function! LightlineCocInfo() abort
-    return s:lightline_coc_diagnostic('information', 'i')
+  return s:lightline_coc_diagnostic('information', 'i')
 endfunction
 
 augroup CocStatusSettings
@@ -366,7 +366,7 @@ augroup END
 
 "Setting/ExternalFile
 if filereadable(expand('~/.vimrc.local'))
-    source ~/.vimrc.local
+  source ~/.vimrc.local
 endif
 
 
