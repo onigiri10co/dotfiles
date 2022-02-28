@@ -1,28 +1,27 @@
-"Setting/Basic
-set encoding=utf8                                      ""Encoding
-set fileencoding=utf-8                                 ""File Encoding
-set showcmd                                            ""To view the command in the input to the status.
-set noswapfile                                         ""No create swap file.
-set nobackup                                           ""No create backup file.
-set clipboard=unnamed,autoselect                       ""To insert the selected text in visual mode to the clipboard. & Share the clipboard.
-set hidden                                             ""Buffer is to be opened in the editing.
-set autoread                                           ""Rereading Automatic When the file being edited is changed.
-set confirm                                            ""To make sure when there are unsaved files.
-set visualbell t_vb=                                   ""Disable all the beep.
-set noerrorbells                                       ""Not sound the beep at the time of display of error messages.
-set switchbuf=useopen                                  ""If already in the buffer, open that file.
-set autowrite                                          ""Auto save file If there is a change when file move or make command is executed.
-set textwidth=0                                        ""Turn off automatic line breaks.
-set history=100                                        ""The number of command history
-set completeopt=menuone,noinsert                       ""Completion Style
-set ambiwidth=double                                   ""Display double-byte characters normally
-set wildignore=*.o,*.obj,*.pyc,*.so,*.dll,*.class,*~   ""Ignore Pattern when the complement, vimgrep.
+"Setting/General
+set encoding=utf8
+set fileencoding=utf-8
+set showcmd
+set noswapfile
+set nobackup
+set clipboard=unnamed,autoselect
+set hidden
+set autoread
+set confirm
+set visualbell t_vb=
+set noerrorbells
+set switchbuf=useopen
+set autowrite
+set textwidth=0
+set history=1000
+set completeopt=menuone,noinsert
+set ambiwidth=double
+set wildignore=*.o,*.obj,*.pyc,*.so,*.dll,*.class,*~
 set guioptions=
-""Don't perform a line feed when pressing the Enter key on the completion display.
 inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+
 augroup AutoChangeDir
   autocmd!
-  ""Automatically move to the directory of the file being edited
   autocmd BufEnter * silent! lcd %:p:h
 augroup END
 
@@ -33,45 +32,40 @@ let maplocalleader = ','
 
 
 "Setting/Tab
-set expandtab                                          ""Convert tabs to spaces.
-set shiftwidth=2                                       ""Display width of the Tab character at the beginning of a line.
-set tabstop=2                                          ""Display width of the Tab character other than the beginning of the line.
+set expandtab
+set shiftwidth=2
+set tabstop=2
 
 
 "Setting/View
-set number                                             ""View number count.
-set title                                              ""To display the name of the file being edited.
-set ruler                                              ""Display ruler.
-set cursorline                                         ""Currently highlight the line.
-set showmatch                                          ""Input parentheses, to highlight the corresponding brackets.
-set laststatus=2                                       ""Display the status line in the second row from the end. (for lightline.vim)
-set signcolumn=yes                                     ""Display signcolumn always
+set number
+set title
+set ruler
+set cursorline
+set showmatch
+set laststatus=2
+set signcolumn=yes
 
 
 "Setting/Search
-set ignorecase                                         ""Search not case sensitive.
-set smartcase                                          ""If the search string contains upper-case letters, to search by distinguishing.
-set incsearch                                          ""To enable incremental search.
-set wrapscan                                           ""Search to the end, go back to the beginning.
-set hlsearch                                           ""Search result hilight.
-""To turn off the highlight in the Esc key * 2.
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+set hlsearch
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 
 
 "Setting/Key
-""Replace j,k to gj, gk
 nnoremap j gj
 nnoremap k gk
-""jj insted of ESC
 inoremap <silent> jj <ESC>
-""Display current buffer path on the command line
-cnoremap <c-x> <c-r>=expand('%:p')<cr>
-" move tabs with Tab
 nnoremap <Tab><Tab> gt
 nnoremap <S-Tab> gT
 for i in range(1, 9)
     execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
 endfor
+cnoremap <c-x> <c-r>=expand('%:p')<cr>
 
 
 "Setting/QuickFix
@@ -82,7 +76,6 @@ augroup END
 
 autocmd FileType qf call s:qickfix_keymap()
 function! s:qickfix_keymap()
-  ""Press esc twice to close
   nmap <silent><buffer> <ESC><ESC> :<C-u>bd<CR>
   imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>bd<CR>
 endfunction
