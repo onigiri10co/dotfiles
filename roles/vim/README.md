@@ -117,6 +117,11 @@ augroup AutoChangeDir
 augroup END
 ```
 
+#### GUI オプションは全て無効にする（MacVim 起動時に、スクロールバーやタブなどを表示しない）
+```
+set guioptions=
+```
+
 
 ### Leader
 - リーダー: 直接的な開発で使う（LSP 操作: 定義ジャンプ、エラー表示など）

@@ -17,6 +17,7 @@ set history=100                                        ""The number of command h
 set completeopt=menuone,noinsert                       ""Completion Style
 set ambiwidth=double                                   ""Display double-byte characters normally
 set wildignore=*.o,*.obj,*.pyc,*.so,*.dll,*.class,*~   ""Ignore Pattern when the complement, vimgrep.
+set guioptions=
 ""Don't perform a line feed when pressing the Enter key on the completion display.
 inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
 augroup AutoChangeDir
