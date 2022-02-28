@@ -186,7 +186,7 @@ endfunction
 "Setting/Tool/junegunn/fzf.vim
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = { 'up': '~35%' }
-nmap <silent> <Leader><Leader> :<C-u>FzfFiles<CR>
+nmap <silent> <LocalLeader><LocalLeader> :<C-u>FzfFiles<CR>
 nnoremap <silent><nowait> <LocalLeader>l :<C-u>FzfBLines<CR>
 nnoremap <silent><nowait> <LocalLeader>b :<C-u>FzfBuffers<CR>
 nnoremap <silent><nowait> <LocalLeader>a :<C-u>cd %:p:h<CR> :<C-u>FzfAg<CR>
@@ -225,7 +225,7 @@ let g:memolist_template_dir_path = "~/.config/memo"
 "Setting/Tool/tyru/open-browser.vim
 nmap <silent> <LocalLeader>op <Plug>(openbrowser-smart-search)
 vmap <silent> <LocalLeader>op <Plug>(openbrowser-smart-search)
-nnoremap <silent> <LocalLeader>tl :<C-u>execute 'OpenBrowserSearch -deepl' expand('<cWORD>')<CR>
+nnoremap <silent> <LocalLeader>ot :<C-u>execute 'OpenBrowserSearch -deepl' expand('<cWORD>')<CR>
 let g:openbrowser_search_engines = {
 \    'deepl': 'https://www.deepl.com/translator#auto/auto/{query}',
 \}
