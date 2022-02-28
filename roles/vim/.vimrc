@@ -1,27 +1,27 @@
-"Setting/Basic
-set encoding=utf8                                      ""Encoding
-set fileencoding=utf-8                                 ""File Encoding
-set showcmd                                            ""To view the command in the input to the status.
-set noswapfile                                         ""No create swap file.
-set nobackup                                           ""No create backup file.
-set clipboard=unnamed,autoselect                       ""To insert the selected text in visual mode to the clipboard. & Share the clipboard.
-set hidden                                             ""Buffer is to be opened in the editing.
-set autoread                                           ""Rereading Automatic When the file being edited is changed.
-set confirm                                            ""To make sure when there are unsaved files.
-set visualbell t_vb=                                   ""Disable all the beep.
-set noerrorbells                                       ""Not sound the beep at the time of display of error messages.
-set switchbuf=useopen                                  ""If already in the buffer, open that file.
-set autowrite                                          ""Auto save file If there is a change when file move or make command is executed.
-set textwidth=0                                        ""Turn off automatic line breaks.
-set history=100                                        ""The number of command history
-set completeopt=menuone,noinsert                       ""Completion Style
-set ambiwidth=double                                   ""Display double-byte characters normally
-set wildignore=*.o,*.obj,*.pyc,*.so,*.dll,*.class,*~   ""Ignore Pattern when the complement, vimgrep.
-""Don't perform a line feed when pressing the Enter key on the completion display.
+"Setting/General
+set encoding=utf8
+set fileencoding=utf-8
+set showcmd
+set noswapfile
+set nobackup
+set clipboard=unnamed,autoselect
+set hidden
+set autoread
+set confirm
+set visualbell t_vb=
+set noerrorbells
+set switchbuf=useopen
+set autowrite
+set textwidth=0
+set history=1000
+set completeopt=menuone,noinsert
+set ambiwidth=double
+set wildignore=*.o,*.obj,*.pyc,*.so,*.dll,*.class,*~
+set guioptions=
 inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
-augroup autochdir-settings
+
+augroup AutoChangeDir
   autocmd!
-  ""Automatically move to the directory of the file being edited
   autocmd BufEnter * silent! lcd %:p:h
 augroup END
 
@@ -32,39 +32,53 @@ let maplocalleader = ','
 
 
 "Setting/Tab
-set expandtab                                          ""Convert tabs to spaces.
-set shiftwidth=2                                       ""Display width of the Tab character at the beginning of a line.
-set tabstop=2                                          ""Display width of the Tab character other than the beginning of the line.
+set expandtab
+set shiftwidth=2
+set tabstop=2
 
 
 "Setting/View
-set number                                             ""View number count.
-set title                                              ""To display the name of the file being edited.
-set ruler                                              ""Display ruler.
-set cursorline                                         ""Currently highlight the line.
-set showmatch                                          ""Input parentheses, to highlight the corresponding brackets.
-set laststatus=2                                       ""Display the status line in the second row from the end. (for lightline.vim)
-set signcolumn=yes                                     ""Display signcolumn always
+set number
+set title
+set ruler
+set cursorline
+set showmatch
+set laststatus=2
+set signcolumn=yes
 
 
 "Setting/Search
-set ignorecase                                         ""Search not case sensitive.
-set smartcase                                          ""If the search string contains upper-case letters, to search by distinguishing.
-set incsearch                                          ""To enable incremental search.
-set wrapscan                                           ""Search to the end, go back to the beginning.
-set hlsearch                                           ""Search result hilight.
-""To turn off the highlight in the Esc key * 2.
+set ignorecase
+set smartcase
+set incsearch
+set wrapscan
+set hlsearch
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 
 
 "Setting/Key
-""Replace j,k to gj, gk
 nnoremap j gj
 nnoremap k gk
-""jj insted of ESC
 inoremap <silent> jj <ESC>
-""Display current buffer path on the command line
+nnoremap <Tab><Tab> gt
+nnoremap <S-Tab> gT
+for i in range(1, 9)
+  execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
+endfor
 cnoremap <c-x> <c-r>=expand('%:p')<cr>
+
+
+"Setting/QuickFix
+augroup QuickFixCmd
+  autocmd!
+  autocmd QuickFixCmdPost *grep* cwindow
+augroup END
+
+autocmd FileType qf call s:qickfix_keymap()
+function! s:qickfix_keymap()
+  nmap <silent><buffer> <ESC><ESC> :<C-u>bd<CR>
+  imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>bd<CR>
+endfunction
 
 
 "Setting/Plugin
@@ -96,9 +110,6 @@ Plug 'tyru/open-browser.vim'
 """brew install node && npm i -g yarn
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 call plug#end()
 
 
@@ -120,7 +131,7 @@ let g:nord_bold_vertical_split_line = 1
 let g:nord_cursor_line_number_background = 1
 ""ref. https://github.com/arcticicestudio/nord-vim/issues/26
 ""ref. https://www.nordtheme.com/docs/ports/vim/customization
-augroup colorscheme-nord-overrides
+augroup ColorschemeNord
   autocmd!
   autocmd ColorScheme nord highlight Visual ctermfg=11
   autocmd ColorScheme nord highlight CursorLine ctermfg=14
@@ -168,7 +179,7 @@ endfunction
 "Setting/Tool/junegunn/fzf.vim
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = { 'up': '~35%' }
-nmap <silent> <Leader><Leader> :<C-u>FzfFiles<CR>
+nmap <silent> <LocalLeader><LocalLeader> :<C-u>FzfFiles<CR>
 nnoremap <silent><nowait> <LocalLeader>l :<C-u>FzfBLines<CR>
 nnoremap <silent><nowait> <LocalLeader>b :<C-u>FzfBuffers<CR>
 nnoremap <silent><nowait> <LocalLeader>a :<C-u>cd %:p:h<CR> :<C-u>FzfAg<CR>
@@ -207,7 +218,7 @@ let g:memolist_template_dir_path = "~/.config/memo"
 "Setting/Tool/tyru/open-browser.vim
 nmap <silent> <LocalLeader>op <Plug>(openbrowser-smart-search)
 vmap <silent> <LocalLeader>op <Plug>(openbrowser-smart-search)
-nnoremap <silent> <LocalLeader>tl :<C-u>execute 'OpenBrowserSearch -deepl' expand('<cWORD>')<CR>
+nnoremap <silent> <LocalLeader>ot :<C-u>execute 'OpenBrowserSearch -deepl' expand('<cWORD>')<CR>
 let g:openbrowser_search_engines = {
 \    'deepl': 'https://www.deepl.com/translator#auto/auto/{query}',
 \}
@@ -215,14 +226,14 @@ let g:openbrowser_search_engines = {
 
 "Setting/Tool/neoclide/coc.nvim
 let g:coc_global_extensions = [
-    \ 'coc-lists',
-    \ 'coc-marketplace',
-    \ 'coc-json',
-    \ 'coc-tsserver',
-    \ 'coc-prettier',
-    \ 'coc-eslint',
-    \ 'coc-python',
-    \ 'coc-go',
+  \ 'coc-lists',
+  \ 'coc-marketplace',
+  \ 'coc-json',
+  \ 'coc-tsserver',
+  \ 'coc-prettier',
+  \ 'coc-eslint',
+  \ 'coc-python',
+  \ 'coc-go',
 \ ]
 ""Show all diagnostics (OR CocList diagnostics)
 nnoremap <silent> <Leader>di :<C-u>CocDiagnostics<CR>
@@ -282,41 +293,41 @@ endfunction
 
 "Setting/Tool/itchyny/lightline.vim
 let g:lightline = {
-    \ 'colorscheme': 'nord',
-    \ 'active': {
-    \   'left': [
-    \     [ 'mode', 'paste' ],
-    \     [ 'coc_error', 'coc_warn', 'coc_info' ],
-    \     [ 'readonly', 'gitbranch', 'filename', 'modified' ],
-    \   ],
-    \   'right': [
-    \     [ 'fileformat', 'fileencoding', 'filetype', 'percent', 'lineinfo' ],
-    \   ],
-    \ },
-    \ 'inactive': {
-    \   'left': [
-    \     [ 'inactive_filename' ],
-    \   ],
-    \   'right': [
-    \     [ ],
-    \   ],
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'gitbranch#name',
-    \   'filename': 'LightlineFilename',
-    \ },
-    \ 'component_expand': {
-    \   'coc_error': 'LightlineCocError',
-    \   'coc_warn': 'LightlineCocWarn',
-    \   'coc_info': 'LightlineCocInfo',
-    \   'inactive_filename': 'LightlineFilename',
-    \ },
-    \ 'component_type': {
-    \   'coc_error': 'error',
-    \   'coc_warn': 'warning',
-    \   'coc_info': 'tabsel',
-    \   'inactive_filename': 'middle',
-    \ },
+  \ 'colorscheme': 'nord',
+  \ 'active': {
+  \   'left': [
+  \     [ 'mode', 'paste' ],
+  \     [ 'coc_error', 'coc_warn', 'coc_info' ],
+  \     [ 'readonly', 'gitbranch', 'filename', 'modified' ],
+  \   ],
+  \   'right': [
+  \     [ 'fileformat', 'fileencoding', 'filetype', 'percent', 'lineinfo' ],
+  \   ],
+  \ },
+  \ 'inactive': {
+  \   'left': [
+  \     [ 'inactive_filename' ],
+  \   ],
+  \   'right': [
+  \     [ ],
+  \   ],
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'gitbranch#name',
+  \   'filename': 'LightlineFilename',
+  \ },
+  \ 'component_expand': {
+  \   'coc_error': 'LightlineCocError',
+  \   'coc_warn': 'LightlineCocWarn',
+  \   'coc_info': 'LightlineCocInfo',
+  \   'inactive_filename': 'LightlineFilename',
+  \ },
+  \ 'component_type': {
+  \   'coc_error': 'error',
+  \   'coc_warn': 'warning',
+  \   'coc_info': 'tabsel',
+  \   'inactive_filename': 'middle',
+  \ },
 \ }
 
 ""Custom Color Settings
@@ -324,30 +335,30 @@ let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
 let s:palette.normal.right = s:palette.normal.middle
 
 function! LightlineFilename() abort
-    return expand('%:p:h:t') . '/' . expand('%:t')
+  return expand('%:p:h:t') . '/' . expand('%:t')
 endfunction
 
 function! s:lightline_coc_diagnostic(type, sign) abort
-    let info = get(b:, 'coc_diagnostic_info', 0)
-    if empty(info) || get(info, a:type, 0) == 0
-        return ''
-    endif
-    return printf('%s %d', a:sign, info[a:type])
+  let info = get(b:, 'coc_diagnostic_info', 0)
+  if empty(info) || get(info, a:type, 0) == 0
+    return ''
+  endif
+  return printf('%s %d', a:sign, info[a:type])
 endfunction
 
 function! LightlineCocError() abort
-    return s:lightline_coc_diagnostic('error', '✘')
+  return s:lightline_coc_diagnostic('error', '✘')
 endfunction
 
 function! LightlineCocWarn() abort
-    return s:lightline_coc_diagnostic('warning', '⚠')
+  return s:lightline_coc_diagnostic('warning', '⚠')
 endfunction
 
 function! LightlineCocInfo() abort
-    return s:lightline_coc_diagnostic('information', 'i')
+  return s:lightline_coc_diagnostic('information', 'i')
 endfunction
 
-augroup coc-status-settings
+augroup CocStatusSettings
   autocmd!
   autocmd User CocDiagnosticChange call lightline#update()
 augroup END
@@ -355,7 +366,7 @@ augroup END
 
 "Setting/ExternalFile
 if filereadable(expand('~/.vimrc.local'))
-    source ~/.vimrc.local
+  source ~/.vimrc.local
 endif
 
 
