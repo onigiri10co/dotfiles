@@ -18,5 +18,6 @@ curl -sSfLo ~/.vim/autoload/plug.vim \
 ( 
 cd ${CURRENT_PATH}
 cp .vimrc ${HOME}
+cp -fr .zsh.d ${HOME}/
 )
 
