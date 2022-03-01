@@ -232,7 +232,6 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <buffer> <Leader>f <plug>(lsp-document-diagnostics)
   nmap <buffer> <Leader>i <plug>(lsp-implementation)
   nmap <buffer> <Leader>r <plug>(lsp-references)
-  nmap <buffer> <Leader>x <plug>(lsp-document-symbol-search)
   nmap <buffer> <C-j> <Plug>(lsp-next-error)
   nmap <buffer> <C-k> <Plug>(lsp-previous-error)
 endfunction
