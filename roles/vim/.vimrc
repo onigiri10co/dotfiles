@@ -270,8 +270,8 @@ autocmd FileType javascript call s:vista_keymap_development()
 autocmd FileType go call s:vista_keymap_development()
 autocmd FileType python call s:vista_keymap_development()
 function! s:vista_keymap_development()
-  nmap <silent><buffer><nowait> <Leader>o :<C-u>Vista finder coc<CR>
-  nmap <silent><buffer><nowait> <Leader>t :<C-u>Vista coc<CR>
+  nmap <silent><buffer><nowait> <Leader>o :<C-u>Vista finder vim_lsp<CR>
+  nmap <silent><buffer><nowait> <Leader>t :<C-u>Vista vim_lsp<CR>
 endfunction
 
 autocmd FileType vista call s:vista_keymap()
