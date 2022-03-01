@@ -109,6 +109,8 @@ Plug 'tyru/open-browser.vim'
 ""Development
 """brew install node && npm i -g yarn
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 Plug 'liuchengxu/vista.vim'
 call plug#end()
 
@@ -254,6 +256,27 @@ nnoremap <silent><nowait> <Leader>l  :<C-u>CocList<CR>
 nnoremap <silent><nowait> <Leader>c  :<C-u>CocList commands<CR>
 ""Search workspace symbols
 nnoremap <silent><nowait> <Leader>s  :<C-u>CocList -I symbols<CR>
+"Setting/Tool/prabirshrestha/vim-lsp
+function! s:on_lsp_buffer_enabled() abort
+  setlocal omnifunc=lsp#complete
+  nmap <buffer> <Leader>d <Plug>(lsp-definition)
+  nmap <buffer> <Leader>h <plug>(lsp-hover)
+  nmap <buffer> <Leader>f <plug>(lsp-document-diagnostics)
+  nmap <buffer> <Leader>i <plug>(lsp-implementation)
+  nmap <buffer> <Leader>r <plug>(lsp-references)
+  nmap <buffer> <Leader>x <plug>(lsp-document-symbol-search)
+  nmap <buffer> <C-j> <Plug>(lsp-next-error)
+  nmap <buffer> <C-k> <Plug>(lsp-previous-error)
+endfunction
+
+augroup LSPSettings
+  autocmd!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+  autocmd BufWritePre <buffer> LspDocumentFormatSync
+augroup END
+
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
 
 
 "Setting/Tool/liuchengxu/vista.vim
