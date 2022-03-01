@@ -107,8 +107,6 @@ Plug 'previm/previm'
 Plug 'glidenote/memolist.vim'
 Plug 'tyru/open-browser.vim'
 ""Development
-"""brew install node && npm i -g yarn
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'liuchengxu/vista.vim'
@@ -226,36 +224,6 @@ let g:openbrowser_search_engines = {
 \}
 
 
-"Setting/Tool/neoclide/coc.nvim
-let g:coc_global_extensions = [
-  \ 'coc-lists',
-  \ 'coc-marketplace',
-  \ 'coc-json',
-  \ 'coc-tsserver',
-  \ 'coc-prettier',
-  \ 'coc-eslint',
-  \ 'coc-python',
-  \ 'coc-go',
-\ ]
-""Show all diagnostics (OR CocList diagnostics)
-nnoremap <silent> <Leader>di :<C-u>CocDiagnostics<CR>
-""Navigate diagnostics
-nmap <silent> <C-j> <Plug>(coc-diagnostic-next)
-nmap <silent> <C-k> <Plug>(coc-diagnostic-prev)
-""Hover
-nmap <silent> <Leader>hv :<C-u>call CocAction('doHover')<CR>>
-""Definition
-nmap <silent> <Leader>gd <Plug>(coc-definition)
-""References
-nmap <silent> <Leader>rf <Plug>(coc-references)
-""Rename
-nmap <silent> <Leader>rn <Plug>(coc-rename)
-""Show CocList
-nnoremap <silent><nowait> <Leader>l  :<C-u>CocList<CR>
-""Show commands
-nnoremap <silent><nowait> <Leader>c  :<C-u>CocList commands<CR>
-""Search workspace symbols
-nnoremap <silent><nowait> <Leader>s  :<C-u>CocList -I symbols<CR>
 "Setting/Tool/prabirshrestha/vim-lsp
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
@@ -385,6 +353,7 @@ augroup CocStatusSettings
   autocmd!
   autocmd User CocDiagnosticChange call lightline#update()
 augroup END
+
 
 
 "Setting/ExternalFile
