@@ -107,8 +107,8 @@ Plug 'previm/previm'
 Plug 'glidenote/memolist.vim'
 Plug 'tyru/open-browser.vim'
 ""Development
-"""brew install node && npm i -g yarn
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 Plug 'liuchengxu/vista.vim'
 call plug#end()
 
@@ -224,36 +224,26 @@ let g:openbrowser_search_engines = {
 \}
 
 
-"Setting/Tool/neoclide/coc.nvim
-let g:coc_global_extensions = [
-  \ 'coc-lists',
-  \ 'coc-marketplace',
-  \ 'coc-json',
-  \ 'coc-tsserver',
-  \ 'coc-prettier',
-  \ 'coc-eslint',
-  \ 'coc-python',
-  \ 'coc-go',
-\ ]
-""Show all diagnostics (OR CocList diagnostics)
-nnoremap <silent> <Leader>di :<C-u>CocDiagnostics<CR>
-""Navigate diagnostics
-nmap <silent> <C-j> <Plug>(coc-diagnostic-next)
-nmap <silent> <C-k> <Plug>(coc-diagnostic-prev)
-""Hover
-nmap <silent> <Leader>hv :<C-u>call CocAction('doHover')<CR>>
-""Definition
-nmap <silent> <Leader>gd <Plug>(coc-definition)
-""References
-nmap <silent> <Leader>rf <Plug>(coc-references)
-""Rename
-nmap <silent> <Leader>rn <Plug>(coc-rename)
-""Show CocList
-nnoremap <silent><nowait> <Leader>l  :<C-u>CocList<CR>
-""Show commands
-nnoremap <silent><nowait> <Leader>c  :<C-u>CocList commands<CR>
-""Search workspace symbols
-nnoremap <silent><nowait> <Leader>s  :<C-u>CocList -I symbols<CR>
+"Setting/Tool/prabirshrestha/vim-lsp
+function! s:on_lsp_buffer_enabled() abort
+  setlocal omnifunc=lsp#complete
+  nmap <buffer> <Leader>d <Plug>(lsp-definition)
+  nmap <buffer> <Leader>h <plug>(lsp-hover)
+  nmap <buffer> <Leader>f <plug>(lsp-document-diagnostics)
+  nmap <buffer> <Leader>i <plug>(lsp-implementation)
+  nmap <buffer> <Leader>r <plug>(lsp-references)
+  nmap <buffer> <C-j> <Plug>(lsp-next-error)
+  nmap <buffer> <C-k> <Plug>(lsp-previous-error)
+endfunction
+
+augroup LSPSettings
+  autocmd!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+  autocmd BufWritePre <buffer> LspDocumentFormatSync
+augroup END
+
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
 
 
 "Setting/Tool/liuchengxu/vista.vim
@@ -279,8 +269,8 @@ autocmd FileType javascript call s:vista_keymap_development()
 autocmd FileType go call s:vista_keymap_development()
 autocmd FileType python call s:vista_keymap_development()
 function! s:vista_keymap_development()
-  nmap <silent><buffer><nowait> <Leader>o :<C-u>Vista finder coc<CR>
-  nmap <silent><buffer><nowait> <Leader>t :<C-u>Vista coc<CR>
+  nmap <silent><buffer><nowait> <Leader>o :<C-u>Vista finder vim_lsp<CR>
+  nmap <silent><buffer><nowait> <Leader>t :<C-u>Vista vim_lsp<CR>
 endfunction
 
 autocmd FileType vista call s:vista_keymap()
@@ -297,7 +287,7 @@ let g:lightline = {
   \ 'active': {
   \   'left': [
   \     [ 'mode', 'paste' ],
-  \     [ 'coc_error', 'coc_warn', 'coc_info' ],
+  \     [ 'lsp_error', 'lsp_warn', 'lsp_info' ],
   \     [ 'readonly', 'gitbranch', 'filename', 'modified' ],
   \   ],
   \   'right': [
@@ -317,15 +307,15 @@ let g:lightline = {
   \   'filename': 'LightlineFilename',
   \ },
   \ 'component_expand': {
-  \   'coc_error': 'LightlineCocError',
-  \   'coc_warn': 'LightlineCocWarn',
-  \   'coc_info': 'LightlineCocInfo',
+  \   'lsp_error': 'LightlineLSPError',
+  \   'lsp_warn': 'LightlineLSPWarn',
+  \   'lsp_info': 'LightlineLSPInfo',
   \   'inactive_filename': 'LightlineFilename',
   \ },
   \ 'component_type': {
-  \   'coc_error': 'error',
-  \   'coc_warn': 'warning',
-  \   'coc_info': 'tabsel',
+  \   'lsp_error': 'error',
+  \   'lsp_warn': 'warning',
+  \   'lsp_info': 'tabsel',
   \   'inactive_filename': 'middle',
   \ },
 \ }
@@ -338,29 +328,26 @@ function! LightlineFilename() abort
   return expand('%:p:h:t') . '/' . expand('%:t')
 endfunction
 
-function! s:lightline_coc_diagnostic(type, sign) abort
-  let info = get(b:, 'coc_diagnostic_info', 0)
-  if empty(info) || get(info, a:type, 0) == 0
-    return ''
-  endif
-  return printf('%s %d', a:sign, info[a:type])
+function! s:lightline_lsp_diagnostic(type, sign) abort
+  let l:counts = lsp#get_buffer_diagnostics_counts()
+  return l:counts[a:type] == 0 ? '' : printf('%s %d', a:sign, l:counts[a:type])
 endfunction
 
-function! LightlineCocError() abort
-  return s:lightline_coc_diagnostic('error', '✘')
+function! LightlineLSPError() abort
+  return s:lightline_lsp_diagnostic('error', '✘')
 endfunction
 
-function! LightlineCocWarn() abort
-  return s:lightline_coc_diagnostic('warning', '⚠')
+function! LightlineLSPWarn() abort
+  return s:lightline_lsp_diagnostic('warning', '⚠')
 endfunction
 
-function! LightlineCocInfo() abort
-  return s:lightline_coc_diagnostic('information', 'i')
+function! LightlineLSPInfo() abort
+  return s:lightline_lsp_diagnostic('information', 'i')
 endfunction
 
-augroup CocStatusSettings
+augroup LightlineLSP
   autocmd!
-  autocmd User CocDiagnosticChange call lightline#update()
+  autocmd User lsp_diagnostics_updated call lightline#update()
 augroup END
 
 

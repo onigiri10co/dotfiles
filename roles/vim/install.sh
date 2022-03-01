@@ -18,11 +18,6 @@ curl -sSfLo ~/.vim/autoload/plug.vim \
 ( 
 cd ${CURRENT_PATH}
 cp .vimrc ${HOME}
-cp -fr .config ${HOME}
+cp -fr .zsh.d ${HOME}/
 )
-
-# for neoclide/coc.nvim
-npm ls -g yarn > /dev/null 2>&1 || {
-  npm install -g yarn
-}
 
