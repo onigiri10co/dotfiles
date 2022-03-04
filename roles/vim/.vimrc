@@ -110,6 +110,11 @@ Plug 'tyru/open-browser.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'liuchengxu/vista.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'rafamadriz/friendly-snippets'
 call plug#end()
 
 
@@ -225,6 +230,12 @@ let g:openbrowser_search_engines = {
 
 
 "Setting/Tool/prabirshrestha/vim-lsp
+"Setting/Tool/mattn/vim-lsp-settings
+"Setting/Tool/prabirshrestha/asyncomplete.vim
+"Setting/Tool/prabirshrestha/asyncomplete-lsp.vim
+"Setting/Tool/hrsh7th/vim-vsnip
+"Setting/Tool/hrsh7th/vim-vsnip-integ
+"Setting/Tool/rafamadriz/friendly-snippets
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
   nmap <buffer> <Leader>d <Plug>(lsp-definition)
@@ -234,6 +245,9 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <buffer> <Leader>r <plug>(lsp-references)
   nmap <buffer> <C-j> <Plug>(lsp-next-error)
   nmap <buffer> <C-k> <Plug>(lsp-previous-error)
+  imap <C-n> <Plug>(asyncomplete_force_refresh)
+  imap <expr> <C-k> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
+  smap <expr> <C-k> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
 endfunction
 
 augroup LSPSettings
@@ -244,6 +258,8 @@ augroup END
 
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
+let g:asyncomplete_auto_popup = 0
+let g:vsnip_snippet_dir = expand($XDG_CONFIG_HOME . '/vsnip')
 
 
 "Setting/Tool/liuchengxu/vista.vim
