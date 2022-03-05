@@ -115,6 +115,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'rafamadriz/friendly-snippets'
+Plug 'thinca/vim-quickrun'
 call plug#end()
 
 
@@ -295,6 +296,16 @@ function! s:vista_keymap()
   nmap <silent><buffer> <ESC><ESC> :<C-u>Vista!<CR>
   imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>Vista!<CR>
 endfunction
+
+
+"Setting/Tool/thinca/vim-quickrun
+nnoremap <silent><Leader>q :QuickRun<CR>
+let g:quickrun_config = {
+\  "_": {
+\    "outputter": "quickfix",
+\    "hook/time/enable":  1
+\  },
+\}
 
 
 "Setting/Tool/itchyny/lightline.vim
