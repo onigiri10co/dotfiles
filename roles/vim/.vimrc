@@ -176,7 +176,7 @@ function! s:fern_keymap()
   nmap <silent><buffer><nowait> P <Plug>(fern-action-clipboard-paste)
   nmap <silent><buffer> yy <Plug>(fern-action-yank:path)
   ""FZF Keymaps
-  nmap <silent><buffer><nowait> <LocalLeader>a :<C-u>FzfRg<CR>
+  nmap <silent><buffer><nowait> <LocalLeader>f :<C-u>FzfRg<CR>
   nmap <silent><buffer><nowait> <LocalLeader>b :<C-u>FzfBuffers<CR>
   nmap <silent><buffer><nowait> <LocalLeader>h :<C-u>FzfHistory<CR>
 endfunction
@@ -188,7 +188,7 @@ let g:fzf_layout = { 'up': '~35%' }
 nmap <silent> <LocalLeader><LocalLeader> :<C-u>FzfFiles<CR>
 nnoremap <silent><nowait> <LocalLeader>l :<C-u>FzfBLines<CR>
 nnoremap <silent><nowait> <LocalLeader>b :<C-u>FzfBuffers<CR>
-nnoremap <silent><nowait> <LocalLeader>a :<C-u>cd %:p:h<CR> :<C-u>FzfRg<CR>
+nnoremap <silent><nowait> <LocalLeader>f :<C-u>cd %:p:h<CR> :<C-u>FzfRg<CR>
 nnoremap <silent><nowait> <LocalLeader>h :<C-u>FzfHistory<CR>
 
 
