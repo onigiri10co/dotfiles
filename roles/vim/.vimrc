@@ -190,6 +190,7 @@ nnoremap <silent><nowait> <LocalLeader>l :<C-u>FzfBLines<CR>
 nnoremap <silent><nowait> <LocalLeader>b :<C-u>FzfBuffers<CR>
 nnoremap <silent><nowait> <LocalLeader>f :<C-u>cd %:p:h<CR> :<C-u>FzfRg<CR>
 nnoremap <silent><nowait> <LocalLeader>h :<C-u>FzfHistory<CR>
+nnoremap <silent><nowait> <LocalLeader>r :<C-u>FzfHistory:<CR>
 
 
 "Setting/Tool/iberianpig/tig-explorer.vim
