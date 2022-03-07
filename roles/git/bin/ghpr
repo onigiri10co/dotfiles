@@ -1,0 +1,59 @@
+#!/usr/bin/env zsh
+
+
+readonly GHPR_MAIN_BRANCH_NAME=main
+
+
+usage() {
+cat << EOS
+ghpr is get github pull request #NO from commit hash.
+coomit hash must be at least 7 digits.
+
+Usage: ghpr <hash>
+
+
+Examples:
+ghpr be84bcf
+gh browse \`ghpr be84bcf\`
+gh browse \$(ghpr \$(gci))
+
+refs. gh: https://cli.github.com/
+
+EOS
+exit 1
+}
+
+
+# e.g. prmessage: be84bcf Merge pull request #14 from onigiri10co/update-xxx
+# => 14
+_extract_prno_from_prmessage() {
+  local prmessage="${1:?[ERROR] prmessage is required.}"
+  echo "$prmessage" | cut -f5 -d' ' | tr -d '#'
+}
+
+
+main() {
+  local hash=$1
+  [[ ! $hash =~ ^[a-z0-9]{7,}$ ]] && usage
+
+  # 見つかった場合、PR そのものの番号
+  local prmessage=$(git log --merges --oneline | grep 'Merge pull request #' | grep "^$hash")
+  if [[ ! -z $prmessage ]]; then
+    _extract_prno_from_prmessage "$prmessage"
+    return
+  fi
+
+  # そうでなければ、どこかの PR に含まれるコミット
+  prmessage=$(git log --merges --oneline --reverse --ancestry-path $hash...$GHPR_MAIN_BRANCH_NAME | grep 'Merge pull request #' | head -n 1)
+  if [[ ! -z $prmessage ]]; then
+    _extract_prno_from_prmessage "$prmessage"
+    return
+  fi
+
+  # いずれでもない場合、まだマージされていない、作成されていない PR、または、存在しないコミットIDの場合は、上記コマンドのエラーメッセージを表示する。
+  return 1
+}
+
+
+main "$@"
+

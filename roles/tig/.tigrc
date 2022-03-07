@@ -1,5 +1,11 @@
 # Keybind
 bind generic P ?git push -u %(remote) %(repo:head)  # P: git push
+bind generic g move-first-line
+bind main    G none
+bind main    G move-last-line
+bind generic G move-last-line
+bind generic Y @sh -c "echo %(commit) | pbcopy"
+bind generic B @sh -c "gh browse `ghpr %(commit)`"
 
 # Main view
 set main-view = id date author commit-title:graph=yes,refs=yes
