@@ -1,7 +1,5 @@
 # Keybind
-bind generic L !git log -p %(file)                  # L: git log only current file
 bind generic P ?git push -u %(remote) %(repo:head)  # P: git push
-bind generic U ?git pull %(remote)                  # U: git pull
 
 # Main view
 set main-view = id date author commit-title:graph=yes,refs=yes
