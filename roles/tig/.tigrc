@@ -1,17 +1,21 @@
 # Keybind
-bind generic L !git log -p %(file)                  # L: git log only current file
 bind generic P ?git push -u %(remote) %(repo:head)  # P: git push
-bind generic U ?git pull %(remote)                  # U: git pull
+bind generic g move-first-line
+bind main    G none
+bind main    G move-last-line
+bind generic G move-last-line
+bind generic Y @sh -c "echo %(commit) | pbcopy"
+bind generic B @sh -c "gh browse `ghpr %(commit)`"
 
-# Main view
-set main-view = id date author commit-title:graph=yes,refs=yes
-
-# Etc view
+# View
+set vertical-split = false
+set split-view-height = 60%
+set main-view   = id author date commit-title:graph=yes,refs=yes
+set blame-view  = id author date line-number:yes,interval=1 text
 set pager-view  = line-number:yes,interval=1 text
 set stage-view  = line-number:yes,interval=1 text
 set log-view    = line-number:yes,interval=1 text
 set blob-view   = line-number:yes,interval=1 text
-set blame-view  = line-number:yes,interval=1 text
 set diff-view   = line-number:yes,interval=1 text:yes,commit-title-overflow=no
 
 # Editor
