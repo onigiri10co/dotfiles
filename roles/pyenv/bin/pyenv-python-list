@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+pyenv install --list | rg '\s[0-9].*' | tail
+
