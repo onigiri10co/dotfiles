@@ -191,6 +191,7 @@ nnoremap <silent><nowait> <LocalLeader>b :<C-u>FzfBuffers<CR>
 nnoremap <silent><nowait> <LocalLeader>f :<C-u>cd %:p:h<CR> :<C-u>FzfRg<CR>
 nnoremap <silent><nowait> <LocalLeader>h :<C-u>FzfHistory<CR>
 nnoremap <silent><nowait> <LocalLeader>r :<C-u>FzfHistory:<CR>
+cnoremap <silent><nowait> <C-r> :<C-u>FzfHistory:<CR>
 
 
 "Setting/Tool/iberianpig/tig-explorer.vim
@@ -302,10 +303,43 @@ endfunction
 "Setting/Tool/thinca/vim-quickrun
 nnoremap <silent><Leader>q :QuickRun<CR>
 let g:quickrun_config = {
-\  "_": {
-\    "outputter": "quickfix",
-\    "hook/time/enable":  1
+\  '_': {
+\    'outputter': 'quickfix',
+\    'hook/time/enable':  1
 \  },
+\ 'poetry': {
+\    'command': 'poetry',
+\    'exec': '%c run python %s',
+\ },
+\ 'poetry/pytest': {
+\    'command': 'poetry',
+\    'exec': '%c run pytest %s',
+\ },
+\ 'python': {
+\    'command': 'poetry',
+\    'exec': '%c run pytest %s',
+\ },
+\ 'go/run': {
+\    'command': 'go',
+\    'exec': '%c run %s:p:t %a',
+\    'tempfile': '%{tempname()}.go',
+\    'hook/output_encode/encoding': 'utf-8',
+\    'hook/cd/directory': '%S:p:h',
+\ },
+\ 'go/test': {
+\    'command': 'go',
+\    'exec': '%c test %s:p:t %a',
+\    'tempfile': '%{tempname()}.go',
+\    'hook/output_encode/encoding': 'utf-8',
+\    'hook/cd/directory': '%S:p:h',
+\ },
+\ 'go': {
+\    'command': 'go',
+\    'exec': '%c test %s:p:t %a',
+\    'tempfile': '%{tempname()}.go',
+\    'hook/output_encode/encoding': 'utf-8',
+\    'hook/cd/directory': '%S:p:h',
+\ },
 \}
 
 
