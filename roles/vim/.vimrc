@@ -302,9 +302,9 @@ endfunction
 "Setting/Tool/thinca/vim-quickrun
 nnoremap <silent><Leader>q :QuickRun<CR>
 let g:quickrun_config = {
-\  "_": {
-\    "outputter": "quickfix",
-\    "hook/time/enable":  1
+\  '_': {
+\    'outputter': 'quickfix',
+\    'hook/time/enable':  1
 \  },
 \}
 
