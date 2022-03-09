@@ -67,7 +67,14 @@ nnoremap <S-Tab> gT
 for i in range(1, 9)
   execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
 endfor
-cnoremap <c-x> <c-r>=expand('%:p')<cr>
+cnoremap <C-q> <C-r>=expand('%:p')<CR>
+cnoremap <C-o> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-h> <Left>
+cnoremap <C-l> <Right>
+cnoremap <C-b> <S-Left>
+cnoremap <C-w> <S-Right>
+cnoremap <C-x> <Del>
 
 
 "Setting/QuickFix
