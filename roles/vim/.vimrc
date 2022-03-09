@@ -306,6 +306,18 @@ let g:quickrun_config = {
 \    'outputter': 'quickfix',
 \    'hook/time/enable':  1
 \  },
+\ 'poetry': {
+\    'command': 'poetry',
+\    'exec': '%c run python %s',
+\ },
+\ 'poetry/pytest': {
+\    'command': 'poetry',
+\    'exec': '%c run pytest %s',
+\ },
+\ 'python': {
+\    'command': 'poetry',
+\    'exec': '%c run pytest %s',
+\ },
 \}
 
 
