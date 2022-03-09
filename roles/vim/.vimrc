@@ -153,8 +153,8 @@ nnoremap <silent> <Leader>e :<C-u>Fern .<CR>
 autocmd FileType fern call s:fern_keymap()
 function! s:fern_keymap()
   ""Press esc twice to close
-  nmap <silent><buffer> <ESC><ESC> :<C-u>bd<CR>
-  imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>bd<CR>
+  nmap <silent><buffer><nowait> <ESC><ESC> :<C-u>bd<CR>
+  imap <silent><buffer><nowait> <ESC><ESC> <ESC>:<C-u>bd<CR>
   ""Fern Keymaps
   nmap <silent><buffer><nowait> <C-h> <Plug>(fern-action-leave)
   nmap <silent><buffer><nowait> h <Plug>(fern-action-collapse)
