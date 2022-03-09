@@ -18,6 +18,8 @@ set completeopt=menuone,noinsert
 set ambiwidth=double
 set wildignore=*.o,*.obj,*.pyc,*.so,*.dll,*.class,*~
 set guioptions=
+set wildmenu
+set wildmode=longest:full,full
 inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
 
 augroup AutoChangeDir
