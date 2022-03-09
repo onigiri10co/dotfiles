@@ -18,6 +18,8 @@ set completeopt=menuone,noinsert
 set ambiwidth=double
 set wildignore=*.o,*.obj,*.pyc,*.so,*.dll,*.class,*~
 set guioptions=
+set wildmenu
+set wildmode=longest:full,full
 inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
 
 augroup AutoChangeDir
@@ -65,7 +67,14 @@ nnoremap <S-Tab> gT
 for i in range(1, 9)
   execute 'nnoremap <Tab>' . i . ' ' . i . 'gt'
 endfor
-cnoremap <c-x> <c-r>=expand('%:p')<cr>
+cnoremap <C-q> <C-r>=expand('%:p')<CR>
+cnoremap <C-o> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-h> <Left>
+cnoremap <C-l> <Right>
+cnoremap <C-b> <S-Left>
+cnoremap <C-w> <S-Right>
+cnoremap <C-x> <Del>
 
 
 "Setting/QuickFix
@@ -92,6 +101,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'simeji/winresizer'
 Plug 'itchyny/lightline.vim'
 Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-hijack.vim'
 ""Edit
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
@@ -153,8 +163,8 @@ nnoremap <silent> <Leader>e :<C-u>Fern .<CR>
 autocmd FileType fern call s:fern_keymap()
 function! s:fern_keymap()
   ""Press esc twice to close
-  nmap <silent><buffer> <ESC><ESC> :<C-u>bd<CR>
-  imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>bd<CR>
+  nmap <silent><buffer><nowait> <ESC><ESC> :<C-u>bd<CR>
+  imap <silent><buffer><nowait> <ESC><ESC> <ESC>:<C-u>bd<CR>
   ""Fern Keymaps
   nmap <silent><buffer><nowait> <C-h> <Plug>(fern-action-leave)
   nmap <silent><buffer><nowait> h <Plug>(fern-action-collapse)
