@@ -318,6 +318,27 @@ let g:quickrun_config = {
 \    'command': 'poetry',
 \    'exec': '%c run pytest %s',
 \ },
+\ 'go/run': {
+\    'command': 'go',
+\    'exec': '%c run %s:p:t %a',
+\    'tempfile': '%{tempname()}.go',
+\    'hook/output_encode/encoding': 'utf-8',
+\    'hook/cd/directory': '%S:p:h',
+\ },
+\ 'go/test': {
+\    'command': 'go',
+\    'exec': '%c test %s:p:t %a',
+\    'tempfile': '%{tempname()}.go',
+\    'hook/output_encode/encoding': 'utf-8',
+\    'hook/cd/directory': '%S:p:h',
+\ },
+\ 'go': {
+\    'command': 'go',
+\    'exec': '%c test %s:p:t %a',
+\    'tempfile': '%{tempname()}.go',
+\    'hook/output_encode/encoding': 'utf-8',
+\    'hook/cd/directory': '%S:p:h',
+\ },
 \}
 
 
