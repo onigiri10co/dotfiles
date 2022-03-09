@@ -92,6 +92,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'simeji/winresizer'
 Plug 'itchyny/lightline.vim'
 Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-hijack.vim'
 ""Edit
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
