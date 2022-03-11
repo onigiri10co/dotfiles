@@ -268,6 +268,7 @@ augroup LSPSettings
   autocmd!
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
   autocmd BufWritePre <buffer> LspDocumentFormatSync
+  autocmd BufWritePre *.py LspDocumentFormatSync --server=efm-langserver
 augroup END
 
 command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/lsp.log')
