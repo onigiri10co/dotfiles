@@ -279,6 +279,22 @@ let g:lsp_settings = {
 \   'efm-langserver': {
 \     'disabled': v:false
 \   },
+\   'pylsp-all': {
+\     'workspace_config': {
+\       'pylsp': {
+\         'plugins': {
+\           'flake8': { 'enabled': v:false },
+\           'pycodestyle': { 'enabled': v:false },
+\           'pydocstyle': { 'enabled': v:false },
+\           'autopep8': { 'enabled': v:false },
+\           'pyflakes': { 'enabled': v:false },
+\           'pylint': { 'enabled': v:false },
+\           'mccabe': { 'enabled': v:false },
+\           'yapf': { 'enabled': v:false },
+\         }
+\       }
+\     }
+\   }
 \ }
 let g:asyncomplete_auto_popup = 0
 let g:vsnip_snippet_dir = expand($XDG_CONFIG_HOME . '/vsnip')
