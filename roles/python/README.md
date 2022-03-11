@@ -1,4 +1,5 @@
 # roles/python
+[Python](https://github.com/python/)
 
 
 
@@ -44,7 +45,7 @@
  3.11-dev
 ```
 
-※README には、`eval "$(pyenv init -)"` とあるが、`eval "$(pyenv init --path)"` にしないとシステムデフォルトの Python を参照するため、こうしている。
+NOTE: README には、`eval "$(pyenv init -)"` とあるが、`eval "$(pyenv init --path)"` にしないとシステムデフォルトの Python を参照するため、こうしている。
 
 
 ### Install pipx
@@ -56,7 +57,7 @@
 % brew install pipx
 ```
 
-※`pipx ensurepath` でも良いが、~/.zshrc などに自動的に PATH が書き込まれるため、自前で制御したければ上記のように設定する。
+NOTE: `pipx ensurepath` でも良いが、~/.zshrc などに自動的に PATH が書き込まれるため、自前で制御したければ上記のように設定する。
 
 
 ### Install poetry
@@ -83,24 +84,69 @@ virtualenvs.in-project = true に設定しても、既に virtualenvs.path 配�
 ```
 % pyenv install 3.10.2
 % poetry new example; cd $_;
-Created package example3 in example3
+Created package example in example
 % pyenv local 3.10.2
 % python -V
 Python 3.10.2
+% poetry add flake8 mypy black isort -D
 ```
 
 
+### サンプルプログラム
+```
+% cat << EOF > example/fizzbuzz.py
+def main():
+    for i in range(1, 101):
+        print(fizz_buzz(i))
 
----
-# TODO: 以下もいずれ追記する。
 
-- フォーマッター、リンター設定
-  - vim efm-lsp の設定で、効かせるようにする
-- サンプルプログラム作成
-- そのまま実行
-  - vim quickrun の設定
-- テストプログラム作成
-- テスト実行
-  - vim-test ?
-  - vim quickrun の設定？
+def fizz_buzz(num: int) -> str:
+    if num % 3 == 0 and num % 5 == 0:
+        return "FizzBuzz"
+    elif num % 3 == 0:
+        return "Fizz"
+    elif num % 5 == 0:
+        return "Buzz"
+    else:
+        return str(num)
+
+
+if __name__ == "__main__":
+    main()
+
+EOF
+
+% poetry run python example/fizzbuzz.py
+```
+
+NOTE: vim からは、:QuickRun poetry で実行できる。
+
+
+### サンプルプログラムテスト
+```
+cat << EOF > tests/test_fizzbuzz.py
+def test_fizz_buzz():
+    from example.fizzbuzz import fizz_buzz
+
+    assert fizz_buzz(1) == "1"
+    assert fizz_buzz(2) == "2"
+    assert fizz_buzz(3) == "Fizz"
+    assert fizz_buzz(4) == "4"
+    assert fizz_buzz(5) == "Buzz"
+    assert fizz_buzz(10) == "Buzz"
+    assert fizz_buzz(15) == "FizzBuzz"
+    assert fizz_buzz(75) == "FizzBuzz"
+    assert fizz_buzz(83) == "83"
+    assert fizz_buzz(99) == "Fizz"
+    assert fizz_buzz(100) == "Buzz"
+
+EOF
+
+% poetry run pytest tests/test_fizzbuzz.py
+```
+
+
+NOTE: vim からは、:QuickRun poetry/pytest or \<Leader-r\> で実行できる。 Python 周りの vim の設定は、以下の PR を参照。
+
+- [add efm langserver with python settings by onigiri10co · Pull Request #19 · onigiri10co/dotfiles](https://github.com/onigiri10co/dotfiles/pull/19)
 
