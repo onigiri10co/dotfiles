@@ -119,6 +119,7 @@ Plug 'tyru/open-browser.vim'
 ""Development
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/efm-langserver'
 Plug 'liuchengxu/vista.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
@@ -273,6 +274,11 @@ command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/lsp.log')
 
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_settings = {
+\   'efm-langserver': {
+\     'disabled': v:false
+\   },
+\ }
 let g:asyncomplete_auto_popup = 0
 let g:vsnip_snippet_dir = expand($XDG_CONFIG_HOME . '/vsnip')
 
