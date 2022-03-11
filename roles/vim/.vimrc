@@ -269,6 +269,8 @@ augroup LSPSettings
   autocmd BufWritePre <buffer> LspDocumentFormatSync
 augroup END
 
+command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/lsp.log')
+
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:asyncomplete_auto_popup = 0
