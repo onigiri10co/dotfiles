@@ -6,6 +6,7 @@ readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 GIT_CONFIG_ROOT_DIR="$HOME/.config/git"
 GIT_USERNAME="${GIT_USERNAME:-onigiri10co}"
 GIT_EMAIL="${GIT_EMAIL:-onigiri10co@gmail.com}"
+GIT_DEFAULT_BRANCH_NAME="${GIT_DEFAULT_BRANCH_NAME:-main}"
 
 
 brew list git > /dev/null 2>&1 || {
@@ -38,6 +39,9 @@ brew list git-secrets > /dev/null 2>&1 || {
 GIT_SECRETS="${GIT_CONFIG_ROOT_DIR}/git-secrets"
 git secrets --install ${GIT_SECRETS} --force > /dev/null
 git config --global init.templatedir ${GIT_SECRETS}
+
+# Global Git default branch name
+git config --global init.defaultBranch ${GIT_DEFAULT_BRANCH_NAME}
 
 ( 
 cd ${CURRENT_PATH}
