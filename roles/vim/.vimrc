@@ -116,7 +116,6 @@ Plug 'lambdalisue/fern-hijack.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
-Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'godlygeek/tabular'
 ""Git
 Plug 'iberianpig/tig-explorer.vim'
