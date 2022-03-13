@@ -324,10 +324,7 @@ augroup Vista
   autocmd!
   autocmd FileType markdown call s:vista_keymap_markdown()
   autocmd FileType vista_markdown call s:vista_keymap_vista_markdown()
-  autocmd FileType typescript call s:vista_keymap_development()
-  autocmd FileType javascript call s:vista_keymap_development()
-  autocmd FileType go call s:vista_keymap_development()
-  autocmd FileType python call s:vista_keymap_development()
+  autocmd FileType typescript,javascript,go,python call s:vista_keymap_development()
   autocmd FileType vista_kind call s:vista_keymap()
 augroup END
 
