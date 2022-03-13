@@ -142,9 +142,7 @@ call plug#end()
 "Setting/Tool/junegunn/vim-plug
 autocmd FileType vim-plug call s:vimplug_keymap()
 function! s:vimplug_keymap()
-  ""Press esc twice to close
-  nmap <silent><buffer> <ESC><ESC> :<C-u>bd<CR>
-  imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>bd<CR>
+  nmap <silent><buffer> <Leader><Leader> :<C-u>bd<CR>
 endfunction
 
 
@@ -173,8 +171,7 @@ nnoremap <silent> <Leader>e :<C-u>Fern .<CR>
 autocmd FileType fern call s:fern_keymap()
 function! s:fern_keymap()
   ""Press esc twice to close
-  nmap <silent><buffer><nowait> <ESC><ESC> :<C-u>bd<CR>
-  imap <silent><buffer><nowait> <ESC><ESC> <ESC>:<C-u>bd<CR>
+  nmap <silent><buffer><nowait> <Leader><Leader> :<C-u>bd<CR>
   ""Fern Keymaps
   nmap <silent><buffer><nowait> <C-h> <Plug>(fern-action-leave)
   nmap <silent><buffer><nowait> h <Plug>(fern-action-collapse)
@@ -322,9 +319,7 @@ endfunction
 
 autocmd FileType vista_markdown call s:vista_keymap_vista_markdown()
 function! s:vista_keymap_vista_markdown()
-  ""Press esc twice to close
-  nmap <silent><buffer> <ESC><ESC> :<C-u>Vista!<CR>
-  imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>Vista!<CR>
+  nmap <silent><buffer> <Leader><Leader> :<C-u>Vista!<CR>
 endfunction
 
 autocmd FileType typescript call s:vista_keymap_development()
@@ -336,11 +331,9 @@ function! s:vista_keymap_development()
   nmap <silent><buffer><nowait> <Leader>t :<C-u>Vista vim_lsp<CR>
 endfunction
 
-autocmd FileType vista call s:vista_keymap()
+autocmd FileType vista_kind call s:vista_keymap()
 function! s:vista_keymap()
-  ""Press esc twice to close
-  nmap <silent><buffer> <ESC><ESC> :<C-u>Vista!<CR>
-  imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>Vista!<CR>
+  nmap <silent><buffer> <Leader><Leader> :<C-u>Vista!<CR>
 endfunction
 
 
