@@ -89,6 +89,17 @@ function! s:qickfix_keymap() abort
 endfunction
 
 
+"Setting/Help
+augroup HelpSettings
+  autocmd!
+  autocmd FileType help call s:help_keymap()
+augroup END
+
+function! s:help_keymap() abort
+  nmap <silent><buffer> <Leader><Leader> :<C-u>bd<CR>
+endfunction
+
+
 "Setting/Plugin
 call plug#begin('~/.vim/plugged')
 ""Color"
