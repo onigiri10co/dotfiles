@@ -140,7 +140,10 @@ call plug#end()
 
 
 "Setting/Tool/junegunn/vim-plug
-autocmd FileType vim-plug call s:vimplug_keymap()
+augroup VimPlug
+  autocmd!
+  autocmd FileType vim-plug call s:vimplug_keymap()
+augroup END
 function! s:vimplug_keymap()
   nmap <silent><buffer> <Leader><Leader> :<C-u>bd<CR>
 endfunction
@@ -168,7 +171,12 @@ colorscheme nord
 let g:fern#default_hidden = 1
 let g:fern#disable_default_mappings = 1
 nnoremap <silent> <Leader>e :<C-u>Fern .<CR>
-autocmd FileType fern call s:fern_keymap()
+
+augroup Fern
+  autocmd!
+  autocmd FileType fern call s:fern_keymap()
+augroup END
+
 function! s:fern_keymap()
   ""Press esc twice to close
   nmap <silent><buffer><nowait> <Leader><Leader> :<C-u>bd<CR>
@@ -311,28 +319,32 @@ let g:vsnip_snippet_dir = expand($XDG_CONFIG_HOME . '/vsnip')
 let g:vista#renderer#enable_icon = 0
 let g:vista_sidebar_position = 'vertical topleft'
 
-autocmd FileType markdown call s:vista_keymap_markdown()
+augroup Vista
+  autocmd!
+  autocmd FileType markdown call s:vista_keymap_markdown()
+  autocmd FileType vista_markdown call s:vista_keymap_vista_markdown()
+  autocmd FileType typescript call s:vista_keymap_development()
+  autocmd FileType javascript call s:vista_keymap_development()
+  autocmd FileType go call s:vista_keymap_development()
+  autocmd FileType python call s:vista_keymap_development()
+  autocmd FileType vista_kind call s:vista_keymap()
+augroup END
+
 function! s:vista_keymap_markdown()
   ""TODO: <Leader>o で、Vista finder fzf:toc がやりたいが、現状できないので操作ミスを考慮して、解決するまで t と同じにしておく。
   nmap <silent><buffer><nowait> <Leader>o :<C-u>Vista toc<CR>
   nmap <silent><buffer><nowait> <Leader>t :<C-u>Vista toc<CR>
 endfunction
 
-autocmd FileType vista_markdown call s:vista_keymap_vista_markdown()
 function! s:vista_keymap_vista_markdown()
   nmap <silent><buffer> <Leader><Leader> :<C-u>Vista!<CR>
 endfunction
 
-autocmd FileType typescript call s:vista_keymap_development()
-autocmd FileType javascript call s:vista_keymap_development()
-autocmd FileType go call s:vista_keymap_development()
-autocmd FileType python call s:vista_keymap_development()
 function! s:vista_keymap_development()
   nmap <silent><buffer><nowait> <Leader>o :<C-u>Vista finder vim_lsp<CR>
   nmap <silent><buffer><nowait> <Leader>t :<C-u>Vista vim_lsp<CR>
 endfunction
 
-autocmd FileType vista_kind call s:vista_keymap()
 function! s:vista_keymap()
   nmap <silent><buffer> <Leader><Leader> :<C-u>Vista!<CR>
 endfunction
