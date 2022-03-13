@@ -81,12 +81,11 @@ inoremap <S-Tab> <C-d>
 augroup QuickFixCmd
   autocmd!
   autocmd QuickFixCmdPost *grep* cwindow
+  autocmd FileType qf call s:qickfix_keymap()
 augroup END
 
-autocmd FileType qf call s:qickfix_keymap()
-function! s:qickfix_keymap()
-  nmap <silent><buffer> <ESC><ESC> :<C-u>bd<CR>
-  imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>bd<CR>
+function! s:qickfix_keymap() abort
+  nmap <silent><buffer> <Leader><Leader> :<C-u>bd<CR>
 endfunction
 
 
