@@ -74,6 +74,7 @@ cnoremap <C-l> <Right>
 cnoremap <C-b> <S-Left>
 cnoremap <C-w> <S-Right>
 cnoremap <C-x> <Del>
+inoremap <S-Tab> <C-d>
 
 
 "Setting/QuickFix
