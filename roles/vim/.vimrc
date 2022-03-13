@@ -265,7 +265,8 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <buffer> <Leader>r <plug>(lsp-references)
   nmap <buffer> <C-j> <Plug>(lsp-next-error)
   nmap <buffer> <C-k> <Plug>(lsp-previous-error)
-  imap <C-n> <Plug>(asyncomplete_force_refresh)
+  imap <C-f> <Plug>(asyncomplete_force_refresh) 
+  inoremap <expr> <Tab> pumvisible() ? asyncomplete#close_popup() : "\<Tab>"
   imap <expr> <C-k> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
   smap <expr> <C-k> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
 endfunction
