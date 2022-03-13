@@ -21,7 +21,7 @@ set guioptions=
 set wildmenu
 set wildmode=longest:full,full
 
-augroup AutoChangeDir
+augroup General
   autocmd!
   autocmd BufEnter * silent! lcd %:p:h
 augroup END
@@ -78,7 +78,7 @@ inoremap <S-Tab> <C-d>
 
 
 "Setting/QuickFix
-augroup QuickFixCmd
+augroup QuickFix
   autocmd!
   autocmd QuickFixCmdPost *grep* cwindow
   autocmd FileType qf call s:qickfix_keymap()
@@ -90,7 +90,7 @@ endfunction
 
 
 "Setting/Help
-augroup HelpSettings
+augroup Help
   autocmd!
   autocmd FileType help call s:help_keymap()
 augroup END
@@ -279,7 +279,7 @@ function! s:on_lsp_buffer_enabled() abort
   smap <expr> <C-k> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
 endfunction
 
-augroup LSPSettings
+augroup LSP
   autocmd!
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
   autocmd BufWritePre <buffer> LspDocumentFormatSync
@@ -457,7 +457,7 @@ function! LightlineLSPInfo() abort
   return s:lightline_lsp_diagnostic('information', 'i')
 endfunction
 
-augroup LightlineLSP
+augroup Lightline
   autocmd!
   autocmd User lsp_diagnostics_updated call lightline#update()
 augroup END
