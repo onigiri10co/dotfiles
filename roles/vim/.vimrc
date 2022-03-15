@@ -136,6 +136,7 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'thinca/vim-quickrun'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 
