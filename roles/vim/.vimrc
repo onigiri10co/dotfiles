@@ -90,6 +90,7 @@ endfunction
 
 
 "Setting/Help
+set helplang=ja
 augroup Help
   autocmd!
   autocmd FileType help call s:help_keymap()
@@ -122,6 +123,7 @@ Plug 'iberianpig/tig-explorer.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/vim-gitbranch'
 ""Utility
+Plug 'vim-jp/vimdoc-ja'
 Plug 'previm/previm'
 Plug 'glidenote/memolist.vim'
 Plug 'tyru/open-browser.vim'
