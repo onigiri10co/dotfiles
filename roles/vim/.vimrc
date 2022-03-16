@@ -137,6 +137,7 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'thinca/vim-quickrun'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'mattn/vim-sonictemplate'
 call plug#end()
 
 
@@ -257,6 +258,10 @@ nnoremap <silent> <LocalLeader>ot :<C-u>execute 'OpenBrowserSearch -deepl' expan
 let g:openbrowser_search_engines = {
 \    'deepl': 'https://www.deepl.com/translator#auto/auto/{query}',
 \}
+
+
+"Setting/Tool/mattn/vim-sonictemplate
+let g:sonictemplate_vim_template_dir = '$XDG_CONFIG_HOME/sonictemplate'
 
 
 "Setting/Tool/prabirshrestha/vim-lsp
