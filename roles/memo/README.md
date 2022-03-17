@@ -1,3 +1,3 @@
 # roles/memo
-See: https://github.com/mattn/memo
+[mattn/memo: 📓 Memo Life For You](https://github.com/mattn/memo)
 
