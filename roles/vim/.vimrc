@@ -264,30 +264,6 @@ let g:sonictemplate_vim_template_dir = '$XDG_CONFIG_HOME/sonictemplate'
 "Setting/Tool/hrsh7th/vim-vsnip
 "Setting/Tool/hrsh7th/vim-vsnip-integ
 "Setting/Tool/rafamadriz/friendly-snippets
-function! s:on_lsp_buffer_enabled() abort
-  setlocal omnifunc=lsp#complete
-  nmap <silent><buffer> <Leader>d <Plug>(lsp-definition)
-  nmap <silent><buffer> <Leader>h <plug>(lsp-hover)
-  nmap <silent><buffer> <Leader>f <plug>(lsp-document-diagnostics)
-  nmap <silent><buffer> <Leader>i <plug>(lsp-implementation)
-  nmap <silent><buffer> <Leader>r <plug>(lsp-references)
-  nmap <silent><buffer> <C-j> <Plug>(lsp-next-error)
-  nmap <silent><buffer> <C-k> <Plug>(lsp-previous-error)
-  imap <silent><buffer> <C-f> <Plug>(asyncomplete_force_refresh)
-  inoremap <expr> <Tab> pumvisible() ? asyncomplete#close_popup() : "\<Tab>"
-  imap <expr> <C-k> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
-  smap <expr> <C-k> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
-endfunction
-
-augroup LSP
-  autocmd!
-  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-  autocmd BufWritePre <buffer> LspDocumentFormatSync
-  autocmd BufWritePre *.py LspDocumentFormatSync --server=efm-langserver
-augroup END
-
-command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/lsp.log')
-
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_settings = {
@@ -313,6 +289,30 @@ let g:lsp_settings = {
 \ }
 let g:asyncomplete_auto_popup = 0
 let g:vsnip_snippet_dir = expand($XDG_CONFIG_HOME . '/vsnip')
+
+augroup LSP
+  autocmd!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+  autocmd BufWritePre <buffer> LspDocumentFormatSync
+  autocmd BufWritePre *.py LspDocumentFormatSync --server=efm-langserver
+augroup END
+
+function! s:on_lsp_buffer_enabled() abort
+  setlocal omnifunc=lsp#complete
+  nmap <silent><buffer> <Leader>d <Plug>(lsp-definition)
+  nmap <silent><buffer> <Leader>h <plug>(lsp-hover)
+  nmap <silent><buffer> <Leader>f <plug>(lsp-document-diagnostics)
+  nmap <silent><buffer> <Leader>i <plug>(lsp-implementation)
+  nmap <silent><buffer> <Leader>r <plug>(lsp-references)
+  nmap <silent><buffer> <C-j> <Plug>(lsp-next-error)
+  nmap <silent><buffer> <C-k> <Plug>(lsp-previous-error)
+  imap <silent><buffer> <C-f> <Plug>(asyncomplete_force_refresh)
+  inoremap <expr> <Tab> pumvisible() ? asyncomplete#close_popup() : "\<Tab>"
+  imap <expr> <C-k> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
+  smap <expr> <C-k> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
+endfunction
+
+command! LspDebug let lsp_log_verbose=1 | let lsp_log_file = expand('~/lsp.log')
 
 
 "Setting/Tool/liuchengxu/vista.vim
