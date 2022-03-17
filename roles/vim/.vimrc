@@ -241,7 +241,8 @@ let g:previm_open_cmd = 'open -a Google\ Chrome'
 "Setting/Tool/glidenote/memolist.vim
 let g:memolist_path = "$HOME/memo"
 let g:memolist_memo_suffix = "md"
-let g:memolist_template_dir_path = "~/.config/memo"
+let g:memolist_template_dir_path = "$XDG_CONFIG_HOME/memo"
+let g:memolist_fzf = 1
 
 
 "Setting/Tool/tyru/open-browser.vim
