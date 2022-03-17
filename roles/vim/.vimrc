@@ -321,25 +321,19 @@ let g:vista_sidebar_position = 'vertical topleft'
 
 augroup Vista
   autocmd!
+  autocmd FileType * call s:vista_keymap_lsp()
   autocmd FileType markdown call s:vista_keymap_markdown()
-  autocmd FileType vista_markdown call s:vista_keymap_vista_markdown()
-  autocmd FileType typescript,javascript,go,python call s:vista_keymap_development()
-  autocmd FileType vista_kind call s:vista_keymap()
+  autocmd FileType vista_kind,vista_markdown call s:vista_keymap()
 augroup END
 
-function! s:vista_keymap_markdown() abort
-  ""TODO: <Leader>o で、Vista finder fzf:toc がやりたいが、現状できないので操作ミスを考慮して、解決するまで t と同じにしておく。
-  nnoremap <silent><buffer> <Leader>o :<C-u>Vista toc<CR>
-  nnoremap <silent><buffer> <Leader>t :<C-u>Vista toc<CR>
-endfunction
-
-function! s:vista_keymap_vista_markdown() abort
-  nnoremap <silent><buffer> <Leader><Leader> :<C-u>Vista!<CR>
-endfunction
-
-function! s:vista_keymap_development() abort
+function! s:vista_keymap_lsp() abort
   nnoremap <silent><buffer> <Leader>o :<C-u>Vista finder vim_lsp<CR>
   nnoremap <silent><buffer> <Leader>t :<C-u>Vista vim_lsp<CR>
+endfunction
+
+function! s:vista_keymap_markdown() abort
+  nnoremap <silent><buffer> <Leader>o :<C-u>Vista toc<CR>
+  nnoremap <silent><buffer> <Leader>t :<C-u>Vista toc<CR>
 endfunction
 
 function! s:vista_keymap() abort
