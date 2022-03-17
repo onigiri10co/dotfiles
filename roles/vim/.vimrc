@@ -220,13 +220,9 @@ cnoremap <silent> <C-r> :<C-u>FzfHistory:<CR>
 
 
 "Setting/Tool/iberianpig/tig-explorer.vim
-""git status
 nnoremap <silent> <LocalLeader>gs :<C-u>TigStatus<CR>
-""git log
 nnoremap <silent> <LocalLeader>gl :<C-u>Tig<CR>
-""git log of current file
 nnoremap <silent> <LocalLeader>gc :<C-u>TigOpenCurrentFile<CR>
-""git blame
 nnoremap <silent> <LocalLeader>gb :<C-u>TigBlame<CR>
 
 
