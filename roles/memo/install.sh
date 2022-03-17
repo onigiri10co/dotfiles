@@ -12,6 +12,7 @@ type memo > /dev/null 2>&1 || {
 cd ${CURRENT_PATH}
 cp -fr .config ${HOME}
 cp -p _memo ~/.zsh.d/completion
+cp -fr .zsh.d ${HOME}/
 )
 
 ln -fs ~/Dropbox/memo $HOME
