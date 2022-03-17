@@ -85,7 +85,7 @@ augroup QuickFix
 augroup END
 
 function! s:qickfix_keymap() abort
-  nmap <silent><buffer> <Leader><Leader> :<C-u>bd<CR>
+  nnoremap <silent><buffer> <Leader><Leader> :<C-u>bd<CR>
 endfunction
 
 
@@ -97,7 +97,7 @@ augroup Help
 augroup END
 
 function! s:help_keymap() abort
-  nmap <silent><buffer> <Leader><Leader> :<C-u>bd<CR>
+  nnoremap <silent><buffer> <Leader><Leader> :<C-u>bd<CR>
 endfunction
 
 
@@ -150,7 +150,7 @@ augroup VimPlug
 augroup END
 
 function! s:vimplug_keymap() abort
-  nmap <silent><buffer> <Leader><Leader> :<C-u>bd<CR>
+  nnoremap <silent><buffer> <Leader><Leader> :<C-u>bd<CR>
 endfunction
 
 
@@ -183,45 +183,40 @@ augroup Fern
 augroup END
 
 function! s:fern_keymap() abort
-  ""Press esc twice to close
-  nmap <silent><buffer><nowait> <Leader><Leader> :<C-u>bd<CR>
-  ""Fern Keymaps
-  nmap <silent><buffer><nowait> <C-h> <Plug>(fern-action-leave)
-  nmap <silent><buffer><nowait> h <Plug>(fern-action-collapse)
-  nmap <silent><buffer><nowait> <C-r> <Plug>(fern-action-reload)
-  nmap <silent><buffer><nowait> o <Plug>(fern-action-open)
-  nmap <silent><buffer><nowait> <Return> o
-  nmap <silent><buffer><nowait> <Space> <Plug>(fern-action-mark:toggle)
-  nmap <silent><buffer><nowait> t <Plug>(fern-action-open:tabedit)
-  nmap <silent><buffer><nowait> l <Plug>(fern-action-expand)
-  nmap <silent><buffer><nowait> x <Plug>(fern-action-open:system)
-  nmap <silent><buffer><nowait> N <Plug>(fern-action-new-file)
-  nmap <silent><buffer><nowait> K <Plug>(fern-action-new-dir)
-  nmap <silent><buffer><nowait> c <Plug>(fern-action-copy)
-  nmap <silent><buffer><nowait> m <Plug>(fern-action-move)
-  nmap <silent><buffer><nowait> r <Plug>(fern-action-rename)
-  nmap <silent><buffer><nowait> D <Plug>(fern-action-trash)
-  nmap <silent><buffer><nowait> C <Plug>(fern-action-clipboard-copy)
-  nmap <silent><buffer><nowait> M <Plug>(fern-action-clipboard-move)
-  nmap <silent><buffer><nowait> P <Plug>(fern-action-clipboard-paste)
+  nnoremap <silent><buffer> <Leader><Leader> :<C-u>bd<CR>
+  nnoremap <silent><buffer> <LocalLeader>f :<C-u>FzfRg<CR>
+  nmap <silent><buffer> <C-h> <Plug>(fern-action-leave)
+  nmap <silent><buffer> h <Plug>(fern-action-collapse)
+  nmap <silent><buffer> <C-r> <Plug>(fern-action-reload)
+  nmap <silent><buffer> o <Plug>(fern-action-open)
+  nmap <silent><buffer> <CR> <Plug>(fern-action-open)
+  nmap <silent><buffer> <Space> <Plug>(fern-action-mark:toggle)
+  nmap <silent><buffer> t <Plug>(fern-action-open:tabedit)
+  nmap <silent><buffer> l <Plug>(fern-action-expand)
+  nmap <silent><buffer> x <Plug>(fern-action-open:system)
+  nmap <silent><buffer> N <Plug>(fern-action-new-file)
+  nmap <silent><buffer> K <Plug>(fern-action-new-dir)
+  nmap <silent><buffer> c <Plug>(fern-action-copy)
+  nmap <silent><buffer> m <Plug>(fern-action-move)
+  nmap <silent><buffer> r <Plug>(fern-action-rename)
+  nmap <silent><buffer> D <Plug>(fern-action-trash)
+  nmap <silent><buffer> C <Plug>(fern-action-clipboard-copy)
+  nmap <silent><buffer> M <Plug>(fern-action-clipboard-move)
+  nmap <silent><buffer> P <Plug>(fern-action-clipboard-paste)
   nmap <silent><buffer> yy <Plug>(fern-action-yank:path)
-  ""FZF Keymaps
-  nmap <silent><buffer><nowait> <LocalLeader>f :<C-u>FzfRg<CR>
-  nmap <silent><buffer><nowait> <LocalLeader>b :<C-u>FzfBuffers<CR>
-  nmap <silent><buffer><nowait> <LocalLeader>h :<C-u>FzfHistory<CR>
 endfunction
 
 
 "Setting/Tool/junegunn/fzf.vim
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = { 'up': '~35%' }
-nmap <silent> <LocalLeader><LocalLeader> :<C-u>FzfFiles<CR>
-nnoremap <silent><nowait> <LocalLeader>l :<C-u>FzfBLines<CR>
-nnoremap <silent><nowait> <LocalLeader>b :<C-u>FzfBuffers<CR>
-nnoremap <silent><nowait> <LocalLeader>f :<C-u>cd %:p:h<CR> :<C-u>FzfRg<CR>
-nnoremap <silent><nowait> <LocalLeader>h :<C-u>FzfHistory<CR>
-nnoremap <silent><nowait> <LocalLeader>r :<C-u>FzfHistory:<CR>
-cnoremap <silent><nowait> <C-r> :<C-u>FzfHistory:<CR>
+nnoremap <silent> <LocalLeader><LocalLeader> :<C-u>FzfFiles<CR>
+nnoremap <silent> <LocalLeader>l :<C-u>FzfBLines<CR>
+nnoremap <silent> <LocalLeader>b :<C-u>FzfBuffers<CR>
+nnoremap <silent> <LocalLeader>f :<C-u>cd %:p:h<CR> :<C-u>FzfRg<CR>
+nnoremap <silent> <LocalLeader>h :<C-u>FzfHistory<CR>
+nnoremap <silent> <LocalLeader>r :<C-u>FzfHistory:<CR>
+cnoremap <silent> <C-r> :<C-u>FzfHistory:<CR>
 
 
 "Setting/Tool/iberianpig/tig-explorer.vim
@@ -275,14 +270,14 @@ let g:sonictemplate_vim_template_dir = '$XDG_CONFIG_HOME/sonictemplate'
 "Setting/Tool/rafamadriz/friendly-snippets
 function! s:on_lsp_buffer_enabled() abort
   setlocal omnifunc=lsp#complete
-  nmap <buffer> <Leader>d <Plug>(lsp-definition)
-  nmap <buffer> <Leader>h <plug>(lsp-hover)
-  nmap <buffer> <Leader>f <plug>(lsp-document-diagnostics)
-  nmap <buffer> <Leader>i <plug>(lsp-implementation)
-  nmap <buffer> <Leader>r <plug>(lsp-references)
-  nmap <buffer> <C-j> <Plug>(lsp-next-error)
-  nmap <buffer> <C-k> <Plug>(lsp-previous-error)
-  imap <C-f> <Plug>(asyncomplete_force_refresh) 
+  nmap <silent><buffer> <Leader>d <Plug>(lsp-definition)
+  nmap <silent><buffer> <Leader>h <plug>(lsp-hover)
+  nmap <silent><buffer> <Leader>f <plug>(lsp-document-diagnostics)
+  nmap <silent><buffer> <Leader>i <plug>(lsp-implementation)
+  nmap <silent><buffer> <Leader>r <plug>(lsp-references)
+  nmap <silent><buffer> <C-j> <Plug>(lsp-next-error)
+  nmap <silent><buffer> <C-k> <Plug>(lsp-previous-error)
+  imap <silent><buffer> <C-f> <Plug>(asyncomplete_force_refresh)
   inoremap <expr> <Tab> pumvisible() ? asyncomplete#close_popup() : "\<Tab>"
   imap <expr> <C-k> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
   smap <expr> <C-k> vsnip#available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-k>'
@@ -338,26 +333,26 @@ augroup END
 
 function! s:vista_keymap_markdown() abort
   ""TODO: <Leader>o で、Vista finder fzf:toc がやりたいが、現状できないので操作ミスを考慮して、解決するまで t と同じにしておく。
-  nmap <silent><buffer><nowait> <Leader>o :<C-u>Vista toc<CR>
-  nmap <silent><buffer><nowait> <Leader>t :<C-u>Vista toc<CR>
+  nnoremap <silent><buffer> <Leader>o :<C-u>Vista toc<CR>
+  nnoremap <silent><buffer> <Leader>t :<C-u>Vista toc<CR>
 endfunction
 
 function! s:vista_keymap_vista_markdown() abort
-  nmap <silent><buffer> <Leader><Leader> :<C-u>Vista!<CR>
+  nnoremap <silent><buffer> <Leader><Leader> :<C-u>Vista!<CR>
 endfunction
 
 function! s:vista_keymap_development() abort
-  nmap <silent><buffer><nowait> <Leader>o :<C-u>Vista finder vim_lsp<CR>
-  nmap <silent><buffer><nowait> <Leader>t :<C-u>Vista vim_lsp<CR>
+  nnoremap <silent><buffer> <Leader>o :<C-u>Vista finder vim_lsp<CR>
+  nnoremap <silent><buffer> <Leader>t :<C-u>Vista vim_lsp<CR>
 endfunction
 
 function! s:vista_keymap() abort
-  nmap <silent><buffer> <Leader><Leader> :<C-u>Vista!<CR>
+  nnoremap <silent><buffer> <Leader><Leader> :<C-u>Vista!<CR>
 endfunction
 
 
 "Setting/Tool/thinca/vim-quickrun
-nnoremap <silent><Leader>q :QuickRun<CR>
+nnoremap <silent> <Leader>q :QuickRun<CR>
 let g:quickrun_config = {
 \  '_': {
 \    'outputter': 'quickfix',
