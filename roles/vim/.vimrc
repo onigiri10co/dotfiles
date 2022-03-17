@@ -118,6 +118,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
+Plug 'ntpeters/vim-better-whitespace'
 ""Git
 Plug 'iberianpig/tig-explorer.vim'
 Plug 'airblade/vim-gitgutter'
