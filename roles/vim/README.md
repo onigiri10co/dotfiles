@@ -272,6 +272,19 @@ endfor
 - Shift + Tab で、左タブへ
 - Tab1 で、1番目のタブへ（9番目まで対応）
 
+#### コマンドラインモードのキーマップを vim 風にする
+```
+cnoremap <C-o> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-h> <Left>
+cnoremap <C-l> <Right>
+cnoremap <C-b> <S-Left>
+cnoremap <C-w> <S-Right>
+cnoremap <C-x> <Del>
+```
+
+- C-o は C-0、C-e は C-$ 代わりに定義している（テンキー以外の数値はマッピング出来ないため）。
+
 
 ### QuickFix
 #### grep 系コマンドを実行すると、QuickFix ウィンドウを自動で表示する
