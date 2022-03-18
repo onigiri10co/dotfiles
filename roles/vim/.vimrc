@@ -113,6 +113,7 @@ Plug 'simeji/winresizer'
 Plug 'itchyny/lightline.vim'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-hijack.vim'
+Plug 'easymotion/vim-easymotion'
 ""Edit
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
@@ -225,6 +226,11 @@ nnoremap <silent> <LocalLeader>gs :<C-u>TigStatus<CR>
 nnoremap <silent> <LocalLeader>gl :<C-u>Tig<CR>
 nnoremap <silent> <LocalLeader>gc :<C-u>TigOpenCurrentFile<CR>
 nnoremap <silent> <LocalLeader>gb :<C-u>TigBlame<CR>
+
+
+"Setting/Tool/easymotion/vim-easymotion
+map  <silent> <Leader>l <Plug>(easymotion-bd-jk)
+nmap <silent> <Leader>l <Plug>(easymotion-overwin-line)
 
 
 "Setting/Tool/ghq
