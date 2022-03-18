@@ -94,6 +94,16 @@ set ambiwidth=double
 set wildignore=*.o,*.obj,*.pyc,*.so,*.dll,*.class,*~
 ```
 
+#### コマンドラインモード時に Tab で補完が効くようにする
+```
+set wildmenu
+```
+
+#### wildemenu 補完時挙動設定 | 最初の Tab で共通部分の補完をしつつ補完候補を出し、次回以降はこの補完候補を順に選択する動作
+```
+set wildmode=longest:full,full
+```
+
 #### インサートモード時で補完ウィンドウ表示時に、Enter キーを押しても改行しない
 ```
 inoremap <expr> <CR> pumvisible() ? "<C-y>" : "<CR>"
