@@ -242,6 +242,9 @@ nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 
 
 ### キー操作
+#### map, noremap の使い分け
+- refs. [update vimrc by onigiri10co · Pull Request #22 · onigiri10co/dotfiles](https://github.com/onigiri10co/dotfiles/pull/22/commits/e4a572e7e7ad512130113464fdb64f0bde90de67)
+
 #### 表示行単位で上下移動する
 ```
 nnoremap j gj
@@ -335,6 +338,9 @@ runtime! userautoload/*.vim
 ```
 
 ※vimrc の設定を読み込んでから最後に定義する
+
+#### autocmd は、augroup と同時に定義する
+- refs. [update vimrc by onigiri10co · Pull Request #22 · onigiri10co/dotfiles](https://github.com/onigiri10co/dotfiles/pull/22/commits/9239b2d0006d365df280563df937eb2dda0945df)
 
 
 
