@@ -326,6 +326,10 @@ endif
 #### runtimepath を設定する
 ```
 set runtimepath+=~/.vim/
+```
+
+#### vimrc を分割する（runtimepath+=~/.vim/userautoload 配下に、.vimrc を分割したファイルを格納する。
+```
 runtime! userautoload/*.vim
 ```
 

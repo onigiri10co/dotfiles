@@ -461,14 +461,3 @@ augroup Lightline
   autocmd User lsp_diagnostics_updated call lightline#update()
 augroup END
 
-
-"Setting/ExternalFile
-if filereadable(expand('~/.vimrc.local'))
-  source ~/.vimrc.local
-endif
-
-
-"Setting/Path
-set runtimepath+=~/.vim/
-runtime! userautoload/*.vim
-
