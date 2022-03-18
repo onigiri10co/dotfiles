@@ -157,20 +157,17 @@ endfunction
 
 
 "Setting/Tool/arcticicestudio/nord-vim
-""Disable diff backgroud color
 let g:nord_uniform_diff_background = 1
-""Set bold vertical split line
 let g:nord_bold_vertical_split_line = 1
-""Set cursor line number backgroud
 let g:nord_cursor_line_number_background = 1
-""ref. https://github.com/arcticicestudio/nord-vim/issues/26
-""ref. https://www.nordtheme.com/docs/ports/vim/customization
+
 augroup ColorschemeNord
   autocmd!
   autocmd ColorScheme nord highlight Visual ctermfg=11
   autocmd ColorScheme nord highlight CursorLine ctermfg=14
 augroup END
-""Set colorscheme (NOTE: Set at the bottom of the color sheme)
+
+""NOTE: Set at the bottom of the color sheme
 colorscheme nord
 
 
