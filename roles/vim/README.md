@@ -76,7 +76,7 @@ set textwidth=0
 
 #### 保存するコマンド履歴数を設定する
 ```
-set history=100
+set history=1000
 ```
 
 #### （1件でも）常に補完ウィンドウを表示,補完ウィンドウを表示時に挿入しない
@@ -92,6 +92,11 @@ set ambiwidth=double
 #### vimgrep 時に無視するファイルパターンを設定する
 ```
 set wildignore=*.o,*.obj,*.pyc,*.so,*.dll,*.class,*~
+```
+
+#### GUI オプションは全て無効にする（MacVim 起動時に、スクロールバーやタブなどを表示しない）
+```
+set guioptions=
 ```
 
 #### コマンドラインモード時に Tab で補完が効くようにする
@@ -121,19 +126,13 @@ inoremap <expr> <CR> pumvisible() ? "<C-y>" : "<CR>"
 
 #### ファイル編集のタイミングで、そのファイルのディレクトリにカレントディレクトリを自動的に変更する
 ```
-augroup AutoChangeDir
-  autocmd!
-  autocmd BufEnter * silent! lcd %:p:h
-augroup END
-```
-
-#### GUI オプションは全て無効にする（MacVim 起動時に、スクロールバーやタブなどを表示しない）
-```
-set guioptions=
+autocmd BufEnter * silent! lcd %:p:h
 ```
 
 
 ### Leader
+以下の通り、使い分けることにする（マイルール）。
+
 - リーダー: 直接的な開発で使う（LSP 操作: 定義ジャンプ、エラー表示など）
 - ローカルリーダー: 上記以外（例: git 操作、セレクター操作、ファイラー操作）
 
@@ -254,9 +253,9 @@ nnoremap k gk
 inoremap <silent> jj <ESC>
 ```
 
-#### コマンドラインで Ctrl + x キーを押すと、カレントバッファのパスを表示する
+#### コマンドラインで Ctrl + q キーを押すと、カレントバッファのパスを表示する
 ```
-cnoremap <c-x> <c-r>=expand('%:p')<cr>
+cnoremap <C-q> <C-r>=expand('%:p')<CR>
 ```
 
 #### タブ移動
@@ -286,21 +285,23 @@ cnoremap <C-x> <Del>
 - C-o は C-0、C-e は C-$ 代わりに定義している（テンキー以外の数値はマッピング出来ないため）。
 
 
+#### インサートモード時に、Shift - Tab でインデントを解除する
+```
+inoremap <S-Tab> <C-d>
+```
+
+
 ### QuickFix
 #### grep 系コマンドを実行すると、QuickFix ウィンドウを自動で表示する
 ```
-augroup QuickFixCmd
-  autocmd!
-  autocmd QuickFixCmdPost *grep* cwindow
-augroup END
+autocmd QuickFixCmdPost *grep* cwindow
 ```
 
-#### QuickFix ウィンドウを ESC 2回押しで閉じる
+#### QuickFix ウィンドウを Leader 2回押しで閉じる
 ```
 autocmd FileType qf call s:qickfix_keymap()
 function! s:qickfix_keymap()
-  nmap <silent><buffer> <ESC><ESC> :<C-u>bd<CR>
-  imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>bd<CR>
+  nnoremap <silent><buffer> <Leader><Leader> :<C-u>bd<CR>
 endfunction
 ```
 
@@ -338,6 +339,9 @@ runtime! userautoload/*.vim
 
 
 ## Plugin
+
+
+
 ### junegunn/vim-plug
 - [junegunn/vim-plug: Minimalist Vim Plugin Manager](https://github.com/junegunn/vim-plug)
 
