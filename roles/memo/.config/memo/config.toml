@@ -3,6 +3,6 @@ editor = "vim"
 column = 35
 selectcmd = "fzf"
 grepcmd = "rg --max-depth 1 --sortr path ${PATTERN} ${DIR}"
-memotemplate = "$HOME/.config/memo/template.txt"
-pluginsdir = "$HOME/.config/memo/plugins"
+memotemplate = "$XDG_CONFIG_HOME/memo/template.txt"
+pluginsdir = "$XDG_CONFIG_HOME/memo/plugins"
 

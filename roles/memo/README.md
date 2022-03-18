@@ -1,3 +1,5 @@
 # roles/memo
-See: https://github.com/mattn/memo
+[mattn/memo: 📓 Memo Life For You](https://github.com/mattn/memo)
+
+[glidenote/memolist.vim: simple memo plugin for Vim.](https://github.com/glidenote/memolist.vim) で、vim からも使える。
 
