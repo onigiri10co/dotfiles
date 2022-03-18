@@ -339,419 +339,61 @@ runtime! userautoload/*.vim
 
 
 ## Plugin
-
-
-
-### junegunn/vim-plug
+### Manager
 - [junegunn/vim-plug: Minimalist Vim Plugin Manager](https://github.com/junegunn/vim-plug)
 
-#### vim-plug ウィンドウを ESC 2回押しで閉じる
-```
-autocmd FileType vim-plug call s:vimplug_keymap()
-function! s:vimplug_keymap()
-  ""Press esc twice to close
-  nmap <silent><buffer> <ESC><ESC> :<C-u>bd<CR>
-  imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>bd<CR>
-endfunction
-```
 
-
-### arcticicestudio/nord-vim
+### Color
 - [arcticicestudio/nord-vim: An arctic, north-bluish clean and elegant Vim theme.](https://github.com/arcticicestudio/nord-vim)
 
-#### diff 時のバックグラウンドカラーは無効化する
-```
-let g:nord_uniform_diff_background = 1
-```
 
-#### 垂直分割ラインは、bold にする
-```
-let g:nord_bold_vertical_split_line = 1
-```
-
-#### カーソル行番号のバックグラウンドカラーをアクティブにする
-```
-let g:nord_cursor_line_number_background = 1
-```
-
-#### Visual, CursorLine のカラーを好みに変更する（デフォルトだと見えづらい部分）
-```
-augroup ColorschemeNord
-  autocmd!
-  autocmd ColorScheme nord highlight Visual ctermfg=11
-  autocmd ColorScheme nord highlight CursorLine ctermfg=14
-augroup END
-```
-
-- [Comment contrast · Issue #26 · arcticicestudio/nord-vim](https://github.com/arcticicestudio/nord-vim/issues/26)
-- [Nord](https://www.nordtheme.com/docs/ports/vim/customization)
-
-#### カラースキーマを設定する
-```
-colorscheme nord
-```
-
-※カラースキーマの中身を設定した後に定義する
-
-
-### junegunn/fzf.vim
-- [junegunn/fzf: A command-line fuzzy finder](https://github.com/junegunn/fzf)
+### Selector
 - [junegunn/fzf.vim: fzf vim](https://github.com/junegunn/fzf.vim)
-
-#### FZF コマンドの Prefix を設定する
-```
-let g:fzf_command_prefix = 'Fzf'
-```
-
-#### FZF ウィンドウサイズを設定する
-```
-let g:fzf_layout = { 'up': '~35%' }
-```
-
-#### よく使うコマンドにキーをマップする
-```
-nmap <silent> <Leader><Leader> :<C-u>FzfFiles<CR>
-nnoremap <silent><nowait> <LocalLeader>l :<C-u>FzfBLines<CR>
-nnoremap <silent><nowait> <LocalLeader>b :<C-u>FzfBuffers<CR>
-nnoremap <silent><nowait> <LocalLeader>a :<C-u>cd %:p:h<CR> :<C-u>FzfAg<CR>
-nnoremap <silent><nowait> <LocalLeader>h :<C-u>FzfHistory<CR>
-```
+  - [junegunn/fzf: A command-line fuzzy finder](https://github.com/junegunn/fzf)
 
 
-### 'simeji/winresizer'
+### Window
 - [simeji/winresizer: very simple vim plugin for easy resizing of your vim windows](https://github.com/simeji/winresizer)
-
-※ デフォルト使用
-
-
-### 'itchyny/lightline.vim'
 - [itchyny/lightline.vim: A light and configurable statusline/tabline plugin for Vim](https://github.com/itchyny/lightline.vim)
-
-#### lightline 設定
-```
-let g:lightline = {
-    \ 'colorscheme': 'nord',
-    \ 'active': {
-    \   'left': [
-    \     [ 'mode', 'paste' ],
-    \     [ 'coc_error', 'coc_warn', 'coc_info' ],
-    \     [ 'readonly', 'gitbranch', 'filename', 'modified' ],
-    \   ],
-    \   'right': [
-    \     [ 'fileformat', 'fileencoding', 'filetype', 'percent', 'lineinfo' ],
-    \   ],
-    \ },
-    \ 'inactive': {
-    \   'left': [
-    \     [ 'inactive_filename' ],
-    \   ],
-    \   'right': [
-    \     [ ],
-    \   ],
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'gitbranch#name',
-    \   'filename': 'LightlineFilename',
-    \ },
-    \ 'component_expand': {
-    \   'coc_error': 'LightlineCocError',
-    \   'coc_warn': 'LightlineCocWarn',
-    \   'coc_info': 'LightlineCocInfo',
-    \   'inactive_filename': 'LightlineFilename',
-    \ },
-    \ 'component_type': {
-    \   'coc_error': 'error',
-    \   'coc_warn': 'warning',
-    \   'coc_info': 'tabsel',
-    \   'inactive_filename': 'middle',
-    \ },
-\ }
-
-""Custom Color Settings
-let s:palette = g:lightline#colorscheme#{g:lightline.colorscheme}#palette
-let s:palette.normal.right = s:palette.normal.middle
-
-function! LightlineFilename() abort
-    return expand('%:p:h:t') . '/' . expand('%:t')
-endfunction
-
-function! s:lightline_coc_diagnostic(type, sign) abort
-    let info = get(b:, 'coc_diagnostic_info', 0)
-    if empty(info) || get(info, a:type, 0) == 0
-        return ''
-    endif
-    return printf('%s %d', a:sign, info[a:type])
-endfunction
-
-function! LightlineCocError() abort
-    return s:lightline_coc_diagnostic('error', '✘')
-endfunction
-
-function! LightlineCocWarn() abort
-    return s:lightline_coc_diagnostic('warning', '⚠')
-endfunction
-
-function! LightlineCocInfo() abort
-    return s:lightline_coc_diagnostic('information', 'i')
-endfunction
-
-augroup CocStatusSettings
-  autocmd!
-  autocmd User CocDiagnosticChange call lightline#update()
-augroup END
-```
-
-- アクティブ時
-  - 左
-    - カラースキーマ: nord
-    - vim モード、ペーストモード（set paste, set nopaste）
-    - coc.nvim のステータス情報（error、warning、infomation） ※カスタム定義
-    - 読み取り専用、Git ブランチ、ファイル名、変更マーク（+ = 変更されている）
-  - 右
-    - ファイルフォーマット、ファイルエンコーディング、ファイルタイプ、ファイル位置、ファイル行情報
-- 非アクティブ時
-  - 左
-    - ファイル名 ※カスタム定義
-  - 右
-    - なし
-
-refs. [作者が教える！ lightline.vimの設定方法！ 〜 中級編 - 展開コンポーネントを理解しよう - プログラムモグモグ](https://itchyny.hatenablog.com/entry/20130918/1379461406)
-
-
-### lambdalisue/fern.vim
 - [lambdalisue/fern.vim: 🌿 General purpose asynchronous tree viewer written in Pure Vim script](https://github.com/lambdalisue/fern.vim)
-
-#### fern 設定
-```
-let g:fern#default_hidden = 1
-let g:fern#disable_default_mappings = 1
-
-nnoremap <silent> <Leader>e :<C-u>Fern .<CR>
-autocmd FileType fern call s:fern_keymap()
-
-function! s:fern_keymap()
-
-  ""Press esc twice to close
-  nmap <silent><buffer> <ESC><ESC> :<C-u>bd<CR>
-  imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>bd<CR>
-
-  ""Fern Keymaps
-  nmap <silent><buffer><nowait> <C-h> <Plug>(fern-action-leave)
-  nmap <silent><buffer><nowait> h <Plug>(fern-action-collapse)
-  nmap <silent><buffer><nowait> <C-r> <Plug>(fern-action-reload)
-  nmap <silent><buffer><nowait> o <Plug>(fern-action-open)
-  nmap <silent><buffer><nowait> <Return> o
-  nmap <silent><buffer><nowait> <Space> <Plug>(fern-action-mark:toggle)
-  nmap <silent><buffer><nowait> t <Plug>(fern-action-open:tabedit)
-  nmap <silent><buffer><nowait> l <Plug>(fern-action-expand)
-  nmap <silent><buffer><nowait> x <Plug>(fern-action-open:system)
-  nmap <silent><buffer><nowait> N <Plug>(fern-action-new-file)
-  nmap <silent><buffer><nowait> K <Plug>(fern-action-new-dir)
-  nmap <silent><buffer><nowait> c <Plug>(fern-action-copy)
-  nmap <silent><buffer><nowait> m <Plug>(fern-action-move)
-  nmap <silent><buffer><nowait> r <Plug>(fern-action-rename)
-  nmap <silent><buffer><nowait> D <Plug>(fern-action-trash)
-  nmap <silent><buffer><nowait> C <Plug>(fern-action-clipboard-copy)
-  nmap <silent><buffer><nowait> M <Plug>(fern-action-clipboard-move)
-  nmap <silent><buffer><nowait> P <Plug>(fern-action-clipboard-paste)
-  nmap <silent><buffer> yy <Plug>(fern-action-yank:path)
-
-  ""FZF Keymaps
-  nmap <silent><buffer><nowait> <LocalLeader>a :<C-u>FzfAg<CR>
-  nmap <silent><buffer><nowait> <LocalLeader>b :<C-u>FzfBuffers<CR>
-  nmap <silent><buffer><nowait> <LocalLeader>h :<C-u>FzfHistory<CR>
-
-endfunction
-```
+- [lambdalisue/fern-hijack.vim: Make fern.vim as a default file explorer instead of Netrw](https://github.com/lambdalisue/fern-hijack.vim)
+- [easymotion/vim-easymotion: Vim motions on speed!](https://github.com/easymotion/vim-easymotion)
 
 
-### tomtom/tcomment_vim
+### Edit
 - [tomtom/tcomment_vim: An extensible & universal comment vim-plugin that also handles embedded filetypes](https://github.com/tomtom/tcomment_vim)
-
-※ デフォルト使用
-
-
-### tpope/vim-surround
 - [tpope/vim-surround: surround.vim: Delete/change/add parentheses/quotes/XML-tags/much more with ease](https://github.com/tpope/vim-surround)
-
-※ デフォルト使用
-
-
-### Yggdroot/indentLine
 - [Yggdroot/indentLine: A vim plugin to display the indention levels with thin vertical lines](https://github.com/Yggdroot/indentLine)
-
-※ デフォルト使用
-
-
-### ConradIrwin/vim-bracketed-paste
-- [ConradIrwin/vim-bracketed-paste: Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)](https://github.com/ConradIrwin/vim-bracketed-paste)
-
-※ デフォルト使用
-
-
-### godlygeek/tabular
 - [godlygeek/tabular: Vim script for text filtering and alignment](https://github.com/godlygeek/tabular)
+- [ntpeters/vim-better-whitespace: Better whitespace highlighting for Vim](https://github.com/ntpeters/vim-better-whitespace)
+- ~~[ConradIrwin/vim-bracketed-paste: Handles bracketed-paste-mode in vim (aka. automatic `:set paste`)](https://github.com/ConradIrwin/vim-bracketed-paste)~~
 
-※ デフォルト使用
 
-
-### iberianpig/tig-explorer.vim
+### Git
 - [iberianpig/tig-explorer.vim: Vim plugin to use Tig as a git client. Seamless switching between vim and Tig with opening in the same buffer.](https://github.com/iberianpig/tig-explorer.vim)
-- [jonas/tig: Text-mode interface for git](https://github.com/jonas/tig)
-
-#### よく使うコマンドにキーをマップする: git status
-```
-nnoremap <silent> <LocalLeader>gs :<C-u>TigStatus<CR>
-```
-
-#### よく使うコマンドにキーをマップする: git log
-```
-nnoremap <silent> <LocalLeader>gl :<C-u>Tig<CR>
-```
-
-#### よく使うコマンドにキーをマップする: git log of current file
-```
-nnoremap <silent> <LocalLeader>gc :<C-u>TigOpenCurrentFile<CR>
-```
-
-#### よく使うコマンドにキーをマップする: git blame
-```
-nnoremap <silent> <LocalLeader>gb :<C-u>TigBlame<CR>
-```
-
-
-### airblade/vim-gitgutter
+  - [jonas/tig: Text-mode interface for git](https://github.com/jonas/tig)
 - [airblade/vim-gitgutter: A Vim plugin which shows git diff markers in the sign column and stages/previews/undoes hunks and partial hunks.](https://github.com/airblade/vim-gitgutter)
-
-※ デフォルト使用
-
-
-### itchyny/vim-gitbranch
 - [itchyny/vim-gitbranch: Provides the branch name of the current git repository](https://github.com/itchyny/vim-gitbranch)
 
-※ デフォルト使用
 
-
-### previm/previm
+### Utility
+- [vim-jp/vimdoc-ja: A project which translate Vim documents into Japanese.](https://github.com/vim-jp/vimdoc-ja)
 - [previm/previm: Realtime preview by Vim. (Markdown, reStructuredText, textile)](https://github.com/previm/previm)
-
-#### プレビューするブラウザを指定する
-```
-let g:previm_open_cmd = 'open -a Google\ Chrome'
-```
-
-
-### glidenote/memolist.vim
 - [glidenote/memolist.vim: simple memo plugin for Vim.](https://github.com/glidenote/memolist.vim)
-
-#### memolist 設定
-```
-let g:memolist_path = "$HOME/memo"
-let g:memolist_memo_suffix = "md"
-let g:memolist_template_dir_path = "~/.config/memo"
-```
-
-
-### tyru/open-browser.vim
 - [tyru/open-browser.vim: Open URI with your favorite browser from your most favorite editor](https://github.com/tyru/open-browser.vim)
 
-#### よく使うコマンドにキーをマップする: ブラウザを開いて、カーソル行の単語を検索する
-```
-nmap <silent> <LocalLeader>op <Plug>(openbrowser-smart-search)
-vmap <silent> <LocalLeader>op <Plug>(openbrowser-smart-search)
-```
 
-#### よく使うコマンドにキーをマップする: ブラウザを開いて、カーソル行の単語を DeepL で翻訳する
-```
-nnoremap <silent> <LocalLeader>tl :<C-u>execute 'OpenBrowserSearch -deepl' expand('<cWORD>')<CR>
-let g:openbrowser_search_engines = {
-\    'deepl': 'https://www.deepl.com/translator#auto/auto/{query}',
-\}
-```
-
-
-### neoclide/coc.nvim
-- [neoclide/coc.nvim: Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers.](https://github.com/neoclide/coc.nvim)
-
-#### 事前に依存している nord, yarn をインストールする
-```
-% brew install node && npm i -g yarn
-```
-
-#### 使用する extentions
-```
-let g:coc_global_extensions = [
-    \ 'coc-lists',
-    \ 'coc-marketplace',
-    \ 'coc-json',
-    \ 'coc-tsserver',
-    \ 'coc-prettier',
-    \ 'coc-eslint',
-    \ 'coc-python',
-    \ 'coc-go',
-\ ]
-```
-
-#### よく使うコマンドにキーをマップする
-```
-""Show all diagnostics (OR CocList diagnostics)
-nnoremap <silent> <Leader>di :<C-u>CocDiagnostics<CR>
-""Navigate diagnostics
-nmap <silent> <C-j> <Plug>(coc-diagnostic-next)
-nmap <silent> <C-k> <Plug>(coc-diagnostic-prev)
-""Hover
-nmap <silent> <Leader>hv :<C-u>call CocAction('doHover')<CR>>
-""Definition
-nmap <silent> <Leader>gd <Plug>(coc-definition)
-""References
-nmap <silent> <Leader>rf <Plug>(coc-references)
-""Rename
-nmap <silent> <Leader>rn <Plug>(coc-rename)
-""Show CocList
-nnoremap <silent><nowait> <Leader>l  :<C-u>CocList<CR>
-""Show commands
-nnoremap <silent><nowait> <Leader>c  :<C-u>CocList commands<CR>
-""Search workspace symbols
-nnoremap <silent><nowait> <Leader>s  :<C-u>CocList -I symbols<CR>
-```
-
-
-### liuchengxu/vista.vim
+### Development
+- [prabirshrestha/vim-lsp: async language server protocol plugin for vim and neovim](https://github.com/prabirshrestha/vim-lsp)
+- [mattn/vim-lsp-settings: Auto configurations for Language Server for vim-lsp](https://github.com/mattn/vim-lsp-settings)
+- [mattn/efm-langserver: General purpose Language Server](https://github.com/mattn/efm-langserver)
 - [liuchengxu/vista.vim: Viewer & Finder for LSP symbols and tags](https://github.com/liuchengxu/vista.vim)
-
-#### vista 設定
-``` 
-let g:vista#renderer#enable_icon = 0
-let g:vista_sidebar_position = 'vertical topleft'
-
-autocmd FileType markdown call s:vista_keymap_markdown()
-function! s:vista_keymap_markdown()
-  ""TODO: <Leader>o で、Vista finder fzf:toc がやりたいが、現状できないので操作ミスを考慮して、解決するまで t と同じにしておく。
-  nmap <silent><buffer><nowait> <Leader>o :<C-u>Vista toc<CR>
-  nmap <silent><buffer><nowait> <Leader>t :<C-u>Vista toc<CR>
-endfunction
-
-autocmd FileType vista_markdown call s:vista_keymap_vista_markdown()
-function! s:vista_keymap_vista_markdown()
-  ""Press esc twice to close
-  nmap <silent><buffer> <ESC><ESC> :<C-u>Vista!<CR>
-  imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>Vista!<CR>
-endfunction
-
-autocmd FileType typescript call s:vista_keymap_development()
-autocmd FileType javascript call s:vista_keymap_development()
-autocmd FileType go call s:vista_keymap_development()
-autocmd FileType python call s:vista_keymap_development()
-function! s:vista_keymap_development()
-  nmap <silent><buffer><nowait> <Leader>o :<C-u>Vista finder coc<CR>
-  nmap <silent><buffer><nowait> <Leader>t :<C-u>Vista coc<CR>
-endfunction
-
-autocmd FileType vista call s:vista_keymap()
-function! s:vista_keymap()
-  ""Press esc twice to close
-  nmap <silent><buffer> <ESC><ESC> :<C-u>Vista!<CR>
-  imap <silent><buffer> <ESC><ESC> <ESC>:<C-u>Vista!<CR>
-endfunction
-```
+- [prabirshrestha/asyncomplete.vim: async completion in pure vim script for vim8 and neovim](https://github.com/prabirshrestha/asyncomplete.vim)
+- [prabirshrestha/asyncomplete-lsp.vim](https://github.com/prabirshrestha/asyncomplete-lsp.vim)
+- [hrsh7th/vim-vsnip: Snippet plugin for vim/nvim that supports LSP/VSCode's snippet format.](https://github.com/hrsh7th/vim-vsnip)
+- [hrsh7th/vim-vsnip-integ: vim-vsnip integrations to other plugins.](https://github.com/hrsh7th/vim-vsnip-integ)
+- [rafamadriz/friendly-snippets: Set of preconfigured snippets for different languages.](https://github.com/rafamadriz/friendly-snippets)
+- [thinca/vim-quickrun: Run commands quickly.](https://github.com/thinca/vim-quickrun)
+- [editorconfig/editorconfig-vim: EditorConfig plugin for Vim](https://github.com/editorconfig/editorconfig-vim)
+- [mattn/vim-sonictemplate: Easy and high speed coding method](https://github.com/mattn/vim-sonictemplate)
 
