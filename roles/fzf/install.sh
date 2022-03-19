@@ -12,7 +12,5 @@ brew list fzf > /dev/null 2>&1 || {
 ( 
 cd ${CURRENT_PATH}
 cp -fr .zsh.d ${HOME}
-cp -fr bin ${HOME}
-chmod +x ${HOME}/bin/*
 )
 
