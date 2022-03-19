@@ -1,0 +1,24 @@
+#!/usr/bin/env zsh
+
+
+usage() {
+cat << EOS
+Get git branch list using fzf.
+
+Usage: gbr
+
+EOS
+exit 1
+}
+
+
+main() {
+  local params=$1
+  [[ $params =~ ^(--help|-h)$ ]] && usage
+
+  git branch | fzf | sed -e 's/\( \|\*\)//g'
+}
+
+
+main "$@"
+

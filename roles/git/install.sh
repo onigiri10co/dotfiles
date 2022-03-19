@@ -45,6 +45,7 @@ git config --global init.defaultBranch ${GIT_DEFAULT_BRANCH_NAME}
 
 ( 
 cd ${CURRENT_PATH}
+cp -fr .zsh.d ${HOME}
 cp -fr bin ${HOME}
 chmod +x ${HOME}/bin/*
 )
