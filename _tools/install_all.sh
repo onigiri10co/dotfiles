@@ -15,7 +15,7 @@ main() {
     while read role; do
       [[ $role =~ ^# ]] && continue
       roles="$roles $role"
-    done < <(cat $DOTF_ROLES_FILE) 
+    done < <(cat $DOTF_ROLES_FILE)
     roles=$(echo "${roles}" | tr ' ' '\n' | sed '/^$/d' | sort | uniq)
   else
     roles=$(find roles ! -path './_tools*' -a ! -path './.git*' -a -name 'install.sh' | sort)

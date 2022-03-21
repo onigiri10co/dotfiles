@@ -20,7 +20,7 @@ _install() {
   else
     echo "[ERROR] ${role_path} is not found."
     return 1
-  fi 
+  fi
 }
 
 _dependencies() {
