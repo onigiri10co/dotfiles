@@ -6,6 +6,10 @@ readonly INSTALL_SHELL=install.sh
 readonly DEPENDENCIES_FILE=dependencies
 
 
+timestamp() {
+  date '+%Y-%m-%d %H:%M:%S'
+}
+
 _install() {
   local role="${1:?[ERROR] role is required.}"
   local role_path="${ROLE_ROOT_PATH}/${role}"
@@ -55,8 +59,11 @@ main() {
   local ownrole="${1:?[ERROR] ROLE is required.}"
   local role_path="${ROLE_ROOT_PATH}/${ownrole}"
 
+  echo "$(timestamp) [INFO] Install ${ownrole}..."
+
   local source_path
   for role in $(_dependencies ${role_path}) ${ownrole}; do
+    echo "$(timestamp) [INFO] Install > ${role}..."
     _source_role_zshrc
     _install ${role} || return $?
   done

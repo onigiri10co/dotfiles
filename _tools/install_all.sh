@@ -26,7 +26,6 @@ main() {
 
   for role_path in ${=roles}; do
     role=$(basename ${role_path%/*})
-    echo "$(timestamp) [INFO] Install ${role}..."
     zsh $CURRENT_PATH/install.sh ${role}
   done
 
