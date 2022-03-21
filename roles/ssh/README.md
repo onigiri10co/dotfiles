@@ -10,13 +10,13 @@
 ├── conf.d
 │   ├── aws
 │   ├── github
-│   └── ... 
+│   └── ...
 ├── aws-20210101.pem
 ├── github-20210101.pem
 ├── ...
-└── known_hosts 
+└── known_hosts
 
-% cat ~/.ssh/config 
+% cat ~/.ssh/config
 Include conf.d/*
 ```
 
@@ -36,7 +36,7 @@ Host github.com
 
 
 ## ssh localhost
-System Preferences > Sharing 
+System Preferences > Sharing
 
-- [x] Remote Login 
+- [x] Remote Login
 

@@ -2,7 +2,7 @@
 
 
 ## Hammerspoon Preferences
-- Behavior: 
+- Behavior:
   - Launch Hammerspoon at login
   - Check for updates
   - Show menu icon

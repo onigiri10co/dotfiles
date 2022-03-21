@@ -8,7 +8,7 @@ brew list tig > /dev/null 2>&1 || {
   brew install tig
 }
 
-( 
+(
 cd ${CURRENT_PATH}
 cp -f .tigrc ${HOME}
 )

@@ -8,7 +8,7 @@ brew list efm-langserver > /dev/null 2>&1 || {
   brew install efm-langserver
 }
 
-( 
+(
 cd ${CURRENT_PATH}
 cp -fr .zsh.d ${HOME}/
 cp -fr .config ${HOME}/

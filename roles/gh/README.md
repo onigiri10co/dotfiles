@@ -1,5 +1,5 @@
 # roles/gh
-- GitHub: https://github.com/cli/cli 
+- GitHub: https://github.com/cli/cli
 - Doc: https://cli.github.com/manual
 
 

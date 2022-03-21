@@ -6,141 +6,141 @@
 ## .tmux.conf 設定内容
 ### tmux default shell set zsh.
 ```
-set-option -g default-shell /usr/local/bin/zsh                                                    
+set-option -g default-shell /usr/local/bin/zsh
 ```
 
 
 ### vi keybind
 ```
-set-window-option -g mode-keys vi                                                                 
+set-window-option -g mode-keys vi
 ```
 
 
 ### Shared clipboard: vim - tmux.
 ```
-set-option -g default-command "reattach-to-user-namespace -l $SHELL"                              
+set-option -g default-command "reattach-to-user-namespace -l $SHELL"
 ```
 
 
 ### fix Esc key delay time for Vim
 ```
-set -sg escape-time 0                                                                             
+set -sg escape-time 0
 ```
 
 
-### To Start the index of window from 1.  
+### To Start the index of window from 1.
 ```
-set -g base-index 1                                                                               
+set -g base-index 1
 ```
 
 
 ### To Start the index of pane from 1.
 ```
-setw -g pane-base-index 1                                                                         
+setw -g pane-base-index 1
 ```
 
 
 ### Automatically ReNumber windows
 ```
-set-option -g renumber-windows on                                                                 
+set-option -g renumber-windows on
 ```
 
 
 ### Enable visual notification
 ```
-setw -g monitor-activity on                                                                       
+setw -g monitor-activity on
 ```
 
 
 ### KeyBind: Reload ~/.tmux.conf when enter `<C-b>` r Key.
 ```
-bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf!!"                              
+bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf!!"
 ```
 
 
 ### KeyBind: Setup 'v' to begin selection as in Vim
 ```
-bind-key -T copy-mode-vi v send-keys -X begin-selection                                           
-bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"       
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 ```
 
 
 ### KeyBind: Update default binding of `Enter` to also use copy-pipe
 ```
-unbind -T copy-mode-vi Enter                                                                      
-bind-key -T copy-mode-vi Enter send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"   
+unbind -T copy-mode-vi Enter
+bind-key -T copy-mode-vi Enter send -X copy-pipe-and-cancel "reattach-to-user-namespace pbcopy"
 ```
 
 
 ### KeyBind: Keep directory when new window is opened.
 ```
-bind c new-window -c "#{pane_current_path}"                                                       
+bind c new-window -c "#{pane_current_path}"
 ```
 
 
 ### KeyBind: " (Vertical) with set pane size
 ```
-bind '"' split-window -vc "#{pane_current_path}" -p 25                                            
+bind '"' split-window -vc "#{pane_current_path}" -p 25
 ```
 
 
 ### KeyBind: " (Horizontal)
 ```
-bind % split-window -hc "#{pane_current_path}"                                                    
+bind % split-window -hc "#{pane_current_path}"
 ```
 
 
-### KeyBind: Like Explore 
+### KeyBind: Like Explore
 ```
-bind e new-window -c "#{pane_current_path}" "vim ."                                               
+bind e new-window -c "#{pane_current_path}" "vim ."
 ```
 
 
 ### Status: Set the refresh interval: 1sec (default: 15sec)
 ```
-set -g status-interval 1                                                                          
+set -g status-interval 1
 ```
 
 
 ### Status: Display status line: top
 ```
-set -g status-position top                                                                        
+set -g status-position top
 ```
 
 
 ### Status: line format: other current
 ```
-set -g window-status-format "[#I]#h:#(basename #{pane_current_path})#F"                           
+set -g window-status-format "[#I]#h:#(basename #{pane_current_path})#F"
 ```
 
 
 ### Status: line format: current
 ```
-set -g window-status-current-format "[#I]#h:#(basename #{pane_current_path})#F"                   
+set -g window-status-current-format "[#I]#h:#(basename #{pane_current_path})#F"
 ```
 
 
-### Statusr: line right length 
+### Statusr: line right length
 ```
-set-option -g status-right-length 150                                                             
+set-option -g status-right-length 150
 ```
 
 
-### Status: line format: right 
+### Status: line format: right
 ```
-set-option -g status-right "#(loadavg) | #h | #(localip) | %m/%d %H:%M:%S#[default]"              
+set-option -g status-right "#(loadavg) | #h | #(localip) | %m/%d %H:%M:%S#[default]"
 ```
 
 
 ### Color: To correspond to 256 colors.
 ```
-set -g default-terminal "xterm-256color"                                                          
-set -g terminal-overrides "term:colors=256"                                                       
+set -g default-terminal "xterm-256color"
+set -g terminal-overrides "term:colors=256"
 ```
 
 
 ### ColorScheme: Solarized
-See also https://github.com/seebi/tmux-colors-solarized/blob/master/tmuxcolors-256.conf 
+See also https://github.com/seebi/tmux-colors-solarized/blob/master/tmuxcolors-256.conf
 
 ```
 #### COLOUR (Solarized 256)

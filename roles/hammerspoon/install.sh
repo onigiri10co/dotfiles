@@ -5,10 +5,10 @@ readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 
 
 brew list --cask hammerspoon > /dev/null 2>&1 || {
-  brew install hammerspoon --cask 
+  brew install hammerspoon --cask
 }
 
-( 
+(
 cd ${CURRENT_PATH}
 cp -fr .hammerspoon ${HOME}
 

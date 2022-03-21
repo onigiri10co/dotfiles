@@ -43,7 +43,7 @@ git config --global init.templatedir ${GIT_SECRETS}
 # Global Git default branch name
 git config --global init.defaultBranch ${GIT_DEFAULT_BRANCH_NAME}
 
-( 
+(
 cd ${CURRENT_PATH}
 cp -fr .zsh.d ${HOME}
 cp -fr bin ${HOME}

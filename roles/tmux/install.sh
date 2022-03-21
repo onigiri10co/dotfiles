@@ -16,7 +16,7 @@ brew list reattach-to-user-namespace > /dev/null 2>&1 || {
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
-( 
+(
 cd ${CURRENT_PATH}
 cp .tmux.conf ${HOME}/
 cp -fr .zsh.d ${HOME}/

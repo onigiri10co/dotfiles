@@ -23,7 +23,7 @@ create: ## Create ROLE <ROLE=RoleName>
 
 
 .PHONY: install
-install: ## Install ROLEs [ROLE=RoleName] 
+install: ## Install ROLEs [ROLE=RoleName]
 	@if [ -n "$(ROLE)" ]; then \
 		_tools/install.sh $(ROLE); \
 	else \

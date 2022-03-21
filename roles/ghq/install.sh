@@ -8,12 +8,12 @@ brew list ghq > /dev/null 2>&1 || {
   brew install ghq
 }
 
-# ~/.gitconfig 
+# ~/.gitconfig
 # [ghq]
 # 	root = ~/src
 git config --global ghq.root '~/src'
 
-( 
+(
 cd ${CURRENT_PATH}
 cp -fr .zsh.d ${HOME}
 cp -fr bin ${HOME}

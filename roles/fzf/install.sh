@@ -9,7 +9,7 @@ brew list fzf > /dev/null 2>&1 || {
   $(brew --prefix)/opt/fzf/install --bin --key-bindings --completion --no-update-rc --no-zsh --no-bash --no-fish
 }
 
-( 
+(
 cd ${CURRENT_PATH}
 cp -fr .zsh.d ${HOME}
 )
