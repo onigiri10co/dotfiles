@@ -1,4 +1,6 @@
 # roles/hammerspoon
+[Hammerspoon/hammerspoon: Staggeringly powerful macOS desktop automation with Lua](https://github.com/Hammerspoon/hammerspoon)
+
 
 
 ## Hammerspoon Preferences

@@ -1,4 +1,5 @@
 # roles/google-japanese-ime
+[Google 日本語入力 – Google](https://www.google.co.jp/ime/)
 
 
 

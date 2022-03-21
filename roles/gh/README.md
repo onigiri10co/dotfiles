@@ -1,6 +1,5 @@
 # roles/gh
-- GitHub: https://github.com/cli/cli
-- Doc: https://cli.github.com/manual
+[cli/cli: GitHub’s official command line tool](https://github.com/cli/cli)
 
 
 

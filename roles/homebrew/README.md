@@ -1,3 +1,3 @@
 # roles/homebrew
-See https://brew.sh
+[The Missing Package Manager for macOS (or Linux) — Homebrew](https://brew.sh/index_ja)
 
