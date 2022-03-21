@@ -8,7 +8,7 @@ brew list pipx > /dev/null 2>&1 || {
   brew install pipx
 }
 
-( 
+(
 cd ${CURRENT_PATH}
 cp -fr .zsh.d ${HOME}
 )

@@ -4,7 +4,7 @@ set -e
 # TODO: shellExitAction が設定できてない。また今度調べる。とりあえず、手動で設定する。あと、設定後に自動で open した terminal も閉じたい。
 # 参考になりそうなサイト
 #
-# /usr/libexec/PlistBuddy: 
+# /usr/libexec/PlistBuddy:
 # https://gist.github.com/cseelye/5d54ca5d014619aed58cafd551149ab3
 # https://kumos.hatenablog.com/entry/2018/03/06/222717
 # https://ughe.github.io/2020/04/29/terminal-part-2
@@ -42,7 +42,7 @@ curl -sL -o "${COLORSCHEME_PATH}/${IMPORT_PROFILE_NAME}" "${COLOR_SCHEME_URL}"
 # (
 # cat <<EOT
 # tell application "Terminal"
-#     set themeName to "$PROFILE_NAME" 
+#     set themeName to "$PROFILE_NAME"
 #     set mainID to id of front window
 #     set default settings to settings set themeName
 #     set startup settings to settings set themeName

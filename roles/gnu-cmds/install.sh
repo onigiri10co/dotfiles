@@ -10,7 +10,7 @@ readonly GNU_MANPATH=${GNU_ROOTPATH}/man
 
 sudo mkdir -p ${GNU_BINPATH}
 sudo mkdir -p ${GNU_MANPATH}
-sudo chown -R $(whoami):$(groups | cut -d' ' -f1) ${GNU_ROOTPATH} 
+sudo chown -R $(whoami):$(groups | cut -d' ' -f1) ${GNU_ROOTPATH}
 
 _install(){
   local brew_name=${1:?[ERROR] brew_name is required.}
@@ -37,7 +37,7 @@ _install gnu-which
 _install grep
 _install make
 
-( 
+(
 cd ${CURRENT_PATH}
 cp -fr .zsh.d ${HOME}
 )

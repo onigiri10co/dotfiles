@@ -1,7 +1,5 @@
 # roles/zsh
-
-
-
+[zsh-users/zsh: Mirror of the Z shell source code repository.](https://github.com/zsh-users/zsh)
 
 
 

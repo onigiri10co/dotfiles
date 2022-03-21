@@ -1,5 +1,5 @@
 # roles/maccy
-Ref. https://github.com/p0deje/Maccy
+[p0deje/Maccy: Lightweight clipboard manager for macOS](https://github.com/p0deje/Maccy)
 
 
 

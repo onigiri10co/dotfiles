@@ -9,5 +9,5 @@ pipx list | grep poetry > /dev/null 2>&1 || {
 }
 
 # Ref. https://python-poetry.org/docs/configuration/#virtualenvsin-project
-poetry config virtualenvs.in-project true 
+poetry config virtualenvs.in-project true
 

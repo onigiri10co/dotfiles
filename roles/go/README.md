@@ -1,4 +1,9 @@
 # roles/go
+[golang/go: The Go programming language](https://github.com/golang/go)
+
+
+
+## バージョン管理
 Go でバージョン管理は不要らしい。
 基本的に後方互換が保証されているので（たまに駄目なやつもあるらしいが）。
 なので、基本的には最新を使い続けるのが良い。

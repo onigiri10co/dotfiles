@@ -32,7 +32,7 @@
 ```
 % echo 'eval "$(pyenv init --path)"' >> ~/.zshrc
 % brew install pyenv
-% pyenv install --list | rg '\s[0-9].*' | tail    
+% pyenv install --list | rg '\s[0-9].*' | tail
  3.9.7
  3.9.8
  3.9.9
@@ -63,7 +63,7 @@ NOTE: `pipx ensurepath` でも良いが、~/.zshrc などに自動的に PATH �
 ### Install poetry
 ```
 % pipx install poetry
-% poetry config virtualenvs.in-project true 
+% poetry config virtualenvs.in-project true
 % poetry config --list
 cache-dir = "/Users/h20220224/Library/Caches/pypoetry"
 experimental.new-installer = true

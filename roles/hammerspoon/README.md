@@ -1,8 +1,10 @@
 # roles/hammerspoon
+[Hammerspoon/hammerspoon: Staggeringly powerful macOS desktop automation with Lua](https://github.com/Hammerspoon/hammerspoon)
+
 
 
 ## Hammerspoon Preferences
-- Behavior: 
+- Behavior:
   - Launch Hammerspoon at login
   - Check for updates
   - Show menu icon
