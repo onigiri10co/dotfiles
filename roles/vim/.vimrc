@@ -217,6 +217,18 @@ nnoremap <silent> <LocalLeader>h :<C-u>FzfHistory<CR>
 nnoremap <silent> <LocalLeader>r :<C-u>FzfHistory:<CR>
 cnoremap <silent> <C-r> :<C-u>FzfHistory:<CR>
 
+command! -bang -nargs=* FzfRg
+\ call fzf#vim#grep(
+\   'rg --column --line-number --no-heading --color=always --smart-case --hidden --glob ''!.git'' -- '.shellescape(<q-args>), 1,
+\   fzf#vim#with_preview(), <bang>0
+\ )
+
+command! -nargs=0 Repo
+\ call fzf#run({
+\   'source': 'ghq list --full-path',
+\   'sink': 'cd'
+\ })
+
 
 "Setting/Tool/iberianpig/tig-explorer.vim
 nnoremap <silent> <LocalLeader>gs :<C-u>TigStatus<CR>
@@ -228,14 +240,6 @@ nnoremap <silent> <LocalLeader>gb :<C-u>TigBlame<CR>
 "Setting/Tool/easymotion/vim-easymotion
 map  <silent> <Leader>l <Plug>(easymotion-bd-jk)
 nmap <silent> <Leader>l <Plug>(easymotion-overwin-line)
-
-
-"Setting/Tool/ghq
-""cd like ghq
-command! -nargs=0 Repo call fzf#run({
-\   'source': 'ghq list --full-path',
-\   'sink': 'cd'
-\ })
 
 
 "Setting/Tool/previm/previm
