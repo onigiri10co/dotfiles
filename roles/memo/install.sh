@@ -5,7 +5,7 @@ readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 
 
 type memo > /dev/null 2>&1 || {
-  go get github.com/mattn/memo
+  go install github.com/mattn/memo@latest
 }
 
 ( 
