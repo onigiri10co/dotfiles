@@ -217,6 +217,12 @@ nnoremap <silent> <LocalLeader>h :<C-u>FzfHistory<CR>
 nnoremap <silent> <LocalLeader>r :<C-u>FzfHistory:<CR>
 cnoremap <silent> <C-r> :<C-u>FzfHistory:<CR>
 
+command! -bang -nargs=* FzfRg
+\ call fzf#vim#grep(
+\   'rg --column --line-number --no-heading --color=always --smart-case --hidden --glob ''!.git'' -- '.shellescape(<q-args>), 1,
+\   fzf#vim#with_preview(), <bang>0
+\ )
+
 
 "Setting/Tool/iberianpig/tig-explorer.vim
 nnoremap <silent> <LocalLeader>gs :<C-u>TigStatus<CR>
