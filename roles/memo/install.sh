@@ -15,6 +15,5 @@ cp -p _memo ~/.zsh.d/completion
 cp -fr .zsh.d ${HOME}/
 )
 
-ln -fs ~/Dropbox/memo $HOME
 ln -fs $HOME/.config/memo/template.txt $HOME/.config/memo/md.txt
 
