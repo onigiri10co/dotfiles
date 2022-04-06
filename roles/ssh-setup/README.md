@@ -1,3 +1,3 @@
 # roles/ssh-setup
-Dropbox に保存している ssh を $HOME/.ssh にリンクする。
+Obsidian に保存している ssh を $HOME/.ssh にリンクする。
 

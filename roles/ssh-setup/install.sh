@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 set -e
 
-ln -fs ~/Dropbox/ssh $HOME/.ssh
+[ -L $HOME/.ssh ] && unlink $HOME/.ssh
+ln -fs $HOME/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/ssh $HOME
+mv -f $HOME/ssh $HOME/.ssh
 
