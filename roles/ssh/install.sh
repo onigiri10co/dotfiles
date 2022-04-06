@@ -10,5 +10,3 @@ cp -fr bin ${HOME}
 chmod +x ${HOME}/bin/*
 )
 
-ln -fs ~/Dropbox/.ssh $HOME
-
