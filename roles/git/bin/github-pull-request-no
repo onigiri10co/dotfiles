@@ -25,7 +25,7 @@ exit 1
 }
 
 
-# e.g. prmessage: be84bcf Merge pull request #14 from onigiri10co/update-xxx
+# e.g. prmessage: be84bcf Merge pull request #14 from GITHUB_USER/update-xxx
 # => 14
 _extract_prno_from_prmessage() {
   local prmessage="${1:?[ERROR] prmessage is required.}"

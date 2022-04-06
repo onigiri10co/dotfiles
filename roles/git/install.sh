@@ -4,8 +4,8 @@ set -e
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 
 GIT_CONFIG_ROOT_DIR="$HOME/.config/git"
-GIT_USERNAME="${GIT_USERNAME:-onigiri10co}"
-GIT_EMAIL="${GIT_EMAIL:-onigiri10co@gmail.com}"
+GIT_USERNAME="${GIT_USERNAME:-onigomex}"
+GIT_EMAIL="${GIT_EMAIL:-onigomex+github@gmail.com}"
 GIT_DEFAULT_BRANCH_NAME="${GIT_DEFAULT_BRANCH_NAME:-main}"
 
 

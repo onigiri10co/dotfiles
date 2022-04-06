@@ -5,12 +5,12 @@ onigri10co's dotfiles
 
 ## Installation
 ```
-curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/HEAD/install.sh | zsh
+curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install.sh | zsh
 ```
 
 ### another way
 ```
-git clone https://github.com/onigiri10co/dotfiles.git
+git clone https://github.com/onigomex/dotfiles.git
 cd dotfiles
 make install
 
@@ -68,7 +68,7 @@ export GIT_EMAIL=bar@baz.com
 ### Specify the branch
 ```
 export DOTF_BRANCH="develop"
-curl -fsSL https://raw.githubusercontent.com/onigiri10co/dotfiles/${DOTF_BRANCH}/install.sh | zsh
+curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/${DOTF_BRANCH}/install.sh | zsh
 ```
 
 
