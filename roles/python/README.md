@@ -148,5 +148,5 @@ EOF
 
 NOTE: vim からは、:QuickRun poetry/pytest or \<Leader-r\> で実行できる。 Python 周りの vim の設定は、以下の PR を参照。
 
-- [add efm langserver with python settings by onigiri10co · Pull Request #19 · onigiri10co/dotfiles](https://github.com/onigiri10co/dotfiles/pull/19)
+- [add efm langserver with python settings by onigomex · Pull Request #19 · onigomex/dotfiles](https://github.com/onigomex/dotfiles/pull/19)
 

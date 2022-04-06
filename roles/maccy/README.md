@@ -5,9 +5,9 @@
 
 ## Preferences
 ### General
-![](https://raw.githubusercontent.com/onigiri10co/dotfiles/images/roles/maccy/ScreenShot-01.png)
+![](https://raw.githubusercontent.com/onigomex/dotfiles/images/roles/maccy/ScreenShot-01.png)
 
 
 ### Appearance
-![](https://raw.githubusercontent.com/onigiri10co/dotfiles/images/roles/maccy/ScreenShot-02.png)
+![](https://raw.githubusercontent.com/onigomex/dotfiles/images/roles/maccy/ScreenShot-02.png)
 

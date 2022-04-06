@@ -10,6 +10,6 @@ System Preferences > Spotlight > Search Results
 - Folders
 - System Preferences
 
-![](https://raw.githubusercontent.com/onigiri10co/dotfiles/images/roles/spotlight/ScreenShot-01.png)
-![](https://raw.githubusercontent.com/onigiri10co/dotfiles/images/roles/spotlight/ScreenShot-02.png)
+![](https://raw.githubusercontent.com/onigomex/dotfiles/images/roles/spotlight/ScreenShot-01.png)
+![](https://raw.githubusercontent.com/onigomex/dotfiles/images/roles/spotlight/ScreenShot-02.png)
 

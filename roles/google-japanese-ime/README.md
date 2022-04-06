@@ -13,5 +13,5 @@ System Preferences > Keyboard > Input Sources
 
 ref. [Macの入力ソースからUSを消す方法 - NISHI3’s blog](https://nishi3.hatenablog.com/entry/2018/01/18/161745)
 
-![](https://raw.githubusercontent.com/onigiri10co/dotfiles/images/roles/google-japanese-ime/ScreenShot-01.png)
+![](https://raw.githubusercontent.com/onigomex/dotfiles/images/roles/google-japanese-ime/ScreenShot-01.png)
 
