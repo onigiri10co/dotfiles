@@ -4,9 +4,12 @@ set -e
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 
 
-brew list go > /dev/null 2>&1 || {
-  brew install go
+asdf list golang > /dev/null 2>&1 || {
+  asdf plugin add golang
 }
+
+asdf install golang latest
+asdf global golang latest
 
 (
 cd ${CURRENT_PATH}
