@@ -4,7 +4,7 @@ set -e
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 
 
-asdf plugin list awscli > /dev/null 2>&1 || {
+asdf list awscli > /dev/null 2>&1 || {
   asdf plugin add awscli
 }
 
