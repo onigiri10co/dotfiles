@@ -1,5 +1,5 @@
 # dotfiles
-onigri10co's dotfiles
+My dotfiles
 
 
 
