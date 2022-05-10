@@ -462,3 +462,8 @@ augroup Lightline
   autocmd User lsp_diagnostics_updated call lightline#update()
 augroup END
 
+
+if filereadable(expand('.vimrc.local'))
+  source .vimrc.local
+endif
+
