@@ -302,7 +302,7 @@ let g:vsnip_snippet_dir = expand($XDG_CONFIG_HOME . '/vsnip')
 augroup LSP
   autocmd!
   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-  autocmd BufWritePre *.go LspDocumentFormatSync
+  autocmd BufWritePre *.go call execute(['LspCodeActionSync source.organizeImports', 'LspDocumentFormatSync'])
   autocmd BufWritePre *.py LspDocumentFormatSync --server=efm-langserver
 augroup END
 
