@@ -18,7 +18,7 @@ hs.notify.new({title="Hammerspoon", informativeText="Config loaded"}):send()
 local previous_app = nil
 local cmd_shift = {"cmd", "shift"}
 function toggle_application(_app)
-    local front_app = hs.application.frontmostApplication() 
+    local front_app = hs.application.frontmostApplication()
     if front_app:name() ~= _app then
         previous_app = front_app
     end
@@ -66,7 +66,7 @@ end
 local function eikanaEvent(event)
     local c = event:getKeyCode()
     local f = event:getFlags()
-    if event:getType() == hs.eventtap.event.types.keyDown then  
+    if event:getType() == hs.eventtap.event.types.keyDown then
         if f['cmd'] and c then
             simpleCmd = true
         end
