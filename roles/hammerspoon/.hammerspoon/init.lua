@@ -18,7 +18,7 @@ hs.notify.new({title="Hammerspoon", informativeText="Config loaded"}):send()
 local previous_app = nil
 local cmd_shift = {"cmd", "shift"}
 function toggle_application(_app)
-    local front_app = hs.application.frontmostApplication() 
+    local front_app = hs.application.frontmostApplication()
     if front_app:name() ~= _app then
         previous_app = front_app
     end
@@ -43,9 +43,7 @@ function toggle_application(_app)
 end
 -- keymap: Console > hs.inspect(hs.keycodes.map)
 -- smei_colon:41, dot:47, comma:43, lightcmd:54
--- hs.hotkey.bind(cmd_shift, 41, function() toggle_application("Terminal") end)
--- hs.hotkey.bind(cmd_shift, 41, function() toggle_application("Alacritty") end)
-hs.hotkey.bind(cmd_shift, 41, function() toggle_application("MacVim") end)
+hs.hotkey.bind(cmd_shift, 41, function() toggle_application("WezTerm") end)
 hs.hotkey.bind(cmd_shift, 47, function() toggle_application("Google Chrome") end)
 
 
@@ -66,7 +64,7 @@ end
 local function eikanaEvent(event)
     local c = event:getKeyCode()
     local f = event:getFlags()
-    if event:getType() == hs.eventtap.event.types.keyDown then  
+    if event:getType() == hs.eventtap.event.types.keyDown then
         if f['cmd'] and c then
             simpleCmd = true
         end
