@@ -45,7 +45,7 @@ end
 -- smei_colon:41, dot:47, comma:43, lightcmd:54
 -- hs.hotkey.bind(cmd_shift, 41, function() toggle_application("Terminal") end)
 -- hs.hotkey.bind(cmd_shift, 41, function() toggle_application("Alacritty") end)
-hs.hotkey.bind(cmd_shift, 41, function() toggle_application("MacVim") end)
+hs.hotkey.bind(cmd_shift, 41, function() toggle_application("WezTerm") end)
 hs.hotkey.bind(cmd_shift, 47, function() toggle_application("Google Chrome") end)
 
 
