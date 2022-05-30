@@ -10,6 +10,6 @@ Private リポジトリであり、セットアップ時はアクセスできな
 - [onigomex/cheatsheets: My cheat sheets](https://github.com/onigomex/cheatsheets)
 
 ```
-% ghq get github.com/onigomex/cheatsheets
+% ghq get git@github.com:onigomex/cheatsheets.git
 ```
 
