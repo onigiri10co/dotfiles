@@ -1,4 +1,4 @@
-# NOTE: 
+# NOTE:
 # 基本的に ~/.zshrc に全て定義しており、~/.zprofile は使用しない方針であったが、以下の対応で必要になったので、MacVim スペシャル対応として作成する。
 # refs. https://github.com/macvim-dev/macvim/wiki/Troubleshooting#for-zsh-users
 #
