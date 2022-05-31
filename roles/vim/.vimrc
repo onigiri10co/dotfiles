@@ -142,6 +142,7 @@ Plug 'rafamadriz/friendly-snippets'
 Plug 'thinca/vim-quickrun'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/vim-sonictemplate'
+Plug 'direnv/direnv.vim'
 call plug#end()
 
 
