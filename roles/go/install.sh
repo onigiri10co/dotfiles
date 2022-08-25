@@ -13,3 +13,6 @@ cd ${CURRENT_PATH}
 cp -fr .zsh.d ${HOME}
 )
 
+brew list golangci-lint > /dev/null 2>&1 || {
+  brew install golangci-lint
+}
