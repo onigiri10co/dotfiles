@@ -33,3 +33,17 @@ Terraform v1.2.1
 on darwin_arm64
 ```
 
+
+
+## tflint
+- [terraform-linters/tflint-ruleset-aws: TFLint ruleset for terraform-provider-aws](https://github.com/terraform-linters/tflint-ruleset-aws)
+
+
+## tfsec
+- [aquasecurity/tfsec: Security scanner for your Terraform code](https://github.com/aquasecurity/tfsec)
+
+
+
+## terraformer
+- [terraformer/aws.md at master · GoogleCloudPlatform/terraformer](https://github.com/GoogleCloudPlatform/terraformer/blob/master/docs/aws.md)
+
