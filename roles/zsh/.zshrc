@@ -71,8 +71,13 @@ zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"       # only git add files
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"        # not git add files
 zstyle ':vcs_info:*' formats "%F{green}%c%u(%b)%f"     # set $vcs_info_msg_0_
 zstyle ':vcs_info:*' actionformats '(%b|%a)'           # This format is displayed at merge conflict.
-precmd () { vcs_info }
-PROMPT='${vcs_info_msg_0_}'$PROMPT 
+precmd () {
+  vcs_info
+  local left='%F{blue}▶%f%F{cyan} %~%f'
+  print
+  print -P $left
+}
+PROMPT='${vcs_info_msg_0_}'$PROMPT
 
 # Command options
 export LESS='-iMR'
