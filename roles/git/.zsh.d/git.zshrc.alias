@@ -1,3 +1,5 @@
 alias gbrl='git-branch-list'
 alias ghpr='github-pull-request-no'
 alias gcdt='cd "$(git rev-parse --show-toplevel)"'
+# ~/.gitconfig > [alias] unstage = reset HEAD
+alias git-unstage='git reset HEAD'
