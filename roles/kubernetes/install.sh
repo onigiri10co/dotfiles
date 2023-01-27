@@ -8,3 +8,8 @@ brew list kubernetes-cli > /dev/null 2>&1 || {
   brew install kubernetes-cli
 }
 
+(
+cd ${CURRENT_PATH}
+cp -fr .zsh.d ${HOME}
+)
+
