@@ -216,7 +216,6 @@ nnoremap <silent> <LocalLeader>b :<C-u>FzfBuffers<CR>
 nnoremap <silent> <LocalLeader>f :<C-u>cd %:p:h<CR> :<C-u>FzfRg<CR>
 nnoremap <silent> <LocalLeader>h :<C-u>FzfHistory<CR>
 nnoremap <silent> <LocalLeader>r :<C-u>FzfHistory:<CR>
-cnoremap <silent> <C-r> :<C-u>FzfHistory:<CR>
 
 command! -bang -nargs=* FzfRg
 \ call fzf#vim#grep(
