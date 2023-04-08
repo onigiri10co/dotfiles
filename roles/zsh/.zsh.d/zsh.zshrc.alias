@@ -1,2 +1,4 @@
 alias ls='ls --color=auto'
 alias ll='ls -la'
+alias precmd-on='add-zsh-hook precmd precmd_branch_currentpath'
+alias precmd-off='add-zsh-hook -d precmd precmd_branch_currentpath'
