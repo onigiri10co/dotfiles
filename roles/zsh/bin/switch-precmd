@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+# TODO: 現状動かない。script 内だと色々 not found.. 手動で切り替えるならプロンプトで add-zsh-hook を打てばいい。
+
+# See: ~/.zshrc > # Prompt
+PRECMD_FUNCTION=precmd_branch_currentpath
+
+# typeset -ag precmd_functions;
+if [[ -z ${precmd_functions[(r)$PRECMD_FUNCTION]} ]]; then
+  # ON PRECMD_FUNCTION
+  # precmd_functions=($PRECMD_FUNCTION ${precmd_functions[@]} )
+  add-zsh-hook precmd $PRECMD_FUNCTION
+else
+  # OFF PRECMD_FUNCTION
+  add-zsh-hook -d precmd $PRECMD_FUNCTION
+fi

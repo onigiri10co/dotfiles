@@ -62,7 +62,6 @@ setopt hist_ignore_space                               # Beginning starts with a
 setopt hist_no_store                                   # Do not register the history command in the history.
 
 # Prompt
-# TODO: prompt 修正。常に、% だけで良い。current dir とか、git branch は別で表示したい。 tmux, vim 両方で同じぐらいの位置が良い。左下。常に目が触れるところ。
 PROMPT="%F{004}%%%f "
 autoload -Uz vcs_info
 setopt prompt_subst
@@ -71,13 +70,14 @@ zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"       # only git add files
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"        # not git add files
 zstyle ':vcs_info:*' formats "%F{green}%c%u(%b)%f"     # set $vcs_info_msg_0_
 zstyle ':vcs_info:*' actionformats '(%b|%a)'           # This format is displayed at merge conflict.
-precmd () {
+precmd_branch_currentpath () {
   vcs_info
-  local left='%F{blue}▶%f%F{cyan} %~%f'
+  local left='${vcs_info_msg_0_} %F{blue}▶%f%F{cyan} %~%f'
   print
   print -P $left
 }
-PROMPT='${vcs_info_msg_0_}'$PROMPT
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd precmd_branch_currentpath
 
 # Command options
 export LESS='-iMR'
@@ -85,4 +85,3 @@ export LESS='-iMR'
 # Load zsh config(see also: $HOME/bin/zsh-build)
 zsh-build
 test -r ~/.zsh.d/.zshrc && source ~/.zsh.d/.zshrc
-
