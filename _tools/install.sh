@@ -3,7 +3,6 @@ set -e
 
 readonly ROLE_ROOT_PATH=roles
 readonly INSTALL_SHELL=install.sh
-readonly DEPENDENCIES_FILE=dependencies
 
 
 timestamp() {
@@ -27,15 +26,6 @@ _install() {
   fi
 }
 
-_dependencies() {
-  local role_path="${1:?[ERROR] role_path is required.}"
-  local dependencies_path="${role_path}/${DEPENDENCIES_FILE}"
-
-  if [[ -e ${dependencies_path} ]]; then
-    cat ${dependencies_path}
-  fi
-}
-
 _source_role_zshrc() {
   setopt +o nomatch
 
@@ -56,19 +46,13 @@ _source_role_zshrc() {
 }
 
 main() {
-  local ownrole="${1:?[ERROR] ROLE is required.}"
-  local role_path="${ROLE_ROOT_PATH}/${ownrole}"
+  local role="${1:?[ERROR] ROLE is required.}"
+  local role_path="${ROLE_ROOT_PATH}/${role}"
 
-  echo "$(timestamp) [INFO] Install ${ownrole}..."
-
-  local source_path
-  for role in $(_dependencies ${role_path}) ${ownrole}; do
-    echo "$(timestamp) [INFO] Install > ${role}..."
-    _source_role_zshrc
-    _install ${role} || return $?
-  done
+  echo "$(timestamp) [INFO] Install ${role}..."
+  _source_role_zshrc
+  _install ${role}
 }
 
 
 main $@
-
