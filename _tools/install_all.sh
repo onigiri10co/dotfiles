@@ -2,7 +2,7 @@
 set -e
 
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
-DOTF_ROLES_FILE=${DOTF_ROLES_FILE:-role.lst}
+DOTF_ROLES_FILE=${DOTF_ROLES_FILE:-roles.lst}
 
 
 timestamp() {
