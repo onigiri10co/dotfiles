@@ -2,6 +2,7 @@
 set -e
 
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
+DOTF_ROLES_FILE=${DOTF_ROLES_FILE:-role.lst}
 
 
 timestamp() {
@@ -18,6 +19,7 @@ main() {
     done < <(cat $DOTF_ROLES_FILE)
     roles=$(echo "${roles}" | tr ' ' '\n' | sed '/^$/d')
   else
+    # TODO: role.lst から読み出すだけでロジック同じなので、↑ のまま。↓がなくなるだけ。
     roles=$(find roles ! -path './_tools*' -a ! -path './.git*' -a -name 'install.sh' | sort)
   fi
 
