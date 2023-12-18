@@ -46,15 +46,13 @@ _source_role_zshrc() {
 }
 
 main() {
-  local ownrole="${1:?[ERROR] ROLE is required.}"
-  local role_path="${ROLE_ROOT_PATH}/${ownrole}"
+  local role="${1:?[ERROR] ROLE is required.}"
+  local role_path="${ROLE_ROOT_PATH}/${role}"
 
-  echo "$(timestamp) [INFO] Install ${ownrole}..."
-
+  echo "$(timestamp) [INFO] Install ${role}..."
   _source_role_zshrc
-  _install ${ownrole}
+  _install ${role}
 }
 
 
 main $@
-
