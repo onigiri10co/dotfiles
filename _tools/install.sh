@@ -47,9 +47,10 @@ _source_role_zshrc() {
 
 main() {
   local role="${1:?[ERROR] ROLE is required.}"
+  local index="${2:-1/1}"
   local role_path="${ROLE_ROOT_PATH}/${role}"
 
-  echo "$(timestamp) [INFO] Install ${role}..."
+  printf "$(timestamp) [INFO] %s Installing ${role}\n" "($index)"
   _source_role_zshrc
   _install ${role}
 }

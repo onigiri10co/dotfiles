@@ -4,36 +4,20 @@ set -e
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 DOTF_ROLES_FILE=${DOTF_ROLES_FILE:-roles.lst}
 
-
-timestamp() {
-  date '+%Y-%m-%d %H:%M:%S'
-}
-
 main() {
-  local roles role_path role
+  [[ -f $DOTF_ROLES_FILE ]] || {
+    echo "[ERROR] $DOTF_ROLES_FILE is not found."
+    return 1
+  }
 
-  if [[ -f $DOTF_ROLES_FILE ]]; then
-    while read role; do
-      [[ $role =~ ^# ]] && continue
-      roles="$roles $role"
-    done < <(cat $DOTF_ROLES_FILE)
-    roles=$(echo "${roles}" | tr ' ' '\n' | sed '/^$/d')
-  else
-    # TODO: role.lst から読み出すだけでロジック同じなので、↑ のまま。↓がなくなるだけ。
-    roles=$(find roles ! -path './_tools*' -a ! -path './.git*' -a -name 'install.sh' | sort)
-  fi
-
-  echo "$(timestamp) [INFO] Install roles list"
-  echo ${roles} | sed -E 's/roles\/|\/install.sh//g' | tr ' ' '\n'
-
-  for role_path in ${=roles}; do
-    role=$(basename ${role_path%/*})
-    zsh $CURRENT_PATH/install.sh ${role}
+  local role i
+  local roles=$(grep -v -e '^\s*#' -e '^\s*$' $DOTF_ROLES_FILE)
+  local all=$(echo $roles | wc -w)
+  for role in $roles; do
+    ((i++))
+    zsh $CURRENT_PATH/install.sh ${role} "$i/$all"
   done
-
-  echo "$(timestamp) [INFO] Install successful. Please login again."
 }
 
 
 main $@
-
