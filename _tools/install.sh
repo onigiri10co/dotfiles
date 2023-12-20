@@ -3,6 +3,7 @@ set -e
 
 readonly ROLE_ROOT_PATH=roles
 readonly INSTALL_SHELL=install.sh
+DOTF_ROLES_FILE=${DOTF_ROLES_FILE:-roles.lst}
 
 
 timestamp() {
@@ -45,7 +46,7 @@ _source_role_zshrc() {
   source ~/.zsh.d/.zshrc
 }
 
-main() {
+_individual() {
   local role="${1:?[ERROR] ROLE is required.}"
   local index="${2:-1/1}"
   local role_path="${ROLE_ROOT_PATH}/${role}"
@@ -55,5 +56,27 @@ main() {
   _install ${role}
 }
 
+_all() {
+  [[ -f $DOTF_ROLES_FILE ]] || {
+    echo "[ERROR] $DOTF_ROLES_FILE is not found."
+    return 1
+  }
+
+  local role i
+  local roles=$(grep -v -e '^\s*#' -e '^\s*$' $DOTF_ROLES_FILE)
+  local all=$(echo $roles | wc -w)
+
+  for role in ${=roles}; do
+    _individual ${role} "$((++i))/$all"
+  done
+}
+
+main() {
+  if [ $# = 0 ]; then
+    _all
+  else
+    _individual $@
+  fi
+}
 
 main $@
