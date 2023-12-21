@@ -24,9 +24,4 @@ create: ## Create ROLE <ROLE=RoleName>
 
 .PHONY: install
 install: ## Install ROLEs [ROLE=RoleName]
-	@if [ -n "$(ROLE)" ]; then \
-		_tools/install.sh $(ROLE); \
-	else \
-		_tools/install_all.sh; \
-	fi
-
+	@_tools/install.sh $(ROLE)

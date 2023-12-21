@@ -5,26 +5,40 @@ My dotfiles
 
 ## Installation
 ```
-curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install.sh | zsh
+curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
 ```
 
-### another way
+
+### Another way
 ```
-git clone https://github.com/onigomex/dotfiles.git
-cd dotfiles
-make install
-
-# by ROLE
-make install ROLE=vim
-
-# Only specified ROLES
-export DOTF_ROLES_FILE=`pwd`/roles.txt
-cat $DOTF_ROLES_FILE
-# is a comment, blank lines are ignored.
+% export DOTF_ROLES_FILE=roles.work.lst
+% curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
+```
+```
+% export DOTF_ROLES_FILE=`pwd`/roles.txt
+% cat << EOF > $DOTF_ROLES_FILE
 fzf
 git
 tig
-make install
+EOF
+% curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
+```
+```
+% git clone https://github.com/onigomex/dotfiles.git
+% cd dotfiles
+% make install
+% make install ROLE=vim
+```
+
+#### $DOTF_ROLES_FILE
+'#' is a comment, blank lines are ignored.
+
+```
+fzf
+git
+
+#ghq
+tig
 ```
 
 
@@ -68,7 +82,7 @@ export GIT_EMAIL=bar@baz.com
 ### Specify the branch
 ```
 export DOTF_BRANCH="develop"
-curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/${DOTF_BRANCH}/install.sh | zsh
+curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/$DOTF_BRANCH/install | zsh
 ```
 
 
