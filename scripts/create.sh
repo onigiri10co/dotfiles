@@ -13,7 +13,7 @@ main() {
     return 1
   fi;
 
-  cp -pr ${CURRENT_PATH}/create ${role_path}
+  cp -pr ${CURRENT_PATH}/templates/create ${role_path}
   # use BSD sed
   /usr/bin/sed -i '' -E -e "s/{{ROLE}}/${role}/g" ${role_path}/*
 
