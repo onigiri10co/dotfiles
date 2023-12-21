@@ -19,9 +19,9 @@ help:
 
 .PHONY: create
 create: ## Create ROLE <ROLE=RoleName>
-	@_tools/create.sh $(ROLE)
+	@scripts/create.sh $(ROLE)
 
 
 .PHONY: install
 install: ## Install ROLEs [ROLE=RoleName]
-	@_tools/install.sh $(ROLE)
+	@scripts/install.sh $(ROLE)
