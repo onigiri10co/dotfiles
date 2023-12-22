@@ -33,9 +33,17 @@ GIT_COMMIT="${GIT_CONFIG_ROOT_DIR}/${GIT_COMMIT_FILE}"
 git config --global commit.template "${GIT_COMMIT}"
 
 # Global Git Secret
-brew list git-secrets > /dev/null 2>&1 || {
-  brew install git-secrets
-}
+# ref. https://github.com/awslabs/git-secrets/issues/220#issuecomment-1641285337
+# brew list git-secrets > /dev/null 2>&1 || {
+#   brew install git-secrets
+# }
+(
+workdir=$(mktemp -d)
+git clone https://github.com/awslabs/git-secrets --depth 1 $workdir
+cd $workdir
+sudo make install
+)
+
 GIT_SECRETS="${GIT_CONFIG_ROOT_DIR}/git-secrets"
 git secrets --install ${GIT_SECRETS} --force > /dev/null
 git config --global init.templatedir ${GIT_SECRETS}
@@ -49,4 +57,3 @@ cp -fr .zsh.d ${HOME}
 cp -fr bin ${HOME}
 chmod +x ${HOME}/bin/*
 )
-

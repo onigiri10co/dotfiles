@@ -15,13 +15,20 @@ help:
 	@echo "make create ROLE=vim"
 	@echo "make install ROLE=vim"
 	@echo "make install"
+	@echo "make list"
 
 
 .PHONY: create
 create: ## Create ROLE <ROLE=RoleName>
-	@_tools/create.sh $(ROLE)
+	@scripts/create.sh $(ROLE)
 
 
 .PHONY: install
 install: ## Install ROLEs [ROLE=RoleName]
-	@_tools/install.sh $(ROLE)
+	@scripts/install.sh $(ROLE)
+
+
+.PHONY: list
+list: ## List ROLEs
+	@scripts/list.sh
+
