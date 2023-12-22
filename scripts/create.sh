@@ -20,6 +20,4 @@ main() {
   echo "[INFO] Successfully created ${role_path}.";
 }
 
-
 main $@
-
