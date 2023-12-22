@@ -2,15 +2,13 @@
 set -e
 
 main() {
-  # use BSD sed
   find roles/*/README.md | while read line; do \
-    paste -d'^' -s <(
-      echo $line | cut -d/ -f2;
-      /usr/bin/sed -n 2p $line;
-    );
+    local role=$(echo $line | cut -d/ -f2)
+    # use BSD sed
+    local description=$(/usr/bin/sed -n 2p $line)
+    echo "$role^$description"
   done \
   | column -s'^' -t
 }
-
 
 main $@
