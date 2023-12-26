@@ -1,5 +1,4 @@
 # roles/google-chrome
-[Google Chrome - Google の高速で安全なブラウザをダウンロード](https://www.google.co.jp/chrome/)
 
 
 
@@ -25,4 +24,9 @@
 - [esa鮮度 - Chrome ウェブストア](https://chrome.google.com/webstore/detail/esa%E9%AE%AE%E5%BA%A6/gnfoghfdikaeidbbglmeohppeoambfdh)
 - [esarea - Chrome ウェブストア](https://chrome.google.com/webstore/detail/esarea/pjhancoeamcahkmbmgoonbaggjbpijoc)
 - [はてなブックマーク ブックマーク機能 - Chrome ウェブストア](https://chrome.google.com/webstore/detail/%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF-%E3%83%96%E3%83%83%E3%82%AF%E3%83%9E%E3%83%BC%E3%82%AF%E6%A9%9F%E8%83%BD/baniobjofkeeahdkdnpanannchdgblni)
+
+
+
+## References
+- [Google Chrome - Google の高速で安全なブラウザをダウンロード](https://www.google.co.jp/chrome/)
 

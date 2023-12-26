@@ -1,6 +1,4 @@
 # roles/ruby
-- [オブジェクト指向スクリプト言語 Ruby](https://www.ruby-lang.org/ja/)
-- [asdf-vm/asdf-ruby: Ruby plugin for asdf version manager](https://github.com/asdf-vm/asdf-ruby)
 
 
 
@@ -50,4 +48,10 @@ ruby 3.0.2p107 (2021-07-07 revision 0db68f0233) [arm64-darwin20]
 % ruby --version
 ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [arm64-darwin20]
 ```
+
+
+
+## References
+- [オブジェクト指向スクリプト言語 Ruby](https://www.ruby-lang.org/ja/)
+- [asdf-vm/asdf-ruby: Ruby plugin for asdf version manager](https://github.com/asdf-vm/asdf-ruby)
 

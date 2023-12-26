@@ -1,5 +1,4 @@
 # roles/obsidian
-[Obsidian.md](https://github.com/obsidianmd)
 
 
 
@@ -42,4 +41,9 @@
 #### Appearance
 - Font size: 10
 - Themes: Obsidian Nord
+
+
+
+## References
+- [Obsidian.md](https://github.com/obsidianmd)
 

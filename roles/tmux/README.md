@@ -1,6 +1,4 @@
 # roles/tmux
-[tmux/tmux: tmux source code](https://github.com/tmux/tmux)
-
 おなじみのターミナルマルチプレクサ
 
 
@@ -187,4 +185,9 @@ set-window-option -g clock-mode-colour colour64 #green
 # bell
 set-window-option -g window-status-bell-style fg=colour235,bg=colour160 #base02, red
 ```
+
+
+
+## References
+- [tmux/tmux: tmux source code](https://github.com/tmux/tmux)
 

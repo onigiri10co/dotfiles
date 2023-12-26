@@ -1,6 +1,4 @@
 # roles/terraform
-- [HashiCorp Terraform - Provision & Manage any Infrastructure](https://www.hashicorp.com/products/terraform)
-- [asdf-community/asdf-hashicorp: HashiCorp plugin for the asdf version manager](https://github.com/asdf-community/asdf-hashicorp)
 
 
 
@@ -51,4 +49,10 @@ on darwin_arm64
 
 ## terraformer
 - [terraformer/aws.md at master · GoogleCloudPlatform/terraformer](https://github.com/GoogleCloudPlatform/terraformer/blob/master/docs/aws.md)
+
+
+
+## References
+- [HashiCorp Terraform - Provision & Manage any Infrastructure](https://www.hashicorp.com/products/terraform)
+- [asdf-community/asdf-hashicorp: HashiCorp plugin for the asdf version manager](https://github.com/asdf-community/asdf-hashicorp)
 

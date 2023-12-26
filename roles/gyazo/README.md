@@ -1,8 +1,12 @@
 # roles/gyazo
-[Gyazoへようこそ : スクリーンショットの瞬間共有](https://gyazo.com/ja)
 
 
 
 ## Dependencies
 - homebrew
+
+
+
+## References
+- [Gyazoへようこそ : スクリーンショットの瞬間共有](https://gyazo.com/ja)
 

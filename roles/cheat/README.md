@@ -1,5 +1,4 @@
 # roles/cheat
-[onigomex/cheat: very simple cheat command](https://github.com/onigomex/cheat)
 
 
 
@@ -17,4 +16,9 @@ Private リポジトリであり、セットアップ時はアクセスできな
 ```
 % ghq get git@github.com:onigomex/cheatsheets.git
 ```
+
+
+
+## References
+- [onigomex/cheat: very simple cheat command](https://github.com/onigomex/cheat)
 

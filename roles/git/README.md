@@ -1,5 +1,4 @@
 # roles/git
-[Git](https://git-scm.com/)
 
 
 
@@ -44,4 +43,9 @@ Prevents you from committing secrets and credentials into git repositories
 > `$ git config --global init.defaultBranch main`
 
 - [Git - First-Time Git Setup > Your default branch name](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+
+
+
+## References
+- [Git](https://git-scm.com/)
 

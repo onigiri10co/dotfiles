@@ -1,6 +1,4 @@
 # roles/awscli
-- [aws/aws-cli: Universal Command Line Interface for Amazon Web Services](https://github.com/aws/aws-cli)
-- [MetricMike/asdf-awscli](https://github.com/MetricMike/asdf-awscli)
 
 
 
@@ -52,6 +50,8 @@ source_profile = base-admin
 
 
 ## References
+- [aws/aws-cli: Universal Command Line Interface for Amazon Web Services](https://github.com/aws/aws-cli)
+- [MetricMike/asdf-awscli](https://github.com/MetricMike/asdf-awscli)
 - [【小ネタ】AWS CLIでスイッチロールして作業を行うための設定をやってみた | DevelopersIO](https://dev.classmethod.jp/articles/cli-switch-role/)
 - [AWS CLIでSwitch Role してさらに Switch Role してみた。（ロールの連鎖:Role chaining） | DevelopersIO](https://dev.classmethod.jp/articles/role-chaining/#toc-16)
 

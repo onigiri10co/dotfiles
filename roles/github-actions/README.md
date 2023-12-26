@@ -1,6 +1,4 @@
 # roles/github-actions
-- [Actions | GitHub](https://github.co.jp/features/actions)
-- [GitHub Actions Documentation - GitHub Docs](https://docs.github.com/en/actions)
 
 
 
@@ -42,4 +40,10 @@ jobs:
 - [actionlint playground](https://rhysd.github.io/actionlint/)
 - [GitHub Actions のワークフローをチェックする actionlint をつくった - はやくプログラムになりたい](https://rhysd.hatenablog.com/entry/2021/07/11/214313)
 - [actionlint v1.4 → v1.6 で実装した新機能の紹介 - はやくプログラムになりたい](https://rhysd.hatenablog.com/entry/2021/08/11/221044)
+
+
+
+## References
+- [Actions | GitHub](https://github.co.jp/features/actions)
+- [GitHub Actions Documentation - GitHub Docs](https://docs.github.com/en/actions)
 

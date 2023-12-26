@@ -1,6 +1,4 @@
 # roles/node
-- [nodejs/node: Node.js JavaScript runtime](https://github.com/nodejs/node)
-- [asdf-vm/asdf-nodejs: Node.js plugin for asdf version manager](https://github.com/asdf-vm/asdf-nodejs)
 
 
 
@@ -52,4 +50,10 @@ v17.5.0
 v18.2.0
 8.9.0
 ```
+
+
+
+## References
+- [nodejs/node: Node.js JavaScript runtime](https://github.com/nodejs/node)
+- [asdf-vm/asdf-nodejs: Node.js plugin for asdf version manager](https://github.com/asdf-vm/asdf-nodejs)
 
