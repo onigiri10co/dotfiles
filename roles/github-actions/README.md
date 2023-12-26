@@ -4,6 +4,11 @@
 
 
 
+## Dependencies
+- homebrew
+
+
+
 ## Debug
 - [Contexts - GitHub Docs](https://docs.github.com/en/actions/learn-github-actions/contexts#example-printing-context-information-to-the-log)
 

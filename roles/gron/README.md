@@ -3,6 +3,11 @@
 
 
 
+## Dependencies
+- homebrew
+
+
+
 ## Usage
 ```
 % curl "https://api.github.com/repos/tomnomnom/gron/commits?per_page=1"

@@ -3,6 +3,11 @@
 
 
 
+## Dependencies
+- homebrew
+
+
+
 ## Hammerspoon Preferences
 - Behavior:
   - Launch Hammerspoon at login

@@ -3,6 +3,12 @@
 
 
 
+## Dependencies
+- zsh
+- awscli
+
+
+
 ## References
 - [AWSアカウントのクリーンアップに役立つaws-nukeの紹介と注意点 | DevelopersIO](https://dev.classmethod.jp/articles/aws_nuke_intro/)
 

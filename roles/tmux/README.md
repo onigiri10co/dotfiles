@@ -5,6 +5,12 @@
 
 
 
+## Dependencies
+- homebrew
+- git
+
+
+
 ## .tmux.conf 設定内容
 ### tmux default shell set zsh.
 ```

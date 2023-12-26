@@ -1,6 +1,12 @@
 # roles/keyboard
 
 
+
+## Dependencies
+- nothing
+
+
+
 ## 設定内容
 System Preferences > Keyboard
 

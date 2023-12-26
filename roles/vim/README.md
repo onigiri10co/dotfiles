@@ -4,6 +4,15 @@
 
 
 
+## Dependencies
+- homebrew
+- fzf
+- ripgrep
+- memo
+- efm-langserver
+
+
+
 ## Settings
 ### General
 #### エディタ内部文字コードを設定する（ファイルを開く時の文字コード）

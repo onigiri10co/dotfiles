@@ -3,6 +3,11 @@
 
 
 
+## Dependencies
+- homebrew
+
+
+
 ## Settings/Desktop
 ### OPTIONS
 #### Editor

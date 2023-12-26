@@ -3,6 +3,13 @@
 
 
 
+## Dependencies
+- pyenv
+- pipx
+- poetry
+
+
+
 ## python 開発環境
 - バージョン管理: pyenv
 - ツール管理: pipx

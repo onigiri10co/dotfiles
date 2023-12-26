@@ -3,6 +3,11 @@
 
 
 
+## Dependencies
+- homebrew
+
+
+
 ## Extensions
 - [1Password – パスワード保管庫 - Chrome ウェブストア](https://chrome.google.com/webstore/detail/1password-%E2%80%93-password-mana/aeblfdkhhhdcdjpifhhbdiojplfjncoa)
 - [Vimium - Chrome ウェブストア](https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb)

@@ -4,6 +4,11 @@
 
 
 
+## Dependencies
+- asdf
+
+
+
 ## Switch Role
 .aws/config に以下を設定したプロファイルを追加すれば良い。
 

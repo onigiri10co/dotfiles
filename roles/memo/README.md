@@ -3,3 +3,11 @@
 
 [glidenote/memolist.vim: simple memo plugin for Vim.](https://github.com/glidenote/memolist.vim) で、vim からも使える。
 
+
+
+## Dependencies
+- go
+- fzf
+- ripgrep
+- zsh
+

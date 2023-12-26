@@ -2,6 +2,11 @@
 
 
 
+## Dependencies
+- nothing
+
+
+
 ## 設定内容
 System Preferences > Dock & Menu Bar
 

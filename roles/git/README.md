@@ -3,6 +3,13 @@
 
 
 
+## Dependencies
+- homebrew
+- gnu-cmds
+- fzf
+
+
+
 ## Installation
 ```
 % export GIT_USERNAME="<name>"

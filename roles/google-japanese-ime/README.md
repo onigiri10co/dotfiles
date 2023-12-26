@@ -3,6 +3,11 @@
 
 
 
+## Dependencies
+- homebrew
+
+
+
 ## インストール後の設定
 System Preferences > Keyboard > Input Sources
 

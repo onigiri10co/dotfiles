@@ -7,3 +7,9 @@ Obsidian の設定は、リンクした memo/.obsidian に設定されており�
 
 ※前提条件: Apple ID でログイン済み、かつ、Obsidian データが同期済みであること。
 
+
+
+## Dependencies
+- memo
+- obsidian
+

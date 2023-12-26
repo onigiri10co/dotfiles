@@ -3,6 +3,11 @@
 
 
 
+## Dependencies
+- homebrew
+
+
+
 ## Preferences
 ### General
 ![](https://raw.githubusercontent.com/onigomex/dotfiles/images/roles/maccy/ScreenShot-01.png)

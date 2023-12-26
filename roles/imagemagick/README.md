@@ -3,6 +3,11 @@
 
 
 
+## Dependencies
+- homebrew
+
+
+
 ## Usage
 ```
 % convert img.HEIC img.jpg

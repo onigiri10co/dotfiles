@@ -3,6 +3,11 @@
 
 
 
+## Dependencies
+- homebrew
+
+
+
 ## Use Cases
 macOS で、gif を撮りたい時に使う想定で導入した。
 ただ、それだけであれば、[Cockos Incorporated | LICEcap](https://www.cockos.com/licecap/) のほうが楽かも。

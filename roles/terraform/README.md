@@ -4,6 +4,11 @@
 
 
 
+## Dependencies
+- asdf
+
+
+
 ## Setup
 ```
 % asdf list terraform

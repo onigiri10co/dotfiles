@@ -1,2 +1,7 @@
 # roles/vscode
 
+
+
+## Dependencies
+- homebrew
+

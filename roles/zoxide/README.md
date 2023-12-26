@@ -3,6 +3,11 @@
 
 
 
+## Dependencies
+- homebrew
+
+
+
 ## Usage
 ```
 z foo              # cd into highest ranked directory matching foo

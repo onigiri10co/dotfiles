@@ -2,6 +2,11 @@
 
 
 
+## Dependencies
+- gnu-cmds
+
+
+
 ## SSH configuration
 ```
 % tree .ssh

@@ -3,6 +3,11 @@
 
 
 
+## Dependencies
+- homebrew
+
+
+
 ## Use Cases
 macOS で、操作の様子を gif 形式で保存する。
 
