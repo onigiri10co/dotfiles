@@ -1,5 +1,12 @@
 # roles/git
-[Git](https://git-scm.com/)
+Git is a free and open source distributed version control system.
+
+
+
+## Dependencies
+- homebrew
+- gnu-cmds
+- fzf
 
 
 
@@ -37,4 +44,9 @@ Prevents you from committing secrets and credentials into git repositories
 > `$ git config --global init.defaultBranch main`
 
 - [Git - First-Time Git Setup > Your default branch name](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+
+
+
+## References
+- [Git](https://git-scm.com/)
 

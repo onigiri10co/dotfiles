@@ -1,4 +1,11 @@
 # roles/keyboard
+macOS keyboard settings
+
+
+
+## Dependencies
+- nothing
+
 
 
 ## 設定内容

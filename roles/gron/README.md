@@ -1,5 +1,10 @@
 # roles/gron
-[tomnomnom/gron: Make JSON greppable!](https://github.com/TomNomNom/gron)
+tomnomnom/gron: Make JSON greppable!
+
+
+
+## Dependencies
+- homebrew
 
 
 
@@ -107,4 +112,9 @@ json[0].commit.author.name = "Tom Hudson";
   }
 ]
 ```
+
+
+
+## References
+- [tomnomnom/gron: Make JSON greppable!](https://github.com/TomNomNom/gron)
 

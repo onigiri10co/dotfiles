@@ -1,4 +1,10 @@
 # roles/spotlight
+macOS spotlight settings
+
+
+
+## Dependencies
+- nothing
 
 
 

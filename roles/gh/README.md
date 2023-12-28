@@ -1,5 +1,10 @@
 # roles/gh
-[cli/cli: GitHub’s official command line tool](https://github.com/cli/cli)
+cli/cli: GitHub’s official command line tool
+
+
+
+## Dependencies
+- homebrew
 
 
 
@@ -18,4 +23,9 @@
 [Account > Settings > Applications > Authorized OAuth Apps](https://github.com/settings/applications)
 
 - GiHub CLI
+
+
+
+## References
+- [cli/cli: GitHub’s official command line tool](https://github.com/cli/cli)
 

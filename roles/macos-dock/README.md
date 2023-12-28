@@ -1,4 +1,10 @@
 # roles/dock
+macOS dock settings
+
+
+
+## Dependencies
+- nothing
 
 
 

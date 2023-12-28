@@ -1,4 +1,10 @@
 # roles/ssh
+SSH とは、Secure Shell（セキュアシェル）の略称で、リモートコンピュータと通信するためのプロトコルです。
+
+
+
+## Dependencies
+- gnu-cmds
 
 
 

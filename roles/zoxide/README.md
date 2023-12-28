@@ -1,5 +1,10 @@
 # roles/zoxide
-[ajeetdsouza/zoxide: A smarter cd command. Supports all major shells.](https://github.com/ajeetdsouza/zoxide)
+ajeetdsouza/zoxide: A smarter cd command. Supports all major shells.
+
+
+
+## Dependencies
+- homebrew
 
 
 
@@ -50,4 +55,9 @@ ENVIRONMENT VARIABLES:
     _ZO_MAXAGE              Maximum total age after which entries start getting deleted
     _ZO_RESOLVE_SYMLINKS    Resolve symlinks when storing paths
 ```
+
+
+
+## References
+- [ajeetdsouza/zoxide: A smarter cd command. Supports all major shells.](https://github.com/ajeetdsouza/zoxide)
 

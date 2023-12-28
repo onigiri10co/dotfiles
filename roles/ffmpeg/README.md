@@ -1,9 +1,15 @@
 # roles/ffmpeg
-[FFmpeg](https://ffmpeg.org/)
+A complete, cross-platform solution to record, convert and stream audio and video.
 
 
 
-## Use Cases
+## Dependencies
+- homebrew
+
+
+
+## Usage
+### Use Cases
 macOS で、gif を撮りたい時に使う想定で導入した。
 ただ、それだけであれば、[Cockos Incorporated | LICEcap](https://www.cockos.com/licecap/) のほうが楽かも。
 FFmpeg は、様々な動画形式に変換できたり、連番画像から動画を作成できたりするので、role としては残しておく。詳しい使い方は、References を参照する。
@@ -23,6 +29,7 @@ FFmpeg は、様々な動画形式に変換できたり、連番画像から動�
 
 
 ## References
+- [FFmpeg](https://ffmpeg.org/)
 - [それFFmpegで出来るよ！ - Qiita](https://qiita.com/cha84rakanal/items/e84fe4eb6fbe2ae13fd8)
 - [ffmpeg 音声形式の変換方法まとめ - Qiita](https://qiita.com/suzutsuki0220/items/43c87488b4684d3d15f6)
 

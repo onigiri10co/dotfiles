@@ -1,5 +1,10 @@
 # roles/hammerspoon
-[Hammerspoon/hammerspoon: Staggeringly powerful macOS desktop automation with Lua](https://github.com/Hammerspoon/hammerspoon)
+Hammerspoon/hammerspoon: Staggeringly powerful macOS desktop automation with Lua
+
+
+
+## Dependencies
+- homebrew
 
 
 
@@ -10,4 +15,9 @@
   - Show menu icon
 - Accessibility:
   - Enable Accessibility
+
+
+
+## References
+- [Hammerspoon/hammerspoon: Staggeringly powerful macOS desktop automation with Lua](https://github.com/Hammerspoon/hammerspoon)
 

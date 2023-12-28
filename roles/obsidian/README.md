@@ -1,5 +1,10 @@
 # roles/obsidian
-[Obsidian.md](https://github.com/obsidianmd)
+Obsidianはマークダウンエディタであり、ナレッジベースアプリでもあります。
+
+
+
+## Dependencies
+- homebrew
 
 
 
@@ -37,4 +42,10 @@
 #### Appearance
 - Font size: 10
 - Themes: Obsidian Nord
+
+
+
+## References
+- [Obsidian.md](https://github.com/obsidianmd)
+- [ここからはじめる - Obsidian 日本語ヘルプ - Obsidian Publish](https://publish.obsidian.md/help-ja/)
 

@@ -1,6 +1,14 @@
 # roles/vim
-- [vim/vim: The official Vim repository](https://github.com/vim/vim)
-- [vim 力UP: vimgolf](https://www.vimgolf.com/) 
+The acronym for Vim is Vi IMproved. Written by Bram Moolenaar, it is a free and open-source text editor. 
+
+
+
+## Dependencies
+- homebrew
+- fzf
+- ripgrep
+- memo
+- efm-langserver
 
 
 
@@ -404,4 +412,10 @@ runtime! userautoload/*.vim
 - [thinca/vim-quickrun: Run commands quickly.](https://github.com/thinca/vim-quickrun)
 - [editorconfig/editorconfig-vim: EditorConfig plugin for Vim](https://github.com/editorconfig/editorconfig-vim)
 - [mattn/vim-sonictemplate: Easy and high speed coding method](https://github.com/mattn/vim-sonictemplate)
+
+
+
+## References
+- [vim/vim: The official Vim repository](https://github.com/vim/vim)
+- [vim 力UP: vimgolf](https://www.vimgolf.com/) 
 

@@ -1,5 +1,10 @@
 # roles/go
-[golang/go: The Go programming language](https://github.com/golang/go)
+golang/go: The Go programming language
+
+
+
+## Dependencies
+- homebrew
 
 
 
@@ -95,4 +100,9 @@ Refs. [How to Write Go Code (with GOPATH) - The Go Programming Language](https:/
   - $GOPATH/bin に PATH を通すために、便宜上このロールでは設定してある。
 - go env <環境変数> でその設定値を取得できる
   - 空白の場合は、デフォルト値が設定されている。
+
+
+
+## References
+- [golang/go: The Go programming language](https://github.com/golang/go)
 
