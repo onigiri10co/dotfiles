@@ -1,4 +1,5 @@
 # roles/vim
+The acronym for Vim is Vi IMproved. Written by Bram Moolenaar, it is a free and open-source text editor. 
 
 
 

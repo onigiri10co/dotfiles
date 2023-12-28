@@ -1,5 +1,6 @@
 # roles/memo-setup
-iCloud Drive/Obsidian に保存している memo を $HOME/memo にリンクする。
+Obsidian に保存している memo を $HOME/memo にリンクする。
+
 ただし、すでに $HOME/memo ディレクトリが存在している場合は何もしない。
 
 Obsidian の設定は、リンクした memo/.obsidian に設定されており、それごとリンクするため、改めて設定することはない。

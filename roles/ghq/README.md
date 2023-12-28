@@ -1,4 +1,5 @@
 # roles/ghq
+x-motemen/ghq: Remote repository management made easy
 
 
 

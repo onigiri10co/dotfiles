@@ -1,4 +1,5 @@
 # roles/spotlight
+macOS spotlight settings
 
 
 

@@ -1,4 +1,5 @@
 # roles/brewlet
+zkokaja/Brewlet: The missing menulet for brew.sh: keeping your packages up-to-date, and your system secure.
 
 
 

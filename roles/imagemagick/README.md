@@ -1,4 +1,5 @@
 # roles/imagemagick
+ImageMagick – Convert, Edit, or Compose Digital Images
 
 
 

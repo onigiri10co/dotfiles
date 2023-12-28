@@ -1,4 +1,5 @@
 # roles/licecap
+simple animated(gif) screen captures
 
 
 

@@ -1,4 +1,5 @@
 # roles/google-chrome
+Google Chrome - Google の高速で安全なブラウザ
 
 
 

@@ -1,4 +1,5 @@
 # roles/zsh
+ZSH, also called the Z shell, is an extended version of the Bourne Shell (sh).
 
 
 

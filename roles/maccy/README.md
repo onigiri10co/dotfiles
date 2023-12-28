@@ -1,4 +1,5 @@
 # roles/maccy
+p0deje/Maccy: Lightweight clipboard manager for macOS
 
 
 

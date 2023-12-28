@@ -1,5 +1,5 @@
 # roles/tmux
-おなじみのターミナルマルチプレクサ
+Tmux is a terminal multiplexer
 
 
 

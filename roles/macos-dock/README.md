@@ -1,4 +1,5 @@
 # roles/dock
+macOS dock settings
 
 
 

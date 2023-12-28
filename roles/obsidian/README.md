@@ -1,4 +1,5 @@
 # roles/obsidian
+Obsidianはマークダウンエディタであり、ナレッジベースアプリでもあります。
 
 
 
@@ -46,4 +47,5 @@
 
 ## References
 - [Obsidian.md](https://github.com/obsidianmd)
+- [ここからはじめる - Obsidian 日本語ヘルプ - Obsidian Publish](https://publish.obsidian.md/help-ja/)
 

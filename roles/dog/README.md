@@ -1,4 +1,5 @@
 # roles/dog
+ogham/dog: A command-line DNS client.
 
 
 

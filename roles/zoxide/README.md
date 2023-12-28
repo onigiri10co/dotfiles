@@ -1,4 +1,5 @@
 # roles/zoxide
+ajeetdsouza/zoxide: A smarter cd command. Supports all major shells.
 
 
 

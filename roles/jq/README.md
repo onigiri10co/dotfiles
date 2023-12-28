@@ -1,4 +1,5 @@
 # roles/jq
+stedolan/jq: Command-line JSON processor
 
 
 

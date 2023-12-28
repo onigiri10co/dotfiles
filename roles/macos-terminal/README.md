@@ -1,4 +1,5 @@
 # roles/terminal
+macOS terminal settings
 
 
 

@@ -1,4 +1,5 @@
 # roles/ffmpeg
+A complete, cross-platform solution to record, convert and stream audio and video.
 
 
 
@@ -7,7 +8,8 @@
 
 
 
-## Use Cases
+## Usage
+### Use Cases
 macOS で、gif を撮りたい時に使う想定で導入した。
 ただ、それだけであれば、[Cockos Incorporated | LICEcap](https://www.cockos.com/licecap/) のほうが楽かも。
 FFmpeg は、様々な動画形式に変換できたり、連番画像から動画を作成できたりするので、role としては残しておく。詳しい使い方は、References を参照する。

@@ -1,4 +1,5 @@
 # roles/cheat
+onigomex/cheat: very simple cheat command
 
 
 

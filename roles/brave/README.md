@@ -1,4 +1,5 @@
 # roles/brave
+Brave Browser: 広告ブロッカーで、セキュアで高速なプライベートウェブブラウジング | Brave Browser
 
 
 

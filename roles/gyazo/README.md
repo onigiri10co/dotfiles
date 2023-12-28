@@ -1,4 +1,5 @@
 # roles/gyazo
+Gyazo: スクリーンショットの瞬間共有
 
 
 

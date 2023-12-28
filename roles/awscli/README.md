@@ -1,4 +1,5 @@
 # roles/awscli
+aws/aws-cli: Universal Command Line Interface for Amazon Web Services
 
 
 
