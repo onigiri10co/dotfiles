@@ -3,6 +3,13 @@ My dotfiles
 
 
 
+## Setup
+```
+xcode-select --install
+```
+
+
+
 ## Installation
 ```
 curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
