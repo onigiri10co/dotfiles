@@ -2,8 +2,7 @@
 set -e
 
 link(){
-  ln -fs $HOME/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/aws $HOME
-  mv -f $HOME/aws $HOME/.aws
+  ln -fs $HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs/userdata/aws $HOME/.aws
 }
 
 if [ -L $HOME/.aws ]; then
@@ -14,4 +13,3 @@ fi
 if [ ! -e $HOME/.aws ]; then
   link
 fi
-
