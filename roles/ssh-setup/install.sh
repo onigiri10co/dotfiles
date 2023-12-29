@@ -2,8 +2,7 @@
 set -e
 
 link(){
-  ln -fs $HOME/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/ssh $HOME
-  mv -f $HOME/ssh $HOME/.ssh
+  ln -fs $HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs/userdata/ssh $HOME/.ssh
   ssh-add-keys
 }
 
@@ -15,4 +14,3 @@ fi
 if [ ! -e $HOME/.ssh ]; then
   link
 fi
-
