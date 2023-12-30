@@ -5,6 +5,7 @@ Google 日本語入力
 
 ## Dependencies
 - homebrew
+- rosetta
 
 
 
