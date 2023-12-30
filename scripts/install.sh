@@ -64,7 +64,7 @@ _all() {
 
   local role i
   local roles=$(grep -v -e '^\s*#' -e '^\s*$' $DOTF_ROLES_FILE)
-  local all=$(echo $roles | wc -w)
+  local all=$(echo $roles | wc -w | xargs)
 
   for role in ${=roles}; do
     _individual ${role} "$((++i))/$all"
