@@ -48,8 +48,8 @@ ssh
 tree
 brewlet
 google-chrome
-rosetta
-google-japanese-ime
+#rosetta
+#google-japanese-ime
 vscode
 #gyazo
 licecap
