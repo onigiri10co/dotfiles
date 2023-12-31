@@ -44,6 +44,7 @@ pipx
 poetry
 python
 ruby
+java
 ssh
 ssh-setup
 tree
