@@ -3,56 +3,18 @@ My dotfiles
 
 
 
-## Installation
-```
-curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
-```
-
-
-### Another way
-```
-% export DOTF_ROLES_FILE=roles.work.lst
-% curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
-```
-```
-% export DOTF_ROLES_FILE=`pwd`/roles.txt
-% cat << EOF > $DOTF_ROLES_FILE
-fzf
-git
-tig
-EOF
-% curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
-```
-```
-% git clone https://github.com/onigomex/dotfiles.git
-% cd dotfiles
-% make install
-% make install ROLE=vim
-```
-
-#### $DOTF_ROLES_FILE
-'#' is a comment, blank lines are ignored.
-
-```
-fzf
-git
-
-#ghq
-tig
-```
-
-
-### NOTE: sudo password
-If you make the following settings in advance, you will not be asked for sudo password.
-
+## Setup
+### sudo password
 ```
 sudo sh -c "echo $(whoami) ALL=\(ALL\) NOPASSWD:ALL > /private/etc/sudoers.d/$(whoami)"
-```
-
-Delete it if it is not necessary after the installation is completed.
-
-```
+# Delete it if it is not necessary after the installation is completed.
 sudo rm -f /private/etc/sudoers.d/$(whoami)
+```
+
+
+### Xcode
+```
+xcode-select --install
 ```
 
 
@@ -64,6 +26,46 @@ You can override the configuration values for particular role by setting them be
 ```
 export GIT_USERNAME=foo
 export GIT_EMAIL=bar@baz.com
+```
+
+
+
+## Installation
+```
+curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
+```
+
+
+### Another way
+```
+export DOTF_ROLES_FILE=roles.work.lst
+curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
+```
+```
+export DOTF_ROLES_FILE=`pwd`/roles.txt
+cat << EOF > $DOTF_ROLES_FILE
+fzf
+git
+tig
+EOF
+curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
+```
+```
+git clone https://github.com/onigomex/dotfiles.git
+cd dotfiles
+make install
+make install ROLE=vim
+```
+
+#### $DOTF_ROLES_FILE
+'#' is a comment, blank lines are ignored.
+
+```
+fzf
+git
+
+#ghq
+tig
 ```
 
 
