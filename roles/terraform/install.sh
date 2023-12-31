@@ -4,16 +4,16 @@ set -e
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 
 
-asdf list terraform > /dev/null 2>&1 || {
-  asdf plugin add terraform
+brew list tfenv > /dev/null 2>&1 || {
+  brew install tfenv
 }
 
-asdf install terraform latest
-asdf global terraform latest
+brew list tgenv > /dev/null 2>&1 || {
+  brew install tgenv
+}
 
-
-brew list terraformer > /dev/null 2>&1 || {
-  brew install terraformer
+brew list terraform_landscape > /dev/null 2>&1 || {
+  brew install terraform_landscape
 }
 
 brew list tflint > /dev/null 2>&1 || {
@@ -22,8 +22,4 @@ brew list tflint > /dev/null 2>&1 || {
 
 brew list tfsec > /dev/null 2>&1 || {
   brew install tfsec
-}
-
-brew list terraformer > /dev/null 2>&1 || {
-  brew install terraformer
 }
