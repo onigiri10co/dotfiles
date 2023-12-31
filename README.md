@@ -4,8 +4,28 @@ My dotfiles
 
 
 ## Setup
+### sudo password
+```
+sudo sh -c "echo $(whoami) ALL=\(ALL\) NOPASSWD:ALL > /private/etc/sudoers.d/$(whoami)"
+# Delete it if it is not necessary after the installation is completed.
+sudo rm -f /private/etc/sudoers.d/$(whoami)
+```
+
+
+### Xcode
 ```
 xcode-select --install
+```
+
+
+
+## Configuration
+You can override the configuration values for particular role by setting them before installation.
+
+### roles/git
+```
+export GIT_USERNAME=foo
+export GIT_EMAIL=bar@baz.com
 ```
 
 
@@ -18,23 +38,23 @@ curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zs
 
 ### Another way
 ```
-% export DOTF_ROLES_FILE=roles.work.lst
-% curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
+export DOTF_ROLES_FILE=roles.work.lst
+curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
 ```
 ```
-% export DOTF_ROLES_FILE=`pwd`/roles.txt
-% cat << EOF > $DOTF_ROLES_FILE
+export DOTF_ROLES_FILE=`pwd`/roles.txt
+cat << EOF > $DOTF_ROLES_FILE
 fzf
 git
 tig
 EOF
-% curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
+curl -fsSL https://raw.githubusercontent.com/onigomex/dotfiles/HEAD/install | zsh
 ```
 ```
-% git clone https://github.com/onigomex/dotfiles.git
-% cd dotfiles
-% make install
-% make install ROLE=vim
+git clone https://github.com/onigomex/dotfiles.git
+cd dotfiles
+make install
+make install ROLE=vim
 ```
 
 #### $DOTF_ROLES_FILE
@@ -46,31 +66,6 @@ git
 
 #ghq
 tig
-```
-
-
-### NOTE: sudo password
-If you make the following settings in advance, you will not be asked for sudo password.
-
-```
-sudo sh -c "echo $(whoami) ALL=\(ALL\) NOPASSWD:ALL > /private/etc/sudoers.d/$(whoami)"
-```
-
-Delete it if it is not necessary after the installation is completed.
-
-```
-sudo rm -f /private/etc/sudoers.d/$(whoami)
-```
-
-
-
-## Configuration
-You can override the configuration values for particular role by setting them before installation.
-
-### roles/git
-```
-export GIT_USERNAME=foo
-export GIT_EMAIL=bar@baz.com
 ```
 
 
