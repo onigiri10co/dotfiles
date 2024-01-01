@@ -8,7 +8,7 @@ python-poetry/poetry: Python dependency management and packaging made easy.
 
 ## Dependencies
 - pipx
-- pyenv
+- pyenv, asdf などバージョン管理ツール
 
 
 
