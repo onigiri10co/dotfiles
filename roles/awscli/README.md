@@ -8,7 +8,13 @@ aws/aws-cli: Universal Command Line Interface for Amazon Web Services
 
 
 
-## Switch Role
+## Setup
+See roles/asdf
+
+
+
+## Usage
+### Switch Role
 .aws/config に以下を設定したプロファイルを追加すれば良い。
 
 - mfa_serial: スイッチ元の IAM/USER/ARN
@@ -18,8 +24,7 @@ aws/aws-cli: Universal Command Line Interface for Amazon Web Services
   - 組織から新規アカウント作成した際のデフォルト IAM ロール名 "OrganizationAccountAccessRole" の場合
   - OrganizationAccountAccessRole ロールは、スイッチ元アカウントから AssumeRole できる信頼関係が設定されていること。
 
-
-### 設定例
+#### 設定例
 ```
 % cat ~/.aws/config 
 [default]
@@ -37,8 +42,7 @@ role_arn = arn:aws:iam::111111111111:role/OrganizationAccountAccessRole
 source_profile = base-admin
 ```
 
-
-### 使い方
+#### 使い方
 ```
 % aws s3 ls --profile sandbox
 

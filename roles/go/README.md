@@ -59,33 +59,14 @@ require github.com/PuerkitoBio/goquery v1.8.0 // indirect
 ```
 
 
-### 参考）asdf を使う場合
-- Refs. [asdf-golang/README.md at master · kennyp/asdf-golang > With ASDF_GOLANG_OVERWRITE_ARCH](https://github.com/kennyp/asdf-golang/blob/master/README.md#with-asdf_golang_overwrite_arch)
-- See [asdf/README](../asdf/README.md)
+
+## asdf を使う場合
+See roles/asdf
 
 ※古いバージョンで M1 mac 用(arm)のバイナリが存在しない場合、amd 用でセットアップできる。
 
 ```
 % ASDF_GOLANG_OVERWRITE_ARCH=amd64 asdf install golang 1.14.1
-% asdf list golang
-  1.14.1
-  1.18.1
-% asdf local golang 1.14.1
-% asdf current golang
-golang          1.14.1          .tool-versions
-% go version
-go version go1.14.1 darwin/amd64
-% cat .tool-versions 
-golang 1.14.1
-
-
-# 削除する場合
-% asdf list                 
-golang
-  1.14.1
-  1.18.1
-% sudo asdf uninstall golang
-% asdf plugin remove golang
 ```
 
 
@@ -105,4 +86,5 @@ Refs. [How to Write Go Code (with GOPATH) - The Go Programming Language](https:/
 
 ## References
 - [golang/go: The Go programming language](https://github.com/golang/go)
+- [asdf-golang/README.md at master · kennyp/asdf-golang > With ASDF_GOLANG_OVERWRITE_ARCH](https://github.com/kennyp/asdf-golang/blob/master/README.md#with-asdf_golang_overwrite_arch)
 
