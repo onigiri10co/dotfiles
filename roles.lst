@@ -39,7 +39,7 @@ dog
 ffmpeg
 imagemagick
 node
-pyenv
+#pyenv
 pipx
 poetry
 python
