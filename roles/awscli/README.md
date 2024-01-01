@@ -8,10 +8,12 @@ aws/aws-cli: Universal Command Line Interface for Amazon Web Services
 
 
 
-## Usage
+## Setup
 See roles/asdf
 
 
+
+## Usage
 ### Switch Role
 .aws/config に以下を設定したプロファイルを追加すれば良い。
 
