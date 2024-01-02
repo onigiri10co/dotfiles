@@ -35,6 +35,15 @@ mocOS settings
 
 
 
+## Others
+### .DS_Store ファイルを作らせない
+```
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+```
+
+
+
 ## References
 - [macOSでの各種設定を自動化するdefaultsコマンド - memo.yammer.jp](https://memo.yammer.jp/posts/macos-defaults)
 
