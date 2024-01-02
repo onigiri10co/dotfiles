@@ -8,10 +8,8 @@ macOS keyboard settings
 
 
 
-## 設定内容
-System Preferences > Keyboard
+## Settings
+System Settings > Keyboard
 
-- Touch Bar shows: F1, F2, etc. Keys
-- Modifier Keys:
-  - Caps Lock Key: Control
+- Touch Bar Settings > Touch Bar shows: F1, F2, etc. Keys
 
