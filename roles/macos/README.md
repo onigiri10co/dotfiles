@@ -23,6 +23,13 @@ System Settings > Desktop & Dock
 - Show recent applications in Dock: false
 
 
+### Keyboard
+System Settings > Keyboard
+
+- Keyboard Shortcuts > Modifier Keys > Caps Lock key: ^Control
+- Touch Bar Settings > Touch Bar shows: F1, F2, etc. Keys
+
+
 
 ## References
 - [macOSでの各種設定を自動化するdefaultsコマンド - memo.yammer.jp](https://memo.yammer.jp/posts/macos-defaults)

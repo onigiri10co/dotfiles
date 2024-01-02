@@ -24,6 +24,17 @@ defaults write com.apple.dock show-recents -bool false
 ## Dockからすべてのアプリを消す
 defaults write com.apple.dock persistent-apps -array
 
+# System Settings > Keyboard
+## Keyboard Shortcuts > Modifier Keys > Caps Lock Key: Control
+keyboard_id="$(ioreg -c AppleEmbeddedKeyboard -r | grep -Eiw "VendorID|ProductID" | awk '{ print $4 }' | paste -s -d'-\n' -)-0"
+defaults -currentHost write -g com.apple.keyboard.modifiermapping.${keyboard_id} -array-add "
+<dict>
+  <key>HIDKeyboardModifierMappingDst</key>\
+  <integer>30064771300</integer>\
+  <key>HIDKeyboardModifierMappingSrc</key>\
+  <integer>30064771129</integer>\
+</dict>
+"
 
 # Others
 ## .DS_Store ファイルを作らせない
