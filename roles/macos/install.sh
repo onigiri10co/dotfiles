@@ -2,7 +2,7 @@
 set -e
 
 
-# System Settings > Desktop & Dock
+# Desktop & Dock
 ## Dock > Size: 25%
 defaults write com.apple.dock tilesize -int 35
 ## Dock > Magnification: Off
@@ -24,7 +24,8 @@ defaults write com.apple.dock show-recents -bool false
 ## Dockからすべてのアプリを消す
 defaults write com.apple.dock persistent-apps -array
 
-# System Settings > Keyboard
+
+# Keyboard
 ## Keyboard Shortcuts > Modifier Keys > Caps Lock Key: Control
 keyboard_id="$(ioreg -c AppleEmbeddedKeyboard -r | grep -Eiw "VendorID|ProductID" | awk '{ print $4 }' | paste -s -d'-\n' -)-0"
 defaults -currentHost write -g com.apple.keyboard.modifiermapping.${keyboard_id} -array-add "
@@ -35,6 +36,11 @@ defaults -currentHost write -g com.apple.keyboard.modifiermapping.${keyboard_id}
   <integer>30064771129</integer>\
 </dict>
 "
+
+
+# Siri & Spotlight
+## TODO: コード化
+
 
 # Others
 ## .DS_Store ファイルを作らせない

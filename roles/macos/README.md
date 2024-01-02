@@ -8,10 +8,8 @@ mocOS settings
 
 
 
-## Settings
+## System Settings
 ### Desktop & Dock
-System Settings > Desktop & Dock
-
 - Dock > Size: 25%
 - Dock > Magnification: Off
 - Position on screen: Left
@@ -24,10 +22,16 @@ System Settings > Desktop & Dock
 
 
 ### Keyboard
-System Settings > Keyboard
-
 - Keyboard Shortcuts > Modifier Keys > Caps Lock key: ^Control
 - Touch Bar Settings > Touch Bar shows: F1, F2, etc. Keys
+
+
+### Siri & Spotlight
+- Search results
+  - Applications
+  - Calculator
+  - Folders
+  - System Preferences
 
 
 
