@@ -46,4 +46,7 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 ## References
 - [macOSでの各種設定を自動化するdefaultsコマンド - memo.yammer.jp](https://memo.yammer.jp/posts/macos-defaults)
+- [Mac ターミナル defaults コマンドの使い方](https://www.webdesignleaves.com/pr/plugins/mac_terminal_basics_06.html)
+- [1からMacの開発環境を構築する](https://zenn.dev/horatjp/articles/macos-dev-env)
+- [Macの設定の半自動化方法 #Mac - Qiita](https://qiita.com/DiveMasakazu/items/ac4c6daad50084656758)
 
