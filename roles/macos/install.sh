@@ -10,7 +10,7 @@ set -e
 
 
 # Desktop & Dock
-## Dock > Size: 25%
+## Dock > Size: 35
 defaults write com.apple.dock tilesize -int 35
 ## Dock > Magnification: Off
 defaults write com.apple.dock magnification -bool false
@@ -28,8 +28,9 @@ defaults write com.apple.dock launchanim -bool false
 defaults write com.apple.dock show-process-indicators -bool false
 ## Show recent applications in Dock: false
 defaults write com.apple.dock show-recents -bool false
-## Dockからすべてのアプリを消す
+## Dock から全てのアプリを削除（ゴミ箱だけにする）※以後は、起動中のアプリだけが Dock に表示される。
 defaults write com.apple.dock persistent-apps -array
+killall Dock
 
 
 # Keyboard
@@ -48,7 +49,7 @@ defaults -currentHost write -g com.apple.keyboard.modifiermapping.${keyboard_id}
 # Finder
 ## すべての拡張子を表示
 defaults write -g AppleShowAllExtensions -bool true
-## 隠しファイルを表示
+## 隠しファイル・フォルダを表示
 defaults write com.apple.finder AppleShowAllFiles -bool true
 ## ステータスバー表示
 # defaults write com.apple.finder ShowStatusBar -bool true
@@ -58,6 +59,21 @@ defaults write com.apple.finder ShowPathbar -bool true
 # defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 ## ゴミ箱を空にするときの警告無効化
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
+## View > as List: 常にリストビューにする（Nlsv:リスト, icnv:アイコン, clmv:カラム, Flwv:カバーフロー）
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+## サイドバーのタグを非表示
+defaults write com.apple.finder ShowRecentTags -bool false
+killall Finder
+
+
+# Screen Shot
+## スクリーンショット保存先を変更
+_screenshotdir="$HOME/Desktop/_ScreenShot"
+mkdir -p $_screenshotdir
+defaults write com.apple.screencapture location $_screenshotdir
+## スクリーンショット名を日付だけにする
+defaults write com.apple.screencapture name ""
+killall SystemUIServer
 
 
 # Others

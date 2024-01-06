@@ -9,25 +9,29 @@ mocOS settings
 
 
 ## System Settings
+※チェック済 = install.sh 内にコード化済
+
+
 ### Desktop & Dock
-- Dock > Size: 25%
-- Dock > Magnification: Off
-- Position on screen: Left
-- Minimize window using: Genie Effect
-- Double-click a window's title bar to: Zoom
-- Automatically hide and show the Dock: true
-- Animate opening applications: false
-- Show indicators for open applications: false
-- Show recent applications in Dock: false
+- [x] Dock > Size: 35
+- [x] Dock > Magnification: Off
+- [x] Position on screen: Left
+- [x] Minimize window using: Genie Effect
+- [x] Double-click a window's title bar to: Zoom
+- [x] Automatically hide and show the Dock: true
+- [x] Animate opening applications: false
+- [x] Show indicators for open applications: false
+- [x] Show recent applications in Dock: false
+- [x] Dock から全てのアプリを削除（ゴミ箱だけにする）※以後は、起動中のアプリだけが Dock に表示される。
 
 
 ### Keyboard
-- Keyboard Shortcuts > Modifier Keys > Caps Lock key: ^Control
-- Touch Bar Settings > Touch Bar shows: F1, F2, etc. Keys
+- [x] Keyboard Shortcuts > Modifier Keys > Caps Lock key: ^Control
+- [ ] Touch Bar Settings > Touch Bar shows: F1, F2, etc. Keys
 
 
 ### Siri & Spotlight
-- Search results
+- [ ] Search results
   - Applications
   - Calculator
   - Folders
@@ -35,12 +39,34 @@ mocOS settings
 
 
 
+## Desktop > Show View Options
+- [ ] Sort By: Name
+- [ ] Icon size: 20 x 20
+- [ ] Grid spacing: max
+- [ ] Text size: 10
+- [ ] Label position: Right
+
+
+
+## Finder
+- [x] View > as List
+- [x] View > Show Path Bar
+- [ ] View > Show Preview
+- [x] サイドバーのタグを非表示
+- [x] すべての拡張子を表示
+- [x] 隠しファイル・フォルダを表示
+- [x] ゴミ箱を空にするときの警告無効化
+
+
+
+## Screen Shot
+- [x] スクリーンショット保存先を変更
+- [x] スクリーンショット名を日付だけにする
+
+
+
 ## Others
-### .DS_Store ファイルを作らせない
-```
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
-```
+- [x] .DS_Store ファイルを作らせない（USB・ネットワークドライブ）
 
 
 
