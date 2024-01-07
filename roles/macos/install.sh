@@ -67,13 +67,36 @@ killall Finder
 
 
 # Screen Shot
+## 画像の影を無効化
+# defaults write com.apple.screencapture "disable-shadow" -bool true
+## 撮影時のサムネイル表示
+# defaults write com.apple.screencapture "show-thumbnail" -bool false
+## スクリーンショットを jpg で保存
+# defaults write com.apple.screencapture type -string "jpg"
 ## スクリーンショット保存先を変更
-_screenshotdir="$HOME/Desktop/_ScreenShot"
+_screenshotdir=$HOME/Desktop/_ScreenShot
 mkdir -p $_screenshotdir
-defaults write com.apple.screencapture location $_screenshotdir
+defaults write com.apple.screencapture location -string "$_screenshotdir"
 ## スクリーンショット名を日付だけにする
 defaults write com.apple.screencapture name ""
 killall SystemUIServer
+
+
+# Feedback
+## クラッシュレポート無効化
+defaults write com.apple.CrashReporter DialogType -string "none"
+## フィードバックを送信しない
+defaults write com.apple.appleseed.FeedbackAssistant "Autogather" -bool false
+
+
+# Battery
+## バッテリーを%表示
+# defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
+
+# Security
+## ファイアウォールon
+# defaults write /Library/Preferences/com.Apple.alf globalstate -int 1
 
 
 # Others
@@ -83,4 +106,10 @@ killall SystemUIServer
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 ## .DS_Store ファイルを作成しない（USB ドライブ）
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+## 自動で頭文字を大文字にしない
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool "false"
+## スペルの訂正を無効にする
+# defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool "false"
+## Googleのパブリック DNS を使用
+# networksetup -setdnsservers Wi-Fi 2001:4860:4860::8844 2001:4860:4860::8888 8.8.4.4 8.8.8.8
 
