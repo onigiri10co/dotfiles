@@ -89,3 +89,12 @@ make create ROLE=vim
 1. If you want to define alias, define it in the `roles/<ROLE>/.zsh.d/<ROLE>.zshrc.alias` file.
 1. If you want to define other processes, define it in the `roles/<ROLE>/.zsh.d/<ROLE>.zshrc` file.
 
+
+### Update images
+```
+% git fetch; git branch -a
+% git checkout images
+# after update contents
+% git push origin images
+```
+
