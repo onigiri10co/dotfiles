@@ -9,7 +9,12 @@ Tmux is a terminal multiplexer
 
 
 
-## .tmux.conf 設定内容
+## Settings
+- Install plugins: `%open tmux.conf` =>  `<prefix> + I`
+
+
+
+## .tmux.conf
 ### tmux default shell set zsh.
 ```
 set-option -g default-shell /usr/local/bin/zsh

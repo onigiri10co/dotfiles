@@ -11,12 +11,11 @@ cli/cli: GitHub’s official command line tool
 ## Setup
 ```
 % gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations? HTTPS
+? Authenticate Git with your GitHub credentials? Yes
+? How would you like to authenticate GitHub CLI? Login with a web browser
 ```
-
-- GitHub.com
-- SSH
-- Generate a new SSH Key to add to your GitHub account? (Y/n) n
-- Login with a web browser
 
 
 ### After Setup

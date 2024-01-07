@@ -8,13 +8,18 @@ Hammerspoon/hammerspoon: Staggeringly powerful macOS desktop automation with Lua
 
 
 
-## Hammerspoon Preferences
+## Preferences
 - Behavior:
   - Launch Hammerspoon at login
   - Check for updates
   - Show menu icon
 - Accessibility:
   - Enable Accessibility
+
+
+
+## System Settings
+- System Settings > Privacy & Security > Accessibility > Enable
 
 
 

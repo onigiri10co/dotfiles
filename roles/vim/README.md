@@ -13,6 +13,9 @@ The acronym for Vim is Vi IMproved. Written by Bram Moolenaar, it is a free and 
 
 
 ## Settings
+- Install plugins: `% vim +PlugInstall`
+
+
 ### General
 #### エディタ内部文字コードを設定する（ファイルを開く時の文字コード）
 ```
