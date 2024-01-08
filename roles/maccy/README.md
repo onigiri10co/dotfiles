@@ -19,25 +19,7 @@ p0deje/Maccy: Lightweight clipboard manager for macOS
 
 
 ### Storage
-- Save:
-  - Files
-  - Images
-  - Text
 - Size: 20
-- Sort by: Time of last copy
-
-
-### Appearance
-- Popup at: Cursor
-- Pin to: Top
-- Image height: 40
-- Number of items: 0
-- Title length: 50
-- Preview delay: 1500
-- Show menu icon: maccy icon
-- Show search field
-- Show title before search field
-- Show footer
 
 
 ### Pins

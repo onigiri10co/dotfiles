@@ -10,7 +10,7 @@ Tmux is a terminal multiplexer
 
 
 ## Settings
-- Install plugins: `%open tmux.conf` =>  `<prefix> + I`
+- Install plugins: `% tmux` =>  `<prefix> + I`
 
 
 
