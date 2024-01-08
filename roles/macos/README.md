@@ -35,7 +35,7 @@ mocOS settings
   - Applications
   - Calculator
   - Folders
-  - System Preferences
+  - System Settings
 
 
 
