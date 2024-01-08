@@ -1,5 +1,5 @@
 # roles/google-japanese-ime
-Google Japanese IME（Google 日本語入力）
+Google Japanese IME（Google 日本語入力）  
 ※開発版をインストールすれば、Rosetta2 は不要なため、手動でインストールする（2024/01/08 時点）。
 
 
