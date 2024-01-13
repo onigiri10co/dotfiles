@@ -16,7 +16,9 @@ Google Chrome - Google の高速で安全なブラウザ
 
 ### 1Password
 1. 1Password にログインする。
-1. アイコンのコンテキストメニュー > セキュリティ > 1Password を自動的にロックする: OFF
+1. 拡張機能アイコンのコンテキストメニュー > 設定
+    1. セキュリティ > 1Password を自動的にロックする: OFF
+    1. Accounts & vaults: 各環境に応じて選択
 
 
 
