@@ -51,7 +51,7 @@ mocOS settings
 ## Finder
 - [x] View > as List
 - [x] View > Show Path Bar
-- [ ] View > Show Preview
+- [x] View > Show Preview
 - [x] サイドバーのタグを非表示
 - [x] すべての拡張子を表示
 - [x] 隠しファイル・フォルダを表示

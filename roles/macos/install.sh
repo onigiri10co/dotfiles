@@ -78,22 +78,24 @@ plist_set_or_add ":StandardViewSettings:IconViewSettings:labelOnBottom false" "$
 
 
 # Finder
+## View > as List: 常にリストビューにする（Nlsv:リスト, icnv:アイコン, clmv:カラム, Flwv:カバーフロー）
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+## タイトルバーにフルパスを表示
+# defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+## パスバーを表示
+defaults write com.apple.finder ShowPathbar -bool true
+## ステータスバー表示
+# defaults write com.apple.finder ShowStatusBar -bool true
+## プレビューウィンドウを表示
+defaults write com.apple.finder ShowPreviewPane -bool true
+## サイドバーのタグを非表示
+defaults write com.apple.finder ShowRecentTags -bool false
 ## すべての拡張子を表示
 defaults write -g AppleShowAllExtensions -bool true
 ## 隠しファイル・フォルダを表示
 defaults write com.apple.finder AppleShowAllFiles -bool true
-## ステータスバー表示
-# defaults write com.apple.finder ShowStatusBar -bool true
-## パスバーを表示
-defaults write com.apple.finder ShowPathbar -bool true
-## タイトルバーにフルパスを表示
-# defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 ## ゴミ箱を空にするときの警告無効化
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
-## View > as List: 常にリストビューにする（Nlsv:リスト, icnv:アイコン, clmv:カラム, Flwv:カバーフロー）
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
-## サイドバーのタグを非表示
-defaults write com.apple.finder ShowRecentTags -bool false
 killall Finder
 
 
