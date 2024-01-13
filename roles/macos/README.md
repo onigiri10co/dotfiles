@@ -40,11 +40,11 @@ mocOS settings
 
 
 ## Desktop > Show View Options
-- [ ] Sort By: Name
-- [ ] Icon size: 20 x 20
-- [ ] Grid spacing: max
-- [ ] Text size: 10
-- [ ] Label position: Right
+- [x] Sort By: Name
+- [x] Icon size: 20 x 20
+- [x] Grid spacing: max(=100)
+- [x] Text size: 10
+- [x] Label position: Right
 
 
 

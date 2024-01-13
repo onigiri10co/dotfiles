@@ -9,6 +9,14 @@ set -e
 ## NSGlobalDomain の代わりに、-g OR -globalDomain を使用することもできる。ここでは、-g で統一する。
 
 
+# See: https://github.com/jmalloc/dotfiles/issues/12
+plist_set_or_add () {
+  /usr/libexec/PlistBuddy -c "Set $1" "${@:2}" ||
+  /usr/libexec/PlistBuddy -c "Add $1" "${@:2}" ||
+  echo "Unable to set or add plist with args:" "$@"
+}
+
+
 # Desktop & Dock
 ## Dock > Size: 35
 defaults write com.apple.dock tilesize -int 35
@@ -44,6 +52,29 @@ defaults -currentHost write -g com.apple.keyboard.modifiermapping.${keyboard_id}
   <integer>30064771129</integer>\
 </dict>
 "
+
+
+# Desktop > Show View Options
+## Sort By: Name
+plist_set_or_add ":DesktopViewSettings:IconViewSettings:arrangeBy name" "$HOME/Library/Preferences/com.apple.finder.plist"
+plist_set_or_add ":FK_StandardViewSettings:IconViewSettings:arrangeBy name" "$HOME/Library/Preferences/com.apple.finder.plist"
+plist_set_or_add ":StandardViewSettings:IconViewSettings:arrangeBy name" "$HOME/Library/Preferences/com.apple.finder.plist"
+## Icon size: 20 x 20
+plist_set_or_add ":DesktopViewSettings:IconViewSettings:iconSize 20" "$HOME/Library/Preferences/com.apple.finder.plist"
+plist_set_or_add ":FK_StandardViewSettings:IconViewSettings:iconSize 20" "$HOME/Library/Preferences/com.apple.finder.plist"
+plist_set_or_add ":StandardViewSettings:IconViewSettings:iconSize 20" "$HOME/Library/Preferences/com.apple.finder.plist"
+## Grid spacing: max(=100)
+plist_set_or_add ":DesktopViewSettings:IconViewSettings:gridSpacing 100" "$HOME/Library/Preferences/com.apple.finder.plist"
+plist_set_or_add ":FK_StandardViewSettings:IconViewSettings:gridSpacing 100" "$HOME/Library/Preferences/com.apple.finder.plist"
+plist_set_or_add ":StandardViewSettings:IconViewSettings:gridSpacing 100" "$HOME/Library/Preferences/com.apple.finder.plist"
+## Text size: 10
+plist_set_or_add ":DesktopViewSettings:IconViewSettings:textSize 10" "$HOME/Library/Preferences/com.apple.finder.plist"
+plist_set_or_add ":FK_StandardViewSettings:IconViewSettings:textSize 10" "$HOME/Library/Preferences/com.apple.finder.plist"
+plist_set_or_add ":StandardViewSettings:IconViewSettings:textSize 10" "$HOME/Library/Preferences/com.apple.finder.plist"
+## Label position: Right
+plist_set_or_add ":DesktopViewSettings:IconViewSettings:labelOnBottom false" "$HOME/Library/Preferences/com.apple.finder.plist"
+plist_set_or_add ":FK_StandardViewSettings:IconViewSettings:labelOnBottom false" "$HOME/Library/Preferences/com.apple.finder.plist"
+plist_set_or_add ":StandardViewSettings:IconViewSettings:labelOnBottom false" "$HOME/Library/Preferences/com.apple.finder.plist"
 
 
 # Finder
