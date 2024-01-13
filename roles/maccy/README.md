@@ -23,7 +23,7 @@ p0deje/Maccy: Lightweight clipboard manager for macOS
 
 
 ### Pins
-- `convert IMG_1399.heic -quality 80 IMG_1399.heic.jpg`
+- `fd -e HEIC | while read line; do echo $line; convert $line -quality 80 $line.jpg; done`
 - `finch run -it --rm public.ecr.aws/debian/debian:stable-slim /bin/bash`
 - `git rebase -i $(gci-rebase)`
 - 
