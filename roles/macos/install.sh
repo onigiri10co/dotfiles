@@ -140,7 +140,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 ## .DS_Store ファイルを作成しない（USB ドライブ）
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 ## 自動で頭文字を大文字にしない
-defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool "false"
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 ## スペルの訂正を無効にする
 # defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool "false"
 ## Googleのパブリック DNS を使用
