@@ -75,6 +75,24 @@ mocOS settings
 
 
 
+## Terminal
+※出力されたコマンドを手動で流して設定する（プロファイルを open するとプロセスが移行してしまうため）。
+
+
+### Profile
+- [x] Startup: Nord
+- [x] Default: Nord
+
+
+### Shell
+- [x] When the shell exits: Close the window
+
+
+### Advanced
+- [x] Bell: OFF
+
+
+
 ## Others
 - [x] .DS_Store ファイルを作らせない（USB・ネットワークドライブ）
 - [x] 自動で頭文字を大文字にしない
