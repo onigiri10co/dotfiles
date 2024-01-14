@@ -52,6 +52,8 @@ defaults -currentHost write -g com.apple.keyboard.modifiermapping.${keyboard_id}
   <integer>30064771129</integer>\
 </dict>
 "
+## Function Keys > Use F1,F2, etc. kyes as standard function keys: true
+defaults write -g com.apple.keyboard.fnState -bool true
 
 
 # Desktop > Show View Options

@@ -26,7 +26,9 @@ mocOS settings
 
 
 ### Keyboard
-- [x] Keyboard Shortcuts > Modifier Keys > Caps Lock key: ^Control
+- Keyboard Shortcuts:
+  - [x] Modifier Keys > Caps Lock key: ^Control
+  - [x] Function Keys > Use F1,F2, etc. kyes as standard function keys: true
 - [ ] Touch Bar Settings > Touch Bar shows: F1, F2, etc. Keys
 
 
