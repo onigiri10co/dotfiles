@@ -125,6 +125,12 @@ defaults write -g AppleShowAllExtensions -bool true
 defaults write com.apple.finder AppleShowAllFiles -bool true
 ## ゴミ箱を空にするときの警告無効化
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
+## パスパーを HOME から表示
+defaults write com.apple.finder PathBarRootAtHome -bool true
+## カレントディレクトリ内を検索
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+## 拡張子変更時の警告を無視
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 killall Finder
 
 
