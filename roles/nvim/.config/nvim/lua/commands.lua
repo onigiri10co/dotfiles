@@ -1,1 +1,5 @@
 -- ref. https://neovim.io/doc/user/map.html#user-commands
+-- Example
+-- vim.api.nvim_create_user_command("OpenHoge", function(opts)
+-- 	vim.cmd("e " .. "~/hoge.md")
+-- end, {})
