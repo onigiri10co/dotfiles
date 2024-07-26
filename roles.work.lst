@@ -21,6 +21,7 @@ jq
 fd
 hammerspoon
 direnv
+devbox
 asdf
 docker
 colima
