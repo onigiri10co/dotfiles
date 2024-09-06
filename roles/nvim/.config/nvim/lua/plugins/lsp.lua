@@ -10,6 +10,10 @@ return {
       { "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "::LSP Signature Help" },
       { "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", desc = "::LSP Goto Implementation" },
       { "gr", "<cmd>lua vim.lsp.buf.references()<cr>", desc = "::LSP References" },
+      { "go", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "::LSP Diagnostic Open float" },
+      { "gl", "<cmd>lua vim.diagnostic.setloclist()<cr>", desc = "::LSP Diagnostic Location List" },
+      { "<C-n>", "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "::LSP Diagnostic Goto Next" },
+      { "<C-p>", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "::LSP Diagnostic Goto Prev" },
     },
 
     config = function()
