@@ -3,7 +3,7 @@ return {
   {
     "lambdalisue/fern.vim",
     keys = {
-      { "<leader>e", "<cmd>Fern .<cr>", desc = "[MS] explorer: Fern ." }
+      { "<leader>e", "<cmd>Fern .<cr>", desc = "::Fern explorer" }
     },
     config = function()
       vim.g["fern#default_hidden"] = 1
