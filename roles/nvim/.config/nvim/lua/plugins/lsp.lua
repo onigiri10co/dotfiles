@@ -52,6 +52,15 @@ return {
       { "neovim/nvim-lspconfig", },
     },
     config = function()
+      -- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
+      require("mason-lspconfig").setup {
+        ensure_installed = {
+          "lua_ls", -- Lua
+          "phpactor", -- php
+          "gopls", -- Go
+        },
+      }
+
       local lspconfig = require("lspconfig")
       local handlers = {
         function(server_name)
@@ -70,8 +79,6 @@ return {
           }
         end,
       }
-
-      require("mason-lspconfig").setup({handlers = handlers})
       require("mason-lspconfig").setup_handlers(handlers)
     end
   },
