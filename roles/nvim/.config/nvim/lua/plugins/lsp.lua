@@ -29,6 +29,18 @@ return {
           border = 'single'
         }
       )
+
+      vim.diagnostic.config({
+        signs = true, -- true: LSP サインを表示する
+        virtual_text = false, -- false: 仮想テキスト（エラー説明）を表示しない
+        underline = true, -- true: エラー行に下線を表示する
+        update_in_insert = false, -- false: 挿入モードのときに diagnostic を更新させない
+        severity_sort = true, -- true: エラー/警告/ヒントの表示順を深刻度の高い方から表示する（サインカラムにそれらが重なった場合）
+        float = {
+          source = "always", -- Or "if_many"
+          border = 'single'
+        },
+      })
     end
   },
 
