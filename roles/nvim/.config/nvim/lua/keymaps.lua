@@ -7,7 +7,7 @@ vim.g.mapleader = " " -- <leader> = space
 vim.g.maplocalleader = "," -- <localLeader>
 
 -- Search
-vim.keymap.set('n', '<esc><esc>', '<cmd>nohlsearch<cr>', { silent = true })
+vim.keymap.set('n', '<esc><esc>', '<cmd>nohlsearch<cr>', { desc = '::Keymap [non]hlsearch', silent = true })
 
 -- Close Window
 local close_window = function()
