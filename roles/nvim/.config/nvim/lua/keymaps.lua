@@ -5,4 +5,4 @@ vim.g.mapleader = " " -- <leader> = space
 vim.g.maplocalleader = "," -- <localLeader>
 
 -- Search
-vim.keymap.set('n', '<ESC><ESC>', ':nohlsearch<CR>')
+vim.keymap.set('n', '<ESC><ESC>', ':nohlsearch<CR>', { silent = true })
