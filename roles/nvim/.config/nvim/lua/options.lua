@@ -10,6 +10,7 @@ opt.swapfile = false -- swap ファイルを作成しない
 opt.backup = false -- バックアップファイル出力無効
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
 opt.confirm = true -- 保存されていないファイルを q するときに保存の確認を行う
+opt.helplang = 'ja' -- Help に表示する言語
 
 -- View
 opt.number = true -- 行番号を表示する
