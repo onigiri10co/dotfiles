@@ -3,3 +3,8 @@
 -- vim.api.nvim_create_user_command("OpenHoge", function(opts)
 -- 	vim.cmd("e " .. "~/hoge.md")
 -- end, {})
+
+-- Close vim with qa! command
+vim.api.nvim_create_user_command("Q", function(opts)
+  vim.cmd("qa!")
+end, {})
