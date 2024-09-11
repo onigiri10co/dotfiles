@@ -25,3 +25,7 @@ autocmd('FileType', {
   pattern = 'qf',
   callback = close_window,
 })
+
+-- Terminal
+-- https://qiita.com/delphinus/items/aea16e82de2145d2a6b7
+vim.keymap.set('t', '<esc>', '<c-\\><c-n>', { desc = '::Keymap Change Terminal-Normal mode by <esc> from Terminal-Job mode. Note: "t" is :tnoremap (Terminal-Job mode)' })

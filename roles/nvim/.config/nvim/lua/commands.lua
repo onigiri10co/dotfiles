@@ -8,3 +8,9 @@
 vim.api.nvim_create_user_command("Q", function(opts)
   vim.cmd("qa!")
 end, {})
+-- Open the terminal in a split window at the bottom
+vim.api.nvim_create_user_command('T', function(opts)
+  vim.cmd('split | wincmd j | resize 20 | terminal')
+end, {
+  nargs = '*'
+})

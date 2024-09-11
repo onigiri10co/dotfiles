@@ -7,3 +7,9 @@ autocmd("BufWritePre", {
 	pattern = "*",
 	command = ":%s/\\s\\+$//e",
 })
+
+-- Always open the terminal in insert mode (and nonumber, laststatus=0)
+autocmd("TermOpen", {
+	pattern = "*",
+	command = "set nonumber\nset laststatus=0\nstartinsert"
+})
