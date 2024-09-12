@@ -1,5 +1,5 @@
 # roles/pyenv
-pyenv/pyenv: Simple Python version management
+Python | pyenv/pyenv: Simple Python version management
 
 - Python のバージョン管理ツール。
 - 任意のバージョンをインストールでき、それらを切り替えて使用できる。
