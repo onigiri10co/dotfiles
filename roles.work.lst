@@ -43,7 +43,9 @@ node
 #pyenv
 #pipx
 #poetry
-python
+#python
+rye
+uv
 ruby
 java
 ssh
