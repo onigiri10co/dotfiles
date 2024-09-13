@@ -4,12 +4,12 @@ Python Programming language
 
 
 ## Dependencies
-- asdf
+- mise
 
 
 
 ## Setup
-See roles/asdf
+See roles/mise
 
 
 

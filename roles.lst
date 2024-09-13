@@ -20,9 +20,10 @@ vimr
 jq
 fd
 hammerspoon
-direnv
+#direnv
 devbox
-asdf
+mise
+#asdf
 docker
 colima
 finch

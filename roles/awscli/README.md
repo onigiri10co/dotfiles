@@ -4,12 +4,12 @@ aws/aws-cli: Universal Command Line Interface for Amazon Web Services
 
 
 ## Dependencies
-- asdf
+- mise
 
 
 
 ## Setup
-See roles/asdf
+See roles/mise
 
 
 
@@ -26,7 +26,7 @@ See roles/asdf
 
 #### 設定例
 ```
-% cat ~/.aws/config 
+% cat ~/.aws/config
 [default]
 region = ap-northeast-1
 output = json
@@ -49,14 +49,13 @@ source_profile = base-admin
 % AWS_PROFILE=sandbox aws s3 ls
 
 % export AWS_PROFILE=sandbox
-% aws s3 ls                 
+% aws s3 ls
 ```
 
 
 
 ## References
 - [aws/aws-cli: Universal Command Line Interface for Amazon Web Services](https://github.com/aws/aws-cli)
-- [MetricMike/asdf-awscli](https://github.com/MetricMike/asdf-awscli)
 - [【小ネタ】AWS CLIでスイッチロールして作業を行うための設定をやってみた | DevelopersIO](https://dev.classmethod.jp/articles/cli-switch-role/)
 - [AWS CLIでSwitch Role してさらに Switch Role してみた。（ロールの連鎖:Role chaining） | DevelopersIO](https://dev.classmethod.jp/articles/role-chaining/#toc-16)
 

@@ -4,16 +4,15 @@ nodejs/node: Node.js JavaScript runtime
 
 
 ## Dependencies
-- asdf
+- mise
 
 
 
 ## Setup
-See roles/asdf
+See roles/mise
 
 
 
 ## References
 - [nodejs/node: Node.js JavaScript runtime](https://github.com/nodejs/node)
-- [asdf-vm/asdf-nodejs: Node.js plugin for asdf version manager](https://github.com/asdf-vm/asdf-nodejs)
 

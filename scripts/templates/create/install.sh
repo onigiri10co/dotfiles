@@ -27,6 +27,11 @@ readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 #   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # }
 
+# mise
+# mise list {{ROLE}} > /dev/null 2>&1 || {
+#   mise use --global {{ROLE}}
+# }
+
 # asdf
 # asdf list {{ROLE}} > /dev/null 2>&1 || {
 #   asdf plugin add {{ROLE}}
