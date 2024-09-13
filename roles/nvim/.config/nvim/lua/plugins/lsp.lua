@@ -70,6 +70,7 @@ return {
           "lua_ls", -- Lua
           "phpactor", -- php
           "gopls", -- Go
+          "pylsp", -- Python
         },
       }
 
