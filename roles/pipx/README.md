@@ -1,5 +1,5 @@
 # roles/pipx
-pypa/pipx: Install and Run Python Applications in Isolated Environments
+Python | pypa/pipx: Install and Run Python Applications in Isolated Environments
 
 - poetry, mkdocs など、開発モジュールとは別管理したい Python 製の CLI ツールは、この pipx で管理すればスッキリする。
 - pipx は、pip の拡張 CLI ツールで、使い方は、pip とほぼ同じ。

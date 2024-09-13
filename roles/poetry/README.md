@@ -1,5 +1,5 @@
 # roles/poetry
-python-poetry/poetry: Python dependency management and packaging made easy.
+Python | python-poetry/poetry: Python dependency management and packaging made easy.
 
 - プロジェクトの作成、パッケージ管理、ビルド、PyPI へのデプロイが、このツールだけで実施できる。
 - 類似ツール: Pipenv、Pyflow
