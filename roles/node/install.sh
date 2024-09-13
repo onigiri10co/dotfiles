@@ -4,10 +4,7 @@ set -e
 readonly CURRENT_PATH=$(cd $(dirname $0); pwd)
 
 
-asdf list nodejs > /dev/null 2>&1 || {
-  asdf plugin add nodejs
+mise list node > /dev/null 2>&1 || {
+  mise use --global node
 }
-
-asdf install nodejs latest
-asdf global nodejs latest
 

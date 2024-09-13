@@ -1,18 +1,18 @@
 # roles/java
-オブジェクト指向プログラミング言語 Java
+オブジェクト指向プログラミング言語 Java（AWS Corretto を使用）
 
 
 
 ## Dependencies
-- asdf
+- mise
 
 
 
 ## Setup
-See roles/asdf
+See roles/mise
 
 
 
 ## References
-- [halcyon/asdf-java: A Java plugin for asdf-vm.](https://github.com/halcyon/asdf-java)
+- [OpenJDK Download - Corretto - AWS](https://aws.amazon.com/corretto/?nc1=h_ls&filtered-posts.sort-by=item.additionalFields.createdDate&filtered-posts.sort-order=desc)
 
