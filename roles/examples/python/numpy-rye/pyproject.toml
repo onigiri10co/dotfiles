@@ -1,0 +1,26 @@
+[project]
+name = "numpy-rye"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "onigomex", email = "onigomex+github@gmail.com" }
+]
+dependencies = [
+    "numpy>=2.1.1",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/numpy_rye"]
