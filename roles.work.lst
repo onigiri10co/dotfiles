@@ -41,9 +41,11 @@ ffmpeg
 imagemagick
 node
 #pyenv
-pipx
-poetry
-python
+#pipx
+#poetry
+#python
+rye
+uv
 ruby
 java
 ssh
