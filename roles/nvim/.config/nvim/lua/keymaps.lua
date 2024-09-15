@@ -12,6 +12,7 @@ vim.keymap.set('n', '<esc><esc>', '<cmd>nohlsearch<cr>', { desc = '::Keymap [non
 -- Close Window
 local close_window = function()
   vim.keymap.set('n', '<leader><leader>', '<cmd>bd<cr>', { buffer = true, silent = true })
+  vim.keymap.set('n', '<esc><esc>', '<cmd>bd<cr>', { buffer = true, silent = true })
 end
 autocmd("FileType", {
   desc = 'Close "Help" window if you press <leader><leader>',
