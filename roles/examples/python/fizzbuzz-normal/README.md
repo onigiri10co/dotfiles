@@ -1,6 +1,7 @@
-# examples/python/fizzbuzz
-- python で fizzbuzz
-- pytest で fizzbuzz の test
+# examples/python/fizzbuzz-normal
+- fizzbuzz
+- test fizzbuzz
+- normal(venv, pip)
 
 
 
@@ -15,6 +16,7 @@
 
 ## Usage
 ```
+% source venv/bin/activate
 (venv) % python example/fizzbuzz.py
 (venv) % python -m pytest tests/test_fizzbuzz.py
 ```
