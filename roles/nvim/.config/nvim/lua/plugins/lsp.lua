@@ -62,6 +62,7 @@ return {
     dependencies = {
       { "williamboman/mason.nvim" },
       { "neovim/nvim-lspconfig", },
+      { "hrsh7th/cmp-nvim-lsp", }, -- LSP source for nvim-cmp
     },
     config = function()
       -- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
@@ -77,7 +78,10 @@ return {
       local lspconfig = require("lspconfig")
       local handlers = {
         function(server_name)
-          lspconfig[server_name].setup {}
+          lspconfig[server_name].setup {
+            -- https://github.com/hrsh7th/cmp-nvim-lsp?tab=readme-ov-file#capabilities
+            capabilities = require('cmp_nvim_lsp').default_capabilities(),
+          }
         end,
         ["lua_ls"] = function()
           lspconfig.lua_ls.setup {
@@ -93,6 +97,30 @@ return {
         end,
       }
       require("mason-lspconfig").setup_handlers(handlers)
+    end
+  },
+
+  -- Autocompletion plugin
+  -- https://github.com/hrsh7th/nvim-cmp/
+  {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      local cmp = require("cmp")
+      cmp.setup {
+        sources = cmp.config.sources({
+          { name = 'nvim_lsp' },
+        }, {
+          { name = 'buffer' },
+        }),
+        mapping = cmp.mapping.preset.insert({
+          ['<c-l>'] = cmp.mapping.complete(),  -- 補完候補表示
+          ['<cr>'] = cmp.mapping.confirm({ select = true }), -- 補完の選択確定（デフォルト c-y も使える）
+          ["<c-p>"] = cmp.mapping.select_prev_item(), -- 補完欄を一つ上に移動（デフォルトだが明示した）
+          ["<c-n>"] = cmp.mapping.select_next_item(), -- 補完欄を一つ下に移動（デフォルトだが明示した）
+          ['<c-f>'] = cmp.mapping.scroll_docs(4),  -- 補完欄内を下に移動
+          ['<c-b>'] = cmp.mapping.scroll_docs(-4), -- 補完欄内を上に移動
+        })
+      }
     end
   },
 
