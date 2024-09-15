@@ -104,11 +104,16 @@ return {
   -- https://github.com/hrsh7th/nvim-cmp/
   {
     "hrsh7th/nvim-cmp",
+    dependencies = {
+      -- https://github.com/hrsh7th/cmp-path
+      { "hrsh7th/cmp-path" },
+    },
     config = function()
       local cmp = require("cmp")
       cmp.setup {
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
+          { name = 'path' },
         }, {
           { name = 'buffer' },
         }),
