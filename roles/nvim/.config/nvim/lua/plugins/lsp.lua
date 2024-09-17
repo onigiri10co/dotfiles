@@ -107,13 +107,25 @@ return {
     dependencies = {
       -- https://github.com/hrsh7th/cmp-path
       { "hrsh7th/cmp-path" },
+      -- https://github.com/hrsh7th/vim-vsnip
+      { "hrsh7th/vim-vsnip" },
+      -- https://github.com/hrsh7th/cmp-vsnip
+      { "hrsh7th/cmp-vsnip" },
+      -- https://github.com/rafamadriz/friendly-snippets
+      { "rafamadriz/friendly-snippets" },
     },
     config = function()
       local cmp = require("cmp")
       cmp.setup {
+        snippet = {
+          expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+          end,
+        },
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = 'path' },
+          { name = 'vsnip' }, -- For vsnip users.
         }, {
           { name = 'buffer' },
         }),
