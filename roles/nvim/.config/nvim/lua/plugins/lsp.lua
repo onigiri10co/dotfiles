@@ -100,6 +100,15 @@ return {
     end
   },
 
+  -- https://github.com/ray-x/lsp_signature.nvim
+  {
+    "ray-x/lsp_signature.nvim",
+    opts = {},
+    config = function(_, opts)
+      require 'lsp_signature'.setup(opts)
+    end
+  },
+
   -- Autocompletion plugin
   -- https://github.com/hrsh7th/nvim-cmp/
   {
