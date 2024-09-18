@@ -3,17 +3,18 @@ return {
   {
     "neovim/nvim-lspconfig",
     keys = {
-      { "<leader>cl", "<cmd>LspInfo<cr>", desc = "::LSP Info" },
-      { "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "::LSP Goto Definition" },
-      { "gn", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "::LSP Rename" },
-      { "K", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "::LSP Hover" },
-      { "<c-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "::LSP Signature Help" },
-      { "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", desc = "::LSP Goto Implementation" },
-      { "gr", "<cmd>lua vim.lsp.buf.references()<cr>", desc = "::LSP References" },
-      { "gf", "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "::LSP Diagnostic Open float" },
-      { "gl", "<cmd>lua vim.diagnostic.setloclist()<cr>", desc = "::LSP Diagnostic Location List" },
-      { "<c-n>", "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "::LSP Diagnostic Goto Next" },
-      { "<c-p>", "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "::LSP Diagnostic Goto Prev" },
+      { "<leader>cl", "<cmd>LspInfo<cr>",                          desc = "::LSP Info" },
+      { "gd",         "<cmd>lua vim.lsp.buf.definition()<cr>",     desc = "::LSP Goto Definition" },
+      { "gn",         "<cmd>lua vim.lsp.buf.rename()<cr>",         desc = "::LSP Rename" },
+      { "K",          "<cmd>lua vim.lsp.buf.hover()<cr>",          desc = "::LSP Hover" },
+      { "<c-k>",      "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "::LSP Signature Help" },
+      { "gi",         "<cmd>lua vim.lsp.buf.implementation()<cr>", desc = "::LSP Goto Implementation" },
+      { "gr",         "<cmd>lua vim.lsp.buf.references()<cr>",     desc = "::LSP References" },
+      { "gf",         "<cmd>lua vim.lsp.buf.format()<cr>",         desc = "::LSP Format" },
+      { "F",          "<cmd>lua vim.diagnostic.open_float()<cr>",  desc = "::LSP Diagnostic Open float" },
+      { "gl",         "<cmd>lua vim.diagnostic.setloclist()<cr>",  desc = "::LSP Diagnostic Location List" },
+      { "<c-n>",      "<cmd>lua vim.diagnostic.goto_next()<cr>",   desc = "::LSP Diagnostic Goto Next" },
+      { "<c-p>",      "<cmd>lua vim.diagnostic.goto_prev()<cr>",   desc = "::LSP Diagnostic Goto Prev" },
     },
 
     config = function()
@@ -31,13 +32,13 @@ return {
       )
 
       vim.diagnostic.config({
-        signs = true, -- true: LSP サインを表示する
-        virtual_text = false, -- false: 仮想テキスト（エラー説明）を表示しない
-        underline = true, -- true: エラー行に下線を表示する
+        signs = true,             -- true: LSP サインを表示する
+        virtual_text = false,     -- false: 仮想テキスト（エラー説明）を表示しない
+        underline = true,         -- true: エラー行に下線を表示する
         update_in_insert = false, -- false: 挿入モードのときに diagnostic を更新させない
-        severity_sort = true, -- true: エラー/警告/ヒントの表示順を深刻度の高い方から表示する（サインカラムにそれらが重なった場合）
+        severity_sort = true,     -- true: エラー/警告/ヒントの表示順を深刻度の高い方から表示する（サインカラムにそれらが重なった場合）
         float = {
-          source = "always", -- Or "if_many"
+          source = "always",      -- Or "if_many"
           border = 'single'
         },
       })
@@ -83,10 +84,11 @@ return {
       -- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
       require("mason-lspconfig").setup {
         ensure_installed = {
-          "lua_ls", -- Lua
-          "phpactor", -- php
-          "gopls", -- Go
-          "pylsp", -- Python
+          "lua_ls",                          -- Lua
+          "phpactor",                        -- php
+          "pylsp",                           -- Python
+          "ruff",                            -- ruff(Python linter, formatter)
+          "gopls",                           -- Go
           "ts_ls",                           -- TypeScript
           "marksman",                        -- Markdown
           "bashls",                          -- Bash
@@ -223,12 +225,12 @@ return {
           { name = 'buffer' },
         }),
         mapping = cmp.mapping.preset.insert({
-          ['<c-l>'] = cmp.mapping.complete(),  -- 補完候補表示
+          ['<c-l>'] = cmp.mapping.complete(),                -- 補完候補表示
           ['<cr>'] = cmp.mapping.confirm({ select = true }), -- 補完の選択確定（デフォルト c-y も使える）
-          ["<c-p>"] = cmp.mapping.select_prev_item(), -- 補完欄を一つ上に移動（デフォルトだが明示した）
-          ["<c-n>"] = cmp.mapping.select_next_item(), -- 補完欄を一つ下に移動（デフォルトだが明示した）
-          ['<c-f>'] = cmp.mapping.scroll_docs(4),  -- 補完欄内を下に移動
-          ['<c-b>'] = cmp.mapping.scroll_docs(-4), -- 補完欄内を上に移動
+          ["<c-p>"] = cmp.mapping.select_prev_item(),        -- 補完欄を一つ上に移動（デフォルトだが明示した）
+          ["<c-n>"] = cmp.mapping.select_next_item(),        -- 補完欄を一つ下に移動（デフォルトだが明示した）
+          ['<c-f>'] = cmp.mapping.scroll_docs(4),            -- 補完欄内を下に移動
+          ['<c-b>'] = cmp.mapping.scroll_docs(-4),           -- 補完欄内を上に移動
           ['<Tab>'] = cmp.mapping(function(fallback)         -- Super-Tab like mapping: Tab で補完欄を一つ下に移動
             if cmp.visible() then
               cmp.select_next_item()
