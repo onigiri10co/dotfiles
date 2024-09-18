@@ -41,6 +41,21 @@ return {
           border = 'single'
         },
       })
+
+      -- LspAttach: LSP Server が開いた Buffer に Attach されたときに発火
+      -- https://www.mitchellhanberg.com/modern-format-on-save-in-neovim/
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("Lsp", { clear = true }),
+        callback = function(args)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            -- pattern = { "*.py" }, -- NOTE: none-ls でフォーマットしない拡張子のみ設定（通常、none-ls でフォーマットするが、一部専用の LS で対応するものがあるため）
+            buffer = args.buf,
+            callback = function()
+              vim.lsp.buf.format { async = false, id = args.data.client_id }
+            end,
+          })
+        end
+      })
     end
   },
 
@@ -97,6 +112,38 @@ return {
         end,
       }
       require("mason-lspconfig").setup_handlers(handlers)
+    end
+  },
+
+  -- https://github.com/nvimtools/none-ls.nvim
+  {
+    "nvimtools/none-ls.nvim",
+    dependencies = {
+      -- https://github.com/nvim-lua/plenary.nvim
+      { "nvim-lua/plenary.nvim" },
+    },
+    config = function()
+      local null_ls = require("null-ls")
+      local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+      null_ls.setup {
+        sources = {
+          -- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md#phpcsfixer
+          null_ls.builtins.formatting.phpcsfixer,
+        },
+        -- https://github.com/nvimtools/none-ls.nvim/wiki/Formatting-on-save#code
+        on_attach = function(client, bufnr)
+          if client.supports_method("textDocument/formatting") then
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              group = augroup,
+              buffer = bufnr,
+              callback = function()
+                vim.lsp.buf.format({ async = false })
+              end,
+            })
+          end
+        end,
+      }
     end
   },
 
