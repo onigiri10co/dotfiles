@@ -87,6 +87,14 @@ return {
           "phpactor", -- php
           "gopls", -- Go
           "pylsp", -- Python
+          "ts_ls",                           -- TypeScript
+          "marksman",                        -- Markdown
+          "bashls",                          -- Bash
+          "html",                            -- HTML
+          "jsonls",                          -- Json
+          "cssls",                           -- CSS
+          "dockerls",                        -- Docker
+          "docker_compose_language_service", --Docker Compose
         },
       }
 
