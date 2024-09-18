@@ -189,6 +189,17 @@ return {
       { "rafamadriz/friendly-snippets" },
     },
     config = function()
+      -- https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#vim-vsnip
+      -- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion#nvim-cmp
+      local has_words_before = function()
+        unpack = unpack or table.unpack
+        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+      end
+      local feedkey = function(key, mode)
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+      end
+
       local cmp = require("cmp")
       cmp.setup {
         snippet = {
@@ -210,6 +221,24 @@ return {
           ["<c-n>"] = cmp.mapping.select_next_item(), -- 補完欄を一つ下に移動（デフォルトだが明示した）
           ['<c-f>'] = cmp.mapping.scroll_docs(4),  -- 補完欄内を下に移動
           ['<c-b>'] = cmp.mapping.scroll_docs(-4), -- 補完欄内を上に移動
+          ['<Tab>'] = cmp.mapping(function(fallback)         -- Super-Tab like mapping: Tab で補完欄を一つ下に移動
+            if cmp.visible() then
+              cmp.select_next_item()
+            elseif vim.fn["vsnip#available"](1) == 1 then
+              feedkey("<Plug>(vsnip-expand-or-jump)", "")
+            elseif has_words_before() then
+              cmp.complete()
+            else
+              fallback()
+            end
+          end, { 'i', 's' }),
+          ['<S-Tab>'] = cmp.mapping(function(fallback) -- Super-Tab like mapping: S-Tab で補完欄を一つ上に移動
+            if cmp.visible() then
+              cmp.select_prev_item()
+            elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+              feedkey("<Plug>(vsnip-jump-prev)", "")
+            end
+          end, { 'i', 's' }),
         })
       }
     end
