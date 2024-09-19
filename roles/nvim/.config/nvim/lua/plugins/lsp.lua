@@ -263,4 +263,14 @@ return {
     end
   },
 
+  -- https://github.com/folke/trouble.nvim
+  {
+    "folke/trouble.nvim",
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
+    keys = {
+      { "<leader>x", "<cmd>Trouble diagnostics toggle<cr>", desc = "::Trouble Diagnostics (Trouble)" },
+    },
+  }
+
 }

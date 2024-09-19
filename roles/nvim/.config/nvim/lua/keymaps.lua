@@ -26,6 +26,13 @@ autocmd('FileType', {
   pattern = 'qf',
   callback = close_window,
 })
+-- dependencies: lsp.lua > folke/trouble.nvim
+autocmd('FileType', {
+  desc = 'Close "Trouble" window if you press <leader><leader>',
+  group = augroup('Trouble', { clear = true }),
+  pattern = 'trouble',
+  callback = close_window,
+})
 
 -- Terminal
 -- https://qiita.com/delphinus/items/aea16e82de2145d2a6b7
