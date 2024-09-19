@@ -44,4 +44,29 @@ return {
     config = true
   },
 
+  -- https://github.com/nvim-lualine/lualine.nvim
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = "VeryLazy",
+    config = function()
+      -- https://github.com/nvim-lualine/lualine.nvim/blob/master/lua/lualine/themes/nord.lua
+      -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md#nord
+      -- https://www.nordtheme.com/docs/colors-and-palettes
+      local custom_theme = require('lualine.themes.nord')
+      -- TODO: 何が作用しているか分からんが、そのまま Nord カラーを使うと、色がおかしくなるので一番マシなやつで仮置き
+      local zantei_color = '#000000'
+      custom_theme.normal.b.bg = zantei_color
+      custom_theme.normal.c.bg = zantei_color
+      custom_theme.inactive.b.bg = zantei_color
+      custom_theme.inactive.c.bg = zantei_color
+      require('lualine').setup {
+        options = {
+          theme = custom_theme,
+          section_separators = { left = '', right = '' },
+          component_separators = { left = '', right = '' }
+        }
+      }
+    end
+  },
 }
