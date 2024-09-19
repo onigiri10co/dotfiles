@@ -3,7 +3,7 @@ local augroup = vim.api.nvim_create_augroup -- Create/get sutocommand group
 local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 
 -- Leader
-vim.g.mapleader = " " -- <leader> = space
+vim.g.mapleader = " "      -- <leader> = space
 vim.g.maplocalleader = "," -- <localLeader>
 
 -- Search
@@ -37,5 +37,7 @@ autocmd('FileType', {
 -- Terminal
 -- https://qiita.com/delphinus/items/aea16e82de2145d2a6b7
 -- Note: "t" is :tnoremap (Terminal-Job mode)
-vim.keymap.set('t', '<esc>', '<c-\\><c-n>', { desc = '::Keymap Change Terminal-Normal mode by <esc> from Terminal-Job mode.' })
-vim.keymap.set('t', 'jj', '<c-\\><c-n><c-w><c-p>', { desc = '::Keymap Switch back to last window from Terminal-Job mode.' })
+vim.keymap.set('t', '<esc>', '<c-\\><c-n>',
+  { desc = '::Keymap Change Terminal-Normal mode by <esc> from Terminal-Job mode.' })
+vim.keymap.set('t', 'jj', '<c-\\><c-n><c-w><c-p>',
+  { desc = '::Keymap Switch back to last window from Terminal-Job mode.' })
