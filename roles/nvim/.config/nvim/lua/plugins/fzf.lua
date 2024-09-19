@@ -15,6 +15,7 @@ return {
     { "<localLeader>gb",  "<cmd>FzfLua git_branches<cr>",               desc = "::git branches" },
     { "<localLeader>gc",  "<cmd>FzfLua git_commits<cr>",                desc = "::git commit log in current repo" },
     { "<localLeader>gcc", "<cmd>FzfLua git_bcommits<cr>",               desc = "::git commit log in current file" },
+    { "<leader>t",        "<cmd>TodoFzfLua<cr>",                        desc = "::fzf Trouble todo" }, -- for folke/todo-comments.nvim
   },
   config = function()
     require("fzf-lua").setup({})
