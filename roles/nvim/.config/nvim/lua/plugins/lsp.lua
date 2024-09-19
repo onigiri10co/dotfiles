@@ -197,6 +197,8 @@ return {
       { "hrsh7th/cmp-vsnip" },
       -- https://github.com/rafamadriz/friendly-snippets
       { "rafamadriz/friendly-snippets" },
+      -- https://github.com/windwp/nvim-autopairs
+      { 'windwp/nvim-autopairs' },
     },
     config = function()
       -- https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#vim-vsnip
@@ -251,6 +253,13 @@ return {
           end, { 'i', 's' }),
         })
       }
+
+      -- https://github.com/windwp/nvim-autopairs?tab=readme-ov-file#you-need-to-add-mapping-cr-on-nvim-cmp-setupcheck-readmemd-on-nvim-cmp-repo
+      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+      cmp.event:on(
+        'confirm_done',
+        cmp_autopairs.on_confirm_done()
+      )
     end
   },
 

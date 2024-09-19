@@ -29,5 +29,13 @@ return {
     -- cs'" : 'change quot*es' => "change quotes"
     -- HTML/dst : remove <b>HTML t*ags</b> => remove HTML tagstack
     -- HTML/csth1<CR> : <b>or tag* types</b> => <h1>or tag types</h1>
-  }
+  },
+
+  -- https://github.com/windwp/nvim-autopairs
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+  },
+
 }
