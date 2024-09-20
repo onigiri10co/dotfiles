@@ -45,6 +45,7 @@ return {
   },
 
   -- https://github.com/nvim-lualine/lualine.nvim
+  -- TODO: ステータスラインを上部にしたい（tabline を使えばできそう）, ref: https://www.reddit.com/r/neovim/comments/18nj7xr/lualine_is_always_at_the_top_how_to_get_it_to_the/
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -97,5 +98,14 @@ return {
   --     })
   --   end
   -- },
+
+  -- https://github.com/b0o/incline.nvim
+  {
+    'b0o/incline.nvim',
+    event = 'VeryLazy',
+    config = function()
+      require('incline').setup()
+    end,
+  },
 
 }
