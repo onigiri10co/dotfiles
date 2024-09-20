@@ -77,4 +77,10 @@ return {
     opts = {},
   },
 
+  -- https://github.com/echasnovski/mini.indentscope
+  {
+    "echasnovski/mini.indentscope",
+    config = true
+  },
+
 }
