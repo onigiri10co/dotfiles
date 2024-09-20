@@ -8,9 +8,9 @@ autocmd("BufWritePre", {
   command = ":%s/\\s\\+$//e",
 })
 
--- TODO: fzf-lua でも termopen イベントが発火するらしく、これが効いたしまう。抜ける時に素に戻したい or terminal だけ効かせたいが方法が分からんのでいったんコメントアウト（vim ターミナルはあんま使わないので）
--- Always open the terminal in insert mode (and nonumber, laststatus=0)
--- autocmd("TermOpen", {
---   pattern = "*",
---   command = "set nonumber\nset laststatus=0\nstartinsert"
--- })
+-- Always open the terminal in insert mode (and nonumber)
+-- TODO: Terminal buffer に戻ったときも自動で insert モードにしたい
+autocmd("TermOpen", {
+  pattern = "*",
+  command = "set nonumber\nstartinsert"
+})
