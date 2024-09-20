@@ -17,6 +17,9 @@ local config = {
   defaults = {
     lazy = false, -- should plugins be lazy-loaded?
   },
+  install = {
+    colorscheme = { "nord" }
+  },
   spec = {
     { import = "plugins" },
   },
