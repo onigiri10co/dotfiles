@@ -83,6 +83,21 @@ return {
     config = true
   },
 
+  -- TODO: 本当はこれを使いたいが、chunk が、まともに動かないので、mini.indentscope で賄っている。
+  -- -- https://github.com/shellRaining/hlchunk.nvim
+  -- {
+  --   "shellRaining/hlchunk.nvim",
+  --   event = { "BufReadPre", "BufNewFile" },
+  --   config = function()
+  --     require("hlchunk").setup({
+  --       chunk = { enable = false, },
+  --       indent = { enable = true },
+  --       line_num = { enable = false },
+  --       blank = { enable = false }
+  --     })
+  --   end
+  -- },
+
   -- https://github.com/akinsho/toggleterm.nvim
   {
     "akinsho/toggleterm.nvim",
