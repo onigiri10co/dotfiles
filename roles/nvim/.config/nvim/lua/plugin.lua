@@ -17,11 +17,14 @@ local config = {
   defaults = {
     lazy = false, -- should plugins be lazy-loaded?
   },
+  install = {
+    colorscheme = { "nord" }
+  },
   spec = {
     { import = "plugins" },
   },
   checker = {
-	  enabled = true, -- プラグインのアップデートを自動的にチェック
+    enabled = true, -- プラグインのアップデートを自動的にチェック
   },
   change_detection = {
     notify = false, -- https://github.com/folke/lazy.nvim/issues/32#issuecomment-1443733721

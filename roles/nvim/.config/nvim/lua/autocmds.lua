@@ -4,12 +4,13 @@ local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 
 -- Remove whitespace on save
 autocmd("BufWritePre", {
-	pattern = "*",
-	command = ":%s/\\s\\+$//e",
+  pattern = "*",
+  command = ":%s/\\s\\+$//e",
 })
 
--- Always open the terminal in insert mode (and nonumber, laststatus=0)
+-- Always open the terminal in insert mode (and nonumber)
+-- TODO: Terminal buffer に戻ったときも自動で insert モードにしたい
 autocmd("TermOpen", {
-	pattern = "*",
-	command = "set nonumber\nset laststatus=0\nstartinsert"
+  pattern = "*",
+  command = "set nonumber\nstartinsert"
 })

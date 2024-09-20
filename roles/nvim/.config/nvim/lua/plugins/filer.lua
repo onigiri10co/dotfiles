@@ -3,6 +3,7 @@ return {
   {
     "lambdalisue/fern.vim",
     keys = {
+      -- https://github.com/lambdalisue/vim-fern/wiki/Mappings
       { "<leader>e", "<cmd>Fern .<cr>", desc = "::Fern explorer" }
     },
     config = function()
