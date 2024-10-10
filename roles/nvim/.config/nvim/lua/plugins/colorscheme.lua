@@ -2,7 +2,7 @@
 return {
   "nordtheme/vim",
   lazy = false,
-  priority = 1000, -- make sure to load this before all the other start plugins
+  priority = 1000,                              -- make sure to load this before all the other start plugins
   config = function()
     local augroup = vim.api.nvim_create_augroup -- Create/get sutocommand group
     local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
