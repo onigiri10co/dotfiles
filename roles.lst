@@ -15,8 +15,8 @@ memo
 memo-setup
 efm-langserver
 vim
-vimr
-#macvim
+nvim
+goneovim
 jq
 fd
 hammerspoon
