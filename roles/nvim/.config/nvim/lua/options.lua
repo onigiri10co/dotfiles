@@ -17,6 +17,7 @@ opt.ignorecase = true -- 大文字小文字を区別しない
 opt.smartcase = true  -- パターンに大文字が含まれているときに限り、大文字と小文字を区別
 
 -- View
+opt.termguicolors = true -- True Color を有効にする
 opt.number = true -- 行番号を表示する
 api.nvim_win_set_option(0, 'signcolumn', 'yes:1') -- サインカラムを常に表示する
 opt.cursorline = true -- 現在行をハイライト
