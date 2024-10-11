@@ -13,7 +13,6 @@ zoxide
 go
 memo
 memo-setup
-efm-langserver
 vim
 nvim
 goneovim
