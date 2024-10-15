@@ -24,7 +24,7 @@ opt.cursorline = true -- 現在行をハイライト
 opt.cursorcolumn = false -- 現在列をハイライト
 opt.list = true -- 改行文字表示
 opt.listchars = 'tab:»-,eol:↴,trail:･,nbsp:⍽,extends:»,precedes:«' -- 改行などの文字を指定
-opt.laststatus = 0 -- 0=非表示（plugin/lualine によりタブラインに表示するため非表示にする）、3=ステータスラインを1つだけにする
+opt.laststatus = 3 -- 0=非表示（plugin/lualine によりタブラインに表示するため非表示にする）、3=ステータスラインを1つだけにする
 
 -- Edit
 opt.expandtab = true -- true の場合、タブキー入力時にタブの代わりに半角スペースを入力する

@@ -51,9 +51,7 @@ return {
     event = "VeryLazy",
     config = function()
       require('lualine').setup {
-        sections = {},
-        inactive_sections = {},
-        tabline = {
+        sections = {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
           lualine_c = {
