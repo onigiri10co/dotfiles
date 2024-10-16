@@ -1,11 +1,11 @@
 ##########################################################################################################
 ## zsh documents
 # % man zsh          :List of zsh manuals and zsh overview
-# % man zshmisc      :Script syntax, how to write redirects and pipes, list of special functions, etc. 
-# % man zshexpn      :Notation of glob and variable expansion 
-# % man zshparam     :List of special variables and notation of suffix expansion of variables  
-# % man zshoptions   :List of options that can be set with setopt  
-# % man zshbuiltins  :List of built-in commands 
+# % man zshmisc      :Script syntax, how to write redirects and pipes, list of special functions, etc.
+# % man zshexpn      :Notation of glob and variable expansion
+# % man zshparam     :List of special variables and notation of suffix expansion of variables
+# % man zshoptions   :List of options that can be set with setopt
+# % man zshbuiltins  :List of built-in commands
 # % bindkey -L       :Examine key binding
 #
 ## display color
@@ -13,7 +13,7 @@
 #
 ## order in zsh config is loaded
 # zshenv -> zprofile -> zshrc -> zlogin
-# For each, read global(/etc/zsh*) and then overwrite with local(~/.zsh*)). 
+# For each, read global(/etc/zsh*) and then overwrite with local(~/.zsh*)).
 # if $ZDOTDIR is set, zsh* under that directory will be loaded(default: $HOME).
 ##########################################################################################################
 # Not duplicate registration
@@ -26,9 +26,9 @@ fpath+=~/.zsh.d/completion
 export PATH="$HOME/bin:/usr/local/bin:/sbin:/usr/sbin/:$PATH"
 
 # Bindkey
-bindkey -v                                             # vi keybind 
+bindkey -v                                             # vi keybind
 bindkey "^[[Z" reverse-menu-complete                   # shift-tab reverse
-stty stop undef                                        # disable <C-s>: Stop screen output. 
+stty stop undef                                        # disable <C-s>: Stop screen output.
 stty start undef                                       # disable <C-q>: Restart screen output that is stopped.
 
 # Base
@@ -36,7 +36,7 @@ autoload -Uz compinit && compinit                      # auto-completion: on
 autoload -Uz colors && colors                          # colors: on
 setopt no_tify                                         # Notify as soon as the background job is over.
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'    # Match to uppercase lowercase conversion (However, distinguish when inputting capital letters)
-zstyle ':completion:*:default' menu select=1           # Press <Tab>, you can select the path name from candidates. 
+zstyle ':completion:*:default' menu select=1           # Press <Tab>, you can select the path name from candidates.
 zstyle ':completion:*:sudo:*' command-path $path       # To enable the completion with sudo command
 
 # Editor
@@ -48,13 +48,13 @@ export EDITOR=vim
 # $ history -i            Show execution date and time
 # $ history -D            Show the time spent executing
 # $ history <fr> <to>     Specify the range and show it
-#   e.g. history 1 5      Show from 1st to 5th 
-#   e.g. history -5       Show the last 5 
-#   e.g. history 1        Show from 1st (= show all) 
-#   e.g. history -10 -5   Show from the tenth most recent to the last five most recent history 
+#   e.g. history 1 5      Show from 1st to 5th
+#   e.g. history -5       Show the last 5
+#   e.g. history 1        Show from 1st (= show all)
+#   e.g. history -10 -5   Show from the tenth most recent to the last five most recent history
 ##########################################################################################################
 setopt share_history                                   # Share history
-export HISTFILE=~/.zsh_history                         # Save history file 
+export HISTFILE=~/.zsh_history                         # Save history file
 export HISTSIZE=10000                                  # Number of history items to store in memory
 export SAVEHIST=10000                                  # Number of records to be saved in history file
 setopt hist_ignore_all_dups                            # Duplicate commands delete the old one
