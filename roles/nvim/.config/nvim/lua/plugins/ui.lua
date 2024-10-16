@@ -45,17 +45,26 @@ return {
   },
 
   -- https://github.com/nvim-lualine/lualine.nvim
-  -- TODO: ステータスラインを上部にしたい（tabline を使えばできそう）, ref: https://www.reddit.com/r/neovim/comments/18nj7xr/lualine_is_always_at_the_top_how_to_get_it_to_the/
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     event = "VeryLazy",
     config = function()
       require('lualine').setup {
-        options = {
-          section_separators = { left = '', right = '' },
-          component_separators = { left = '', right = '' }
-        }
+        sections = {
+          lualine_a = { 'mode' },
+          lualine_b = { 'branch', 'diff', 'diagnostics' },
+          lualine_c = {
+            {
+              'filename',
+              file_status = true, -- displays file status (readonly status, modified status)
+              path = 2            -- 0 = just filename, 1 = relative path, 2 = absolute path
+            }
+          },
+          lualine_x = { 'encoding', 'fileformat', 'filetype' },
+          lualine_y = { 'progress' },
+          lualine_z = { 'location' }
+        },
       }
     end
   },
