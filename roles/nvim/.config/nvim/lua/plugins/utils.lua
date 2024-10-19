@@ -32,4 +32,12 @@ return {
     -- end,
   },
 
+  -- https://github.com/previm/previm
+  {
+    'previm/previm',
+    init = function()
+      vim.g.previm_open_cmd = 'open -a Google\\ Chrome'
+    end,
+  },
+
 }
