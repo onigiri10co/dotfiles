@@ -63,21 +63,21 @@ setopt hist_no_store                                   # Do not register the his
 
 # Prompt
 PROMPT="%F{006}%%%f "
-# autoload -Uz vcs_info
-# setopt prompt_subst
-# zstyle ':vcs_info:git:*' check-for-changes true        # Enable %c,%u formatting. If there are uncommitted files in the repository, the string is stored.
-# zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"       # only git add files
-# zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"        # not git add files
-# zstyle ':vcs_info:*' formats "%F{green}%c%u(%b)%f"     # set $vcs_info_msg_0_
-# zstyle ':vcs_info:*' actionformats '(%b|%a)'           # This format is displayed at merge conflict.
-# precmd_branch_currentpath () {
-#   vcs_info
-#   local left='${vcs_info_msg_0_} %F{blue}▶%f%F{cyan} %~%f'
-#   print
-#   print -P $left
-# }
-# autoload -Uz add-zsh-hook
-# add-zsh-hook precmd precmd_branch_currentpath
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true        # Enable %c,%u formatting. If there are uncommitted files in the repository, the string is stored.
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"       # only git add files
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"        # not git add files
+zstyle ':vcs_info:*' formats "%F{green}%c%u(%b)%f"     # set $vcs_info_msg_0_
+zstyle ':vcs_info:*' actionformats '(%b|%a)'           # This format is displayed at merge conflict.
+precmd_branch_currentpath () {
+  vcs_info
+  local left='${vcs_info_msg_0_} %F{blue}▶%f%F{cyan} %~%f'
+  print
+  print -P $left
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd precmd_branch_currentpath
 
 # Command options
 export LESS='-iMR'
