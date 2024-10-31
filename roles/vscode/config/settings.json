@@ -1,0 +1,48 @@
+/**
+# TODO
+- URL コードジャンプ（vim と同じキーで）
+*/
+{
+  // カラースキーマ: Nord
+  "workbench.colorTheme": "Nord",
+  // プレビューモードで開かない
+  "workbench.editor.enablePreview": false,
+  // minimap(右上に表示されるテキスト全体の縮小表示画面): OFF
+  "editor.minimap.enabled": false,
+  // 半角スペースを可視化する
+  "editor.renderWhitespace": "all",
+  // Vim
+  // クリップボード共有: ON
+  "vim.useSystemClipboard": true,
+  // 検索結果をハイライトする
+  "vim.hlsearch": true,
+  // Leader 設定
+  "vim.leader": "<space>",
+  // EasyMotion: ON (Leader x 2 + jkhl, w, s(検索したい文字列) で実行) ※ keybindings.json で leader とかぶるキーを設定していると効かなくなるので注意
+  "vim.easymotion": true,
+  // vim Ctrl + Key 操作が有効
+  "vim.useCtrlKeys": true,
+  // LeetCode
+  "leetcode.workspaceFolder": "/Users/h20220530/src/github.com/onigomex/sandbox/go/leetcode",
+  "leetcode.defaultLanguage": "golang",
+  "leetcode.hint.configWebviewMarkdown": false,
+  "leetcode.showDescription": "Both",
+  "leetcode.hint.commandShortcut": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "go.toolsManagement.autoUpdate": true,
+  // 拡張子ごとの設定
+  "[csv]": {
+    // 行の折り返し表示
+    "editor.wordWrap": "off"
+  },
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "explorer.confirmDragAndDrop": false,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "php.validate.executablePath": "",
+  "git.openRepositoryInParentFolders": "always",
+}
