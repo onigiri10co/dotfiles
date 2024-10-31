@@ -45,4 +45,5 @@
   "security.workspace.trust.untrustedFiles": "open",
   "php.validate.executablePath": "",
   "git.openRepositoryInParentFolders": "always",
+  "terminal.integrated.defaultProfile.osx": "tmux",
 }
