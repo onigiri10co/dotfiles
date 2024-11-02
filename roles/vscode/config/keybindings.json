@@ -16,102 +16,98 @@
 - カレントエディタ -> 右のエディタ: ctrl+w l
 - カレントエディタ -> 下のエディタ: ctrl+w j
 - カレントエディタ -> 上のエディタ: ctrl+w k
-
-# REFS
-- https://qiita.com/y-mattun/items/45776b7e1942edb2f727
-- https://qiita.com/Kyou13/items/d3dffecbba5b89e8b771
 */
 [
-    // エディタ（エクスプローラー以外） -> エクスプローラー（cmd+shift+e）
-    {
-        "key": "cmd+e",
-        "command": "workbench.view.explorer",
-        "when": "!explorerViewletFocus && vim.mode == 'Normal'"
-    },
-    // エクスプローラー -> 直近のエディタ（cmd+shift+e）
-    {
-        "key": "cmd+e",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "explorerViewletFocus"
-    },
-    // エディタ（ターミナル以外） -> ターミナル
-    {
-        "key": "cmd+t",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "!terminalFocus && vim.mode == 'Normal'"
-    },
-    // エディタ（ターミナル以外） -> ターミナル（tmux キーバインド）
-    {
-        "key": "ctrl+b o",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "!terminalFocus && vim.mode == 'Normal'"
-    },
-    // ターミナル -> エディタ（最後にフォーカスしたエディタ）
-    {
-        "key": "cmd+t",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "terminalFocus"
-    },
-    // 任意のウィンドウ -> findInFiles（cmd+shift+f）
-    {
-        "key": "cmd+f",
-        "command": "workbench.action.findInFiles",
-        "when": "vim.mode == 'Normal'"
-    },
-    // findInFiles -> エディタ（最後にフォーカスしたエディタ）
-    {
-        "key": "cmd+f",
-        "command": "workbench.action.focusActiveEditorGroup",
-        "when": "searchInputBoxFocus"
-    },
-    // カレントエディタ -> 左のエディタ
-    {
-        "key": "ctrl+w h",
-        "command": "workbench.action.navigateLeft",
-        "when": "!editorReadonly && !compareEditorActive && !inZenMode && !remoteExplorerEnabled && vim.mode == 'Normal'"
-    },
-    // カレントエディタ -> 右のエディタ
-    {
-        "key": "ctrl+w l",
-        "command": "workbench.action.navigateRight",
-        "when": "!editorReadonly && !compareEditorActive && !inZenMode && !remoteExplorerEnabled && vim.mode == 'Normal'"
-    },
-    // カレントエディタ -> 下のエディタ
-    {
-        "key": "ctrl+w j",
-        "command": "workbench.action.navigateDown",
-        "when": "!editorReadonly && !compareEditorActive && !inZenMode && !remoteExplorerEnabled && vim.mode == 'Normal'"
-    },
-    // カレントエディタ -> 上のエディタ
-    {
-        "key": "ctrl+w k",
-        "command": "workbench.action.navigateUp",
-        "when": "!editorReadonly && !compareEditorActive && !inZenMode && !remoteExplorerEnabled && vim.mode == 'Normal'"
-    },
-    // 次のエディタを開く（cmd+option+→）
-    {
-        "key": "ctrl+w n",
-        "command": "workbench.action.nextEditor",
-        "when": "!editorReadonly && !compareEditorActive && !inZenMode && !remoteExplorerEnabled && vim.mode == 'Normal'"
-    },
-    // 前のエディタを開く（cmd+option+←）
-    {
-        "key": "ctrl+w p",
-        "command": "workbench.action.previousEditor",
-        "when": "!editorReadonly && !compareEditorActive && !inZenMode && !remoteExplorerEnabled && vim.mode == 'Normal'"
-    },
-    // リポジトリ単位の切り替え（repo -> code -r . で開いたリポジトリ）
-    {
-        "key": "cmd+r",
-        "command": "workbench.action.openRecent"
-    },
-    {
-        "key": "ctrl+r",
-        "command": "-workbench.action.openRecent"
-    },
-    // シンボルで検索する
-    {
-        "key": "cmd+o",
-        "command": "workbench.action.gotoSymbol"
-    }
+  // エディタ（エクスプローラー以外） -> エクスプローラー（cmd+shift+e）
+  {
+    "key": "cmd+e",
+    "command": "workbench.view.explorer",
+    "when": "!explorerViewletFocus && vim.mode == 'Normal'"
+  },
+  // エクスプローラー -> 直近のエディタ（cmd+shift+e）
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "explorerViewletFocus"
+  },
+  // エディタ（ターミナル以外） -> ターミナル
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "!terminalFocus && vim.mode == 'Normal'"
+  },
+  // エディタ（ターミナル以外） -> ターミナル（tmux キーバインド）
+  {
+    "key": "ctrl+b o",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "!terminalFocus && vim.mode == 'Normal'"
+  },
+  // ターミナル -> エディタ（最後にフォーカスしたエディタ）
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  // 任意のウィンドウ -> findInFiles（cmd+shift+f）
+  {
+    "key": "cmd+f",
+    "command": "workbench.action.findInFiles",
+    "when": "vim.mode == 'Normal'"
+  },
+  // findInFiles -> エディタ（最後にフォーカスしたエディタ）
+  {
+    "key": "cmd+f",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "searchInputBoxFocus"
+  },
+  // カレントエディタ -> 左のエディタ
+  {
+    "key": "ctrl+w h",
+    "command": "workbench.action.navigateLeft",
+    "when": "!editorReadonly && !compareEditorActive && !inZenMode && !remoteExplorerEnabled && vim.mode == 'Normal'"
+  },
+  // カレントエディタ -> 右のエディタ
+  {
+    "key": "ctrl+w l",
+    "command": "workbench.action.navigateRight",
+    "when": "!editorReadonly && !compareEditorActive && !inZenMode && !remoteExplorerEnabled && vim.mode == 'Normal'"
+  },
+  // カレントエディタ -> 下のエディタ
+  {
+    "key": "ctrl+w j",
+    "command": "workbench.action.navigateDown",
+    "when": "!editorReadonly && !compareEditorActive && !inZenMode && !remoteExplorerEnabled && vim.mode == 'Normal'"
+  },
+  // カレントエディタ -> 上のエディタ
+  {
+    "key": "ctrl+w k",
+    "command": "workbench.action.navigateUp",
+    "when": "!editorReadonly && !compareEditorActive && !inZenMode && !remoteExplorerEnabled && vim.mode == 'Normal'"
+  },
+  // 次のエディタを開く（cmd+option+→）
+  {
+    "key": "ctrl+w n",
+    "command": "workbench.action.nextEditor",
+    "when": "!editorReadonly && !compareEditorActive && !inZenMode && !remoteExplorerEnabled && vim.mode == 'Normal'"
+  },
+  // 前のエディタを開く（cmd+option+←）
+  {
+    "key": "ctrl+w p",
+    "command": "workbench.action.previousEditor",
+    "when": "!editorReadonly && !compareEditorActive && !inZenMode && !remoteExplorerEnabled && vim.mode == 'Normal'"
+  },
+  // リポジトリ単位の切り替え（repo -> code -r . で開いたリポジトリ）
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.openRecent"
+  },
+  // シンボルで検索する
+  {
+    "key": "cmd+o",
+    "command": "workbench.action.gotoSymbol"
+  }
 ]
