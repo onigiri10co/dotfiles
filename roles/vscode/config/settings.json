@@ -45,6 +45,11 @@
   "[python]": {
     "editor.formatOnType": true
   },
+  // markdown に画像を貼り付けた時に画像ファイルを保存する先
+  "markdown.copyFiles.destination": {
+    "/**/*": "images/${documentBaseName}/"
+  },
+  "workbench.editor.enablePreview": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
