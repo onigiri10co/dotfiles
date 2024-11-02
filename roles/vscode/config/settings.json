@@ -49,7 +49,6 @@
   "markdown.copyFiles.destination": {
     "/**/*": "images/${documentBaseName}/"
   },
-  "workbench.editor.enablePreview": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
