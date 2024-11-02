@@ -7,10 +7,17 @@
   "workbench.colorTheme": "Nord",
   // プレビューモードで開かない
   "workbench.editor.enablePreview": false,
+  // アクティブバーを bottom（小アイコン）に
+  "workbench.activityBar.location": "bottom",
   // minimap(右上に表示されるテキスト全体の縮小表示画面): OFF
   "editor.minimap.enabled": false,
   // 半角スペースを可視化する
   "editor.renderWhitespace": "all",
+  // カーソルを点滅させない
+  "editor.cursorBlinking": "solid",
+  // to be tight of the line number column
+  "editor.glyphMargin": false,
+  "editor.folding": false,
   // Vim
   // クリップボード共有: ON
   "vim.useSystemClipboard": true,
