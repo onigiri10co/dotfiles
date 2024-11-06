@@ -27,14 +27,16 @@
   "vim.leader": "<space>",
   // EasyMotion: ON (Leader x 2 + jkhl, w, s(検索したい文字列) で実行) ※ keybindings.json で leader とかぶるキーを設定していると効かなくなるので注意
   "vim.easymotion": true,
+  // surround: ON
+  "vim.surround": true,
   // vim Ctrl + Key 操作が有効
   "vim.useCtrlKeys": true,
   // LeetCode
-  "leetcode.workspaceFolder": "/Users/h20220530/src/github.com/onigomex/sandbox/go/leetcode",
-  "leetcode.defaultLanguage": "golang",
-  "leetcode.hint.configWebviewMarkdown": false,
-  "leetcode.showDescription": "Both",
-  "leetcode.hint.commandShortcut": false,
+  // "leetcode.workspaceFolder": "/Users/h20220530/src/github.com/onigomex/sandbox/go/leetcode",
+  // "leetcode.defaultLanguage": "golang",
+  // "leetcode.hint.configWebviewMarkdown": false,
+  // "leetcode.showDescription": "Both",
+  // "leetcode.hint.commandShortcut": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "go.toolsManagement.autoUpdate": true,
   // 拡張子ごとの設定
@@ -45,11 +47,39 @@
   "[python]": {
     "editor.formatOnType": true
   },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
   // markdown に画像を貼り付けた時に画像ファイルを保存する先
   "markdown.copyFiles.destination": {
     "/**/*": "images/${documentBaseName}/"
   },
   "explorer.confirmDragAndDrop": false,
+  // ファイル選択時にエクスプローラーが同期しないようにする
+  "explorer.autoReveal": false,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
@@ -57,4 +87,6 @@
   "php.validate.executablePath": "",
   "git.openRepositoryInParentFolders": "always",
   "terminal.integrated.defaultProfile.osx": "tmux",
+  // プラグインを自動アップデート
+  "extensions.autoUpdate": true,
 }
