@@ -6,7 +6,7 @@
 
 main() {
 cat << 'EOF'
-# Useful
+# Cheat
 - finch で docker を動かす
   finch run -it --rm public.ecr.aws/debian/debian:stable-slim /bin/bash
 - git commit id を指定して rebase する。
@@ -15,6 +15,9 @@ cat << 'EOF'
   fd -e HEIC -d1 | while read line; do echo $line; convert $line -quality 80 $line.jpg; done
 - markdown detail
   <details><summary>XXX</summary>\nXXX\n</details>
+- コマンドで GitHub PR を作成する
+  gh pr create -a '@me' -t '<Title>'
+
 
 # Commands
 - gci: git commit id を表示する（fzf で絞り込める）。
