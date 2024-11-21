@@ -1,0 +1,25 @@
+#!/usr/bin/env zsh
+
+# 自分がよく忘れることを書いておいて、サッと見れるための help
+# 中身は何でも良い。特に決めてない。よく使うコマンド、忘れがちなコマンドとか。
+
+
+main() {
+cat << 'EOF'
+# Commands
+- gci: git commit id を表示する（fzf で絞り込める）。
+- gcd: git リポジトリの top レベルに移動する。
+- gbr: git-branch-list
+- gpn: github-pull-request-no
+- git-unstage: 'git reset HEAD'
+- k: kubectl
+- repo: src 直下を fzf し、選択したら cd
+- zi: 高アクセス頻度dir を fzf し、選択したら cd
+- aws-nuke: aws nuke
+- gci-rebase: rebase 用の git commit id（選んだ一つ前）を出力する
+- ssh-add-keys: ~/.ssh/*.pem ファイルを ssh-add する
+- tmux-resize-pane: tmux の pane サイズを変更する
+EOF
+}
+
+main
